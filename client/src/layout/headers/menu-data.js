@@ -17,7 +17,7 @@ const menu_data = [
   },
   {
     id: 3,
-    title: "Professor",
+    title: "Professors",
     link: "/instructor",
     has_dropdown: true,
     sub_menus: [
@@ -25,7 +25,7 @@ const menu_data = [
   },
   {
     id: 4,
-    title: "Course",
+    title: "Bible Course",
     link: "/course-grid",
     has_dropdown: true,
     sub_menus: [

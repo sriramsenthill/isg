@@ -4,7 +4,7 @@ import OurMission from "./ourMission";
 import OurFaithCreed from "./OurFaithCreed";
 import OurFaith from "./OurFaith";
 import HeroBanner from "./hero-banner";
-import InstructorArea from "../../../common/instructor-area";
+import InstructorArea from "../../instructor/instructor-area";
 
 
 const Home = () => {

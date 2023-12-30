@@ -8,11 +8,8 @@ import InstructorArea from "./instructor-area";
 const Instructor = () => {
   return (
     <>
-    <Breadcrumb title="Instructor" subtitle="Instructor" />
-      <FeatureArea style_about={true} />
+      <Breadcrumb title="Professors" subtitle="Professors" />
       <InstructorArea />
-      <SuitableArea style_2={true} />
-      <CounterArea />
     </>
   );
 };

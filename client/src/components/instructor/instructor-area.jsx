@@ -5,13 +5,13 @@ import React from "react";
 const InstructorArea = () => {
   return (
     <>
-      <section className="instructor-area pb-110">
+      <section className="instructor-area pb-110" style={{ marginTop: "5rem" }}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="section-title mb-65 text-center">
-                <span className="tp-sub-title-box mb-15">Instructor</span>
-                <h2 className="tp-section-title">Our Expert Instructor</h2>
+                <span className="tp-sub-title-box mb-15">Professors</span>
+                <h2 className="tp-section-title">Our Expert Professors</h2>
               </div>
             </div>
           </div>
@@ -33,19 +33,19 @@ const InstructorArea = () => {
                         <Link href="/instructor-profile">{item.name}</Link>
                       </h4>
                       <div className="tp-instructor__stu-info">
-                        </div>
                       </div>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
-            
+
           </div>
           <div className="row">
             <div className="col-lg-12">
               <div className="instructor-btn text-center mt-20">
                 <Link className="tp-btn" href="/instructor">
-                  All Instructor
+                  All Professors
                 </Link>
               </div>
             </div>

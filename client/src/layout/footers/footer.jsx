@@ -8,13 +8,9 @@ const footer_data = [
     footer_col: "footer-col-1",
     links: [
       { name: "About Us", link: "/about" },
-      { name: "Blog", link: "/blog" },
-      { name: "Careers", link: "/careers" },
-      { name: "Jobs", link: "/" },
-      { name: "In Press", link: "/" },
     ],
   },
-{
+  {
     id: 3,
     title: "Support",
     footer_col: "footer-col-3",
@@ -24,7 +20,6 @@ const footer_data = [
       { name: "Online Chat", link: "/online-chat" },
       { name: "Whatsapp", link: "/whatsapp" },
       { name: "Telegram", link: "/telegram" },
-      { name: "Ticketing", link: "/ticketing" },
     ],
   },
 ];
@@ -45,13 +40,6 @@ const social_links = [
     name: "Youtube",
   },
   {
-    link: "https://www.basketball.com/",
-    target: "_blank",
-    icon: "fa-light fa-basketball",
-    name: "Instagram",
-  },
-
-  {
     link: "http://whatsapp.com",
     target: "_blank",
     icon: "fa-brands fa-whatsapp",
@@ -60,9 +48,9 @@ const social_links = [
 ];
 
 const copyright = {
-  logo: "/assets/img/logo/logo.png",
+  logo: "/assets/img/isg/logo.png",
   copyright_text: (
-    <>Copyright © Uxaction {new Date().getFullYear()}, All Rights Reserved</>
+    <>Copyright © ISG {new Date().getFullYear()}, All Rights Reserved</>
   ),
 };
 
@@ -116,7 +104,7 @@ const Footer = () => {
                 <div className="col-md-5">
                   <div className="f-copyright__logo mb-30">
                     <a href="#">
-                      <img src={logo} alt="logo" />
+                      <img src={logo} alt="logo" style={{ width: '100px', height: 'auto' }} />
                     </a>
                   </div>
                 </div>
