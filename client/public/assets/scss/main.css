@@ -47101,7 +47101,7 @@ img {
   font-size: 13px;
 }
 .header__info ul li a:hover {
-  color: var(--tp-theme-1);
+  color: var(#5f096f);
 }
 .header__info ul li a i {
   margin-right: 5px;

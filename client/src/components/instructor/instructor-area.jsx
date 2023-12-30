@@ -33,48 +33,8 @@ const InstructorArea = () => {
                         <Link href="/instructor-profile">{item.name}</Link>
                       </h4>
                       <div className="tp-instructor__stu-info">
-                        <ul className="d-flex align-items-center justify-content-center">
-                          <li className="d-flex align-items-center">
-                            <img
-                              src="/assets/img/icon/c-meta-01.png"
-                              alt="meta-icon"
-                            />
-                            <i>{item.total_class} Classes</i>
-                          </li>
-                          <li className="d-flex align-items-center">
-                            <img
-                              src="/assets/img/icon/c-meta-02.png"
-                              alt="meta-icon"
-                            />
-                            <i>{item.total_st}+ Students</i>
-                          </li>
-                        </ul>
+                        </div>
                       </div>
-                      <div className="tp-instructor__social">
-                        <ul>
-                          <li>
-                            <a href="#">
-                              <i className="fa-brands fa-facebook-f"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa-brands fa-twitter"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa-brands fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa-brands fa-youtube"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>

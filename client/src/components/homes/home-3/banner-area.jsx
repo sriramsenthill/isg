@@ -7,7 +7,7 @@ const BannerArea = () => {
       <section className="banner-area fix p-relative">
         <div
           className="banner-bg banner-bg-rainbow"
-          style={{backgroundImage: `url(/assets/img/banner/banner-bg-2.jpg)`}}
+          style={{backgroundImage: `url(/assets/img/banner/background.jpg)`}}
         >
           <div className="container">
             <div className="row">
@@ -27,7 +27,7 @@ const BannerArea = () => {
               <div className="col-xl-6 col-lg-6">
                 <div className="banner-shape d-none d-md-block">
                   <img
-                    src="/assets/img/banner/banner-img-1.png"
+                    src="/assets/img/banner/background.png"
                     alt="banner-shape"
                     className="b-shape-3"
                   />
