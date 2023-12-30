@@ -5,7 +5,7 @@ import React from "react";
 const CourseArea = () => {
   return (
     <>
-      <section className="course-area pb-120">
+      <section className="course-area pb-120" style={{ marginTop: "5rem" }}>
         <div className="container">
           <div className="row">
             <div className="col-md-12">
@@ -27,15 +27,23 @@ const CourseArea = () => {
                 >
                   <div className="tpcourse__thumb p-relative w-img fix">
                     <Link href="/course-details">
-                      <img src={item.img} alt="course-thumb" />
+                      <div style={{ backgroundColor: "#5f096f", width: "500px", height: "300px" }}>
+                        {/* Content goes here */}
+                      </div>
                     </Link>
                     <div className="tpcourse__tag">
                       <Link href="/course-details">
                         <i className="fi fi-rr-heart"></i>
                       </Link>
                     </div>
-                    <div className="tpcourse__img-icon">
-                      <img src={item.icon} alt="course-avata" />
+                    <div style={{ position: 'absolute', bottom: 5, left: 5 }}>
+                      <img
+                        src={item.icon}
+                        alt="course-avatar"
+                        style={{
+                          width: '80px', height: '80px', borderRadius: '50%',
+                        }}
+                      />
                     </div>
                   </div>
                   <div className="tpcourse__content-2">
@@ -73,59 +81,32 @@ const CourseArea = () => {
                           />{" "}
                           <span>{item.cls_text}</span>
                         </li>
-                        <li>
-                          <img
-                            src="/assets/img/icon/c-meta-02.png"
-                            alt="meta-icon"
-                          />{" "}
-                          <span>{item.st_text}</span>
-                        </li>
+
                       </ul>
                     </div>
-                    <div className="tpcourse__rating d-flex align-items-center justify-content-between">
-                      <div className="tpcourse__rating-icon">
-                        <span>4.7</span>
-                        <i className="fi fi-ss-star"></i>
-                        <i className="fi fi-ss-star"></i>
-                        <i className="fi fi-ss-star"></i>
-                        <i className="fi fi-ss-star"></i>
-                        <i className="fi fi-rs-star"></i>
-                        <p>(125)</p>
-                      </div>
-                      <div className="tpcourse__pricing">
-                        <h5 className="price-title">$29.99</h5>
+                    <div className="tpcourse__rating d-flex">
+                      <div className="tpcourse__pricing" >
+                        <button
+                          className="btn"
+                          style={{
+                            backgroundColor: "#5f096f",
+                            color: "white",
+                            border: "none",
+                            padding: "6px 15px", // Adjust padding as needed
+                            borderRadius: "5px", // Adjust border radius as needed
+                          }}
+                        >
+                          Learn
+                        </button>
                       </div>
                     </div>
+
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="basic-pagination">
-            <nav>
-              <ul>
-                <li>
-                  <Link href="/blog">
-                    <i className="far fa-angle-left"></i>
-                  </Link>
-                </li>
-                <li>
-                  <span className="current">1</span>
-                </li>
-                <li>
-                  <Link href="/blog">2</Link>
-                </li>
-                <li>
-                  <Link href="/blog">3</Link>
-                </li>
-                <li>
-                  <Link href="/blog">
-                    <i className="far fa-angle-right"></i>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
+
         </div>
       </section>
     </>

@@ -8,11 +8,8 @@ import CourseArea from "./course-area";
 const CourseGrid = () => {
   return (
     <>
-      <Breadcrumb title="Course Grid" subtitle="Course Grid" isDbbl="Course" />
-      <FeatureArea style_about={true} />
+      <Breadcrumb title="Bible Course" subtitle="Bible Course" isDbbl="Course" />
       <CourseArea />
-      <SuitableArea style_2={true} />
-      <CounterArea />
     </>
   );
 };
