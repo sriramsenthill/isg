@@ -14,20 +14,7 @@ const footer_data = [
       { name: "In Press", link: "/" },
     ],
   },
-  {
-    id: 2,
-    title: "Quick Links",
-    cls: "col-xl-3",
-    footer_col: "footer-col-2",
-    links: [
-      { name: "Refund Policy", link: "/policy" },
-      { name: "Documentation", link: "/documentation" },
-      { name: "Chat online", link: "/chat-online" },
-      { name: "Order Cancel", link: "/order-cancel" },
-      { name: "Privacy Policy", link: "/privacy-policy" },
-    ],
-  },
-  {
+{
     id: 3,
     title: "Support",
     footer_col: "footer-col-3",
@@ -111,24 +98,6 @@ const Footer = () => {
                 ))}
                 <div className="col-xl-4 col-lg-6 col-md-8">
                   <div className="footer-widget footer-col-4  mb-50">
-                    <div className="footer-widget__text mb-35">
-                      <h3 className="footer-widget__title">Support</h3>
-                    </div>
-                    <p>
-                      Be the first one to know about discounts, offers and
-                      events. Unsubscribe whenever you like.
-                    </p>
-                    <div className="footer-widget__f-newsletter mb-40">
-                      <form  onSubmit={(e) => e.preventDefault()}>
-                        <span>
-                          <i className="icon_mail_alt"></i>
-                        </span>
-                        <input type="email" placeholder="Enter your email" />
-                        <button className="footer-widget__submit tp-border-btn2">
-                          Subscribe Now
-                        </button>
-                      </form>
-                    </div>
                     <div className="footer-widget__social d-flex align-items-center">
                       {social_links.map((link, i) => (
                         <a href={link.link} target={link.target} key={i}>

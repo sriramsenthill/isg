@@ -67,10 +67,7 @@ const social_links = [
 // footer bottom data
 const footer_bottom = [
   { name: "About us", link: "/about" },
-  { name: "Contact", link: "/contact" },
-  { name: "Privacy policy", link: "/" },
-  { name: "Courses", link: "/" },
-  { name: "Terms of Use", link: "/" },
+
 ];
 
 
