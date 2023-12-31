@@ -22,7 +22,7 @@ const HeaderTwo = () => {
                            <div className="logo-area d-flex align-items-center justify-content-center">
                               <div className="logo">
                                  <Link href="/">
-                                    <img src="/assets/img/isg/logo.png" alt="logo" />
+                                    <img src="/assets/img/isg/logoAni.gif" style={{ height: "300px", width: "300px" }} alt="logo" />
                                  </Link>
                               </div>
                            </div>
