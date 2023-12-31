@@ -1,7 +1,7 @@
 const instructor_info_data = [
   {
     id: 1,
-    img: "/assets/img/bg/Shan Shalom.jpeg",
+    img: "/assets/img/bg/17.png",
     name: "Dr.Sudarshan Ashokan",
     total_class: "35",
     total_st: "291",
