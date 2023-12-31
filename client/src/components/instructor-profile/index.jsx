@@ -12,14 +12,14 @@ import Priyanthi from "./professor/Priyanthi";
 const InstructorProfile = () => {
   return (
     <>
-    <Breadcrumb title="Instructor Profile" isDbbl="Instructor" subtitle="Instructor Profile" />
-      <Sudarshan/>
-      <Saji/>
-      <Caleb/>
-      <Ben/>
-      <Priyanthi/>
-      <Sasikumar/>
-      <Comment_box/>
+      <Breadcrumb title="Professor Profile" isDbbl="Professor" subtitle="Professor Profile" />
+      <Sudarshan />
+      <Saji />
+      <Caleb />
+      <Ben />
+      <Priyanthi />
+      <Sasikumar />
+      <Comment_box />
     </>
   );
 };

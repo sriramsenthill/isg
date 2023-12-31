@@ -49,10 +49,10 @@ const InstructorPortfolioArea = () => {
                 <div className="instructor-sidebar-widget">
                   <div className="isntruc-side-content text-center">
                     <h4 className="side-instructor-title mb-15">
-                    Dr.Priyanthi Sudarshan
+                      Dr.Priyanthi Sudarshan
                     </h4>
                     <p>
-                    சர்வதேச பெண்கள் ஆராதனை ஒருமித்து தேவனை மகிமைப்படுத்தும் மகிமையின் ஆராதனை!
+                      சர்வதேச பெண்கள் ஆராதனை ஒருமித்து தேவனை மகிமைப்படுத்தும் மகிமையின் ஆராதனை!
                     </p>
                   </div>
                 </div>
@@ -84,81 +84,6 @@ const InstructorPortfolioArea = () => {
                     களிலும் பெரிதாகி, Served ஆகாயத்துப் பறவைகள் அதின் கிளைகளில்
                     வந்து அடையத்தக்க மரமாகும் " என்றார். (மத்தேயு 13:31,32)
                   </p>
-                </div>
-                <div className="instructor-tp-course">
-                  <div className="row">
-                    <div className="col-md-12">
-                      <div className="instruc-biography">
-                        <h2 className="ins-bio-title mb-35">Courses</h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    {our_course_data.slice(0, 4).map((item, i) => (
-                      <div key={i} className="col-xl-6 col-lg-12 col-md-6">
-                        <div className="tpcourse mb-40">
-                          <div className="tpcourse__thumb p-relative w-img fix">
-                            <Link href="/course-details">
-                              <img src={item.img} alt="course-thumb" />
-                            </Link>
-                            <div className="tpcourse__tag">
-                              <Link href="#">
-                                <i className="fi fi-rr-heart"></i>
-                              </Link>
-                            </div>
-                            <div className="tpcourse__img-icon">
-                              <img src={item.icon} alt="course-avata" />
-                            </div>
-                          </div>
-                          <div className="tpcourse__content-2">
-                            <div className="tpcourse__category mb-10">
-                              <ul className="tpcourse__price-list d-flex align-items-center">
-                                <li>
-                                  <Link
-                                    className={item.ct_color}
-                                    href="/course-details"
-                                  >
-                                    {item.course_title}
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link
-                                    className={item.cn_color}
-                                    href="/course-details"
-                                  >
-                                    {item.course_name}
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="tpcourse__ava-title mb-15">
-                              <h4 className="tpcourse__title">
-                                <Link href="/course-details">{item.title}</Link>
-                              </h4>
-                            </div>
-                            <div className="tpcourse__meta tpcourse__meta-gap pb-15 mb-15">
-                              <ul className="d-flex align-items-center">
-                                <li>
-                                  <img
-                                    src="/assets/img/icon/c-meta-01.png"
-                                    alt="meta-icon"
-                                  />
-                                  <span>{item.cls_text}</span>
-                                </li>
-                                <li>
-                                  <img
-                                    src="/assets/img/icon/c-meta-02.png"
-                                    alt="meta-icon"
-                                  />
-                                  <span>{item.st_text}</span>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
