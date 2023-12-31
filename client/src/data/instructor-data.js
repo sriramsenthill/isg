@@ -5,7 +5,7 @@ const instructor_info_data = [
     name: "Dr.Sudarshan Ashokan",
     total_class: "35",
     total_st: "291",
-    title: "Professor",
+    title: "ISG Prof.Rev",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const instructor_info_data = [
     name: "Dr.Saji Abraham",
     total_class: "35",
     total_st: "291",
-    title: "Professor",
+    title: "ISG Prof.Rev",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const instructor_info_data = [
     name: "Dr.Ben Christopher",
     total_class: "35",
     total_st: "291",
-    title: "Instructor",
+    title: "ISG Prof.Rev",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const instructor_info_data = [
     name: "Dr.Priyanthi Sudarshan",
     total_class: "35",
     total_st: "291",
-    title: "Professor",
+    title: "ISG Rev",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const instructor_info_data = [
     name: "Dr.Sasikumar Amos Dhanaraj",
     total_class: "35",
     total_st: "291",
-    title: "Professor",
+    title: "ISG Prof.Rev",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const instructor_info_data = [
     name: "Prof.Caleb James",
     total_class: "35",
     total_st: "291",
-    title: "Professor",
+    title: "ISG Prof",
   },
 ];
 
