@@ -26,8 +26,8 @@ const CommentForm = () => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
+    <div className="container" style={{display:"flex", justifyContent:'center'}}>
+      <form onSubmit={handleSubmit} style={{width:'500px',height:'300px', }}>
         <div className="form-group">
           <textarea
             className="form-control status-box"
@@ -37,9 +37,10 @@ const CommentForm = () => {
             onChange={handleInputChange}
           ></textarea>
         </div>
-        <div className="button-group pull-right">
+        <div   className="button-group pull-right" >
           <p className="counter">{charactersLeft}</p>
           <button
+         
             type="submit"
             className="btn btn-primary"
             disabled={charactersLeft < 0 || charactersLeft === 250}
