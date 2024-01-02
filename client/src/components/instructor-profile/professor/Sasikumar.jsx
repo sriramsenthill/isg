@@ -1,32 +1,101 @@
 import our_course_data from "@/src/data/our-course-data.js";
 import Link from "next/link";
 import React from "react";
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+import CommentForm from "../comment_box";
 
-// instructor_portfolio_data
-// counter data
-const counter_data = [
-  {
-    id: 1,
-    icon: "fi fi-rr-user",
-    count_number: 276,
-    thousand: "K",
-    title: "Worldwide Students",
+const CustomButtonZoom = styled(Button)(({ theme }) => ({
+  background: "transparent",
+  position: "relative",
+  padding: "0px 25px",
+  display: "flex",
+  alignItems: "center",
+  fontSize: "15px",
+  fontWeight: 600,
+  textDecoration: "none",
+  cursor: "pointer",
+  border: `1px solid ${theme.palette.primary.main}`,
+  borderRadius: "25px",
+  outline: "none",
+  overflow: "hidden",
+  color: theme.palette.primary.main,
+  transition: "color 0.3s 0.1s ease-out",
+  textAlign: "center",
+  "& span": {
+    margin: "5px",
   },
-  {
-    id: 2,
-    icon: "fi fi-rr-document",
-    count_number: 35,
-    thousand: "",
-    title: "Professional Courses",
+  "&::before": {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    margin: "auto",
+    content: '""',
+    borderRadius: "50%",
+    display: "block",
+    width: "20em",
+    height: "20em",
+    left: "-5em",
+    textAlign: "center",
+    transition: "box-shadow 0.5s ease-out",
+    zIndex: -1,
   },
-  {
-    id: 3,
-    icon: "fi fi-rr-star",
-    count_number: 407,
-    thousand: "K",
-    title: "Beautiful Review",
+  "&:hover": {
+    color: "#fff",
+    border: `1px solid ${theme.palette.primary.main}`,
+    "&::before": {
+      boxShadow: `inset 0 0 0 10em ${theme.palette.primary.main}`,
+    },
   },
-];
+}));
+
+const CustomButtonwhatsapp = styled(Button)(({ theme }) => ({
+  background: "transparent",
+  position: "relative",
+  padding: "0px 25px",
+  display: "flex",
+  alignItems: "center",
+  fontSize: "15px",
+  fontWeight: 600,
+  textDecoration: "none",
+  cursor: "pointer",
+  border: `1px solid ${theme.palette.success.main}`,
+  borderRadius: "25px",
+  outline: "none",
+  overflow: "hidden",
+  color: theme.palette.success.main,
+  transition: "color 0.3s 0.1s ease-out",
+  textAlign: "center",
+  "& span": {
+    margin: "5px",
+  },
+  "&::before": {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    margin: "auto",
+    content: '""',
+    borderRadius: "50%",
+    display: "block",
+    width: "20em",
+    height: "20em",
+    left: "-5em",
+    textAlign: "center",
+    transition: "box-shadow 0.5s ease-out",
+    zIndex: -1,
+  },
+  "&:hover": {
+    color: "#fff",
+    border: `1px solid ${theme.palette.success.main}`,
+    "&::before": {
+      boxShadow: `inset 0 0 0 10em ${theme.palette.success.main}`,
+    },
+  },
+}));
 
 const InstructorPortfolioArea = () => {
   return (
@@ -56,6 +125,24 @@ const InstructorPortfolioArea = () => {
                       மேன்மைகள் / மகத்துவங்கள்!
                     </p>
                   </div>
+                  <div
+                    style={{ display: "flex", justifyContent: "space-around" }}
+                  >
+                    <CustomButtonZoom>
+                      <img
+                        src="/assets/img/icon/zoom.png"
+                        alt="instructor-thumb"
+                      />
+                      <span>Zoom Meeting</span>
+                    </CustomButtonZoom>
+                    <CustomButtonwhatsapp>
+                      <img
+                        src="/assets/img/icon/whatsapp.png"
+                        alt="instructor-thumb"
+                      />
+                      <span>Whatsapp</span>
+                    </CustomButtonwhatsapp>
+                  </div>  
                 </div>
               </div>
             </div>
@@ -72,6 +159,7 @@ const InstructorPortfolioArea = () => {
                     தீமோத்தேயு 3:17
                   </p>
                 </div>
+                <CommentForm />
               </div>
             </div>
           </div>
