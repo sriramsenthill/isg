@@ -27,21 +27,23 @@ const CourseArea = () => {
                 >
                   <div className="tpcourse__thumb p-relative w-img fix">
                     <Link href="/course-details">
-                      <div style={{ backgroundColor: "#5f096f", width: "500px", height: "300px" }}>
-                        {/* Content goes here */}
+                      <div style={{ width: "500px", height: "500px" }}>
+                        <img style={{objectFit: "cover"}} src={item.img} alt="svasv" />{" "}
                       </div>
                     </Link>
                     <div className="tpcourse__tag">
-                      <Link href="/course-details">
+                      <Link href="/">
                         <i className="fi fi-rr-heart"></i>
                       </Link>
                     </div>
-                    <div style={{ position: 'absolute', bottom: 5, left: 5 }}>
+                    <div style={{ position: "absolute", bottom: 5, left: 5 }}>
                       <img
                         src={item.icon}
                         alt="course-avatar"
                         style={{
-                          width: '80px', height: '80px', borderRadius: '50%',
+                          width: "80px",
+                          height: "80px",
+                          borderRadius: "50%",
                         }}
                       />
                     </div>
@@ -81,11 +83,10 @@ const CourseArea = () => {
                           />{" "}
                           <span>{item.cls_text}</span>
                         </li>
-
                       </ul>
                     </div>
                     <div className="tpcourse__rating d-flex">
-                      <div className="tpcourse__pricing" >
+                      <div className="tpcourse__pricing">
                         <button
                           className="btn"
                           style={{
@@ -100,13 +101,11 @@ const CourseArea = () => {
                         </button>
                       </div>
                     </div>
-
                   </div>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </section>
     </>
