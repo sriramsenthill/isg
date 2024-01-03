@@ -2,8 +2,8 @@ const our_course_data = [
   //   tab all
   {
     id: 1,
-    img: "/assets/img/course/course-thumb-01.jpg",
-    icon: "/assets/img/isg/monday.jpeg",
+    img: "/assets/img/isg/monday.jpeg",
+    icon: "/assets/img/isg/logo.png",
     title: "தேன் துளிகள்",
     cls_text: "Monday",
     st_text: "291 Students",
@@ -18,8 +18,8 @@ const our_course_data = [
   },
   {
     id: 2,
-    img: "/assets/img/course/course-thumb-02.jpg",
-    icon: "/assets/img/isg/tuesday.jpeg",
+    img: "/assets/img/isg/tuesday.jpeg",
+    icon: "/assets/img/isg/logo.png",
     title: "வெளிப்படுத்தின விசேஷம்",
     cls_text: "Tuesday",
     st_text: "291 Students",
@@ -34,8 +34,8 @@ const our_course_data = [
   },
   {
     id: 3,
-    img: "/assets/img/course/course-thumb-03.jpg",
-    icon: "/assets/img/isg/wednesday.jpeg",
+    img: "/assets/img/isg/wednesday.jpeg",
+    icon: "/assets/img/isg/logo.png",
     title: "தேவனுடனான நமது உறவு",
     cls_text: "Wednesday",
     st_text: "291 Students",
@@ -50,8 +50,8 @@ const our_course_data = [
   },
   {
     id: 4,
-    img: "/assets/img/course/course-thumb-04.jpg",
-    icon: "/assets/img/isg/thursday.jpeg",
+    img: "/assets/img/isg/thursday.jpeg",
+    icon: "/assets/img/isg/logo.png",
     title: "திருமறை திரித்துவ உயர் பட்டப் படிப்பு",
     cls_text: "Thursday",
     st_text: "291 Students",
@@ -66,8 +66,8 @@ const our_course_data = [
   },
   {
     id: 5,
-    img: "/assets/img/course/course-thumb-05.jpg",
-    icon: "/assets/img/isg/saturday.jpeg",
+    img: "/assets/img/isg/saturday.jpeg",
+    icon: "/assets/img/isg/logo.png",
     title: "வேதாகமத்தை திணியணித்தல்",
     cls_text: "Saturday",
     st_text: "291 Students",
@@ -82,8 +82,8 @@ const our_course_data = [
   },
   {
     id: 6,
-    img: "/assets/img/course/course-thumb-06.jpg",
-    icon: "/assets/img/isg/sunday.jpeg",
+    img: "/assets/img/isg/sunday.jpeg",
+    icon: "/assets/img/isg/logo.png",
     title: "சர்வதேச பெண்கள் ஆராதனை",
     cls_text: "Sunday",
     st_text: "291 Students",
