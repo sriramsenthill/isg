@@ -13,8 +13,8 @@ const Home = () => {
       <HeroBanner />
       <OurVision />
       <OurMission />
-      <OurFaith />
       <OurFaithCreed />
+      <OurFaith />
       <InstructorArea />
     </>
   );

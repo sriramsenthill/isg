@@ -68,7 +68,6 @@ const HeaderTwo = () => {
                      <div className="header-meta-green text-end">
                         <ul>
                            <li><Link href="/sign-in"><i className="fi fi-rr-user"></i></Link></li>
-                           <li><Link href="/cart"><i className="fi fi-rr-shopping-bag"></i></Link></li>
                            <li><a href="#" onClick={() => setIsActive(true)} className="tp-menu-toggle d-xl-none"><i className="icon_ul"></i></a></li>
                         </ul>
                      </div>

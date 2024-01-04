@@ -6,9 +6,8 @@ import WrapperFour from "../layout/wrapper-4";
 const index = () => {
   return (
     <WrapperFour>
-      <SEO pageTitle={"Course Grid"} />
+      <SEO pageTitle={"Bible Course"} />
       <CourseGrid />
-      <img src="/assests/img/banner/2.jpeg" />
     </WrapperFour>
   );
 };
