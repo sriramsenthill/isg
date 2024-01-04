@@ -11,7 +11,7 @@ const Sidebar = ({ isActive, setIsActive }) => {
         </button>
         <div className="side-logo mb-30">
           <Link href="/">
-            <img src="/assets/img/isg/logo.png" alt="logo" style={{ width: "100px", height: "auto" }} />
+            <img src="/assets/img/isg/logoAni.gif" alt="logo" style={{ width: "100px", height: "auto" }} />
           </Link>
         </div>
         <div className="mobile-menu mean-container">

@@ -20,6 +20,7 @@ const OurFaithCreed = () => {
         className="choose-area pb-90 wow fadeInUp"
         data-wow-duration=".8s"
         data-wow-delay=".4s"
+        style={{backgroundColor:'#5f096f' ,}}
       >
         <div className="container">
           <div className="row align-items-center">
@@ -32,15 +33,15 @@ const OurFaithCreed = () => {
             <div className="col-xl-5 col-lg-6 col-md-6">
               <div className="tp-choose-content mb-10">
                 <div className="section-title mb-20">
-                  <span className="tp-sub-title mb-20">{title}</span>
-                  <h2 className="tp-section-title mb-10">{sub_title}</h2>
-                  <p style={{ textAlign: "justify" }}>{des}</p>
+                  <span className="tp-sub-title mb-20 ">{title}</span>
+                  <h2 className="tp-section-title mb-10 text-white">{sub_title}</h2>
+                  <p style={{ textAlign: "justify" ,color:'#fff' }}>{des}</p>
                 </div>
-                <div className="tp-choose-list mb-35">
+                <div className="tp-choose-list mb-35 ">
                   <ul>
                     {choose_list.map((item, i) => (
-                      <li key={i}>
-                        <i className="fa-light fa-check"></i> {item.title}
+                      <li key={i} >
+                        <i className="fa-light fa-check "></i> {item.title}
                       </li>
                     ))}
                   </ul>

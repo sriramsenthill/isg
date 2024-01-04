@@ -21,24 +21,23 @@ const OurVision = () => {
         className="tp-about-area pt-120 pb-90 wow fadeInUp"
         data-wow-duration="1.5s"
         data-wow-delay=".4s"
+        style={{backgroundColor:'#5f096f'}}
       >
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xxl-7 col-xl-6 col-lg-6 col-md-6">
               <div className="tp-about-img p-relative pb-30 ml-10">
                 <img src={img_1} alt="about-img" />
-
-
               </div>
             </div>
             <div className="col-xxl-5 col-xl-6 col-lg-6 col-md-6">
               <div className="tp-about-content pb-30 ml-80">
                 <div className="section-title mb-55">
-                  <span className="tp-sub-title mb-20">{about_title}</span>
-                  <h2 className="tp-section-title mb-15">
+                  <span className="tp-sub-title mb-20 text-white">{about_title}</span>
+                  <h2 className="tp-section-title mb-15 text-white">
                     {sub_title}
                   </h2>
-                  <p style={{ textAlign: 'justify' }}>
+                  <p style={{ textAlign: 'justify' ,color:'#fff' }}>
                     {des}
                   </p>
                 </div>
