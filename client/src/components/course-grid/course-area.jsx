@@ -28,7 +28,7 @@ const CourseArea = () => {
                   <div className="tpcourse__thumb p-relative w-img fix">
                     <Link href="/course-details">
                       <div style={{ width: "500px", height: "500px" }}>
-                        <img style={{objectFit: "cover"}} src={item.img} alt="svasv" />{" "}
+                        <img style={{ objectFit: "cover" }} src={item.img} alt="svasv" />{" "}
                       </div>
                     </Link>
                     <div className="tpcourse__tag">
@@ -54,7 +54,7 @@ const CourseArea = () => {
                         <li>
                           <Link
                             className={item.ct_color}
-                            href="/course-details"
+                            href="/instructor-profile"
                           >
                             {item.course_title}
                           </Link>
@@ -62,7 +62,7 @@ const CourseArea = () => {
                         <li>
                           <Link
                             className={item.cn_color}
-                            href="/course-details"
+                            href="/instructor-profile"
                           >
                             {item.course_name}
                           </Link>
@@ -71,7 +71,7 @@ const CourseArea = () => {
                     </div>
                     <div className="tpcourse__ava-title mb-15">
                       <h4 className="tpcourse__title tp-cours-title-color">
-                        <Link href="/course-details">{item.title}</Link>
+                        <Link href="/instructor-profile">{item.title}</Link>
                       </h4>
                     </div>
                     <div className="tpcourse__meta tpcourse__meta-gap pb-15 mb-15">
