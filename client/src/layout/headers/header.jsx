@@ -20,7 +20,7 @@ const Header = () => {
                   <div className="logo-area d-flex align-items-center">
                     <div className="logo">
                       <Link href="/">
-                        <img src="/assets/img/isg/logo.png" alt="logo" />
+                        <img src="/assets/img/isg/logoAni.gif" alt="logo" />
                       </Link>
                     </div>
                   </div>

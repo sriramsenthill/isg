@@ -60,7 +60,7 @@ const HeaderTwo = () => {
                   <div className="col-md-6 col-5">
                      <div className="logo">
                         <Link href="/">
-                           <img src="/assets/img/isg/logo.png" alt="logo" />
+                           <img src="/assets/img/isg/logoAni.gif" alt="logo" />
                         </Link>
                      </div>
                   </div>
