@@ -17,9 +17,8 @@ const footer_data = [
     cls: "col-xl-3",
     links: [
       { name: "Contact us", link: "/contact" },
-      { name: "Online Chat", link: "/online-chat" },
-      { name: "Whatsapp", link: "/whatsapp" },
-      { name: "Telegram", link: "/telegram" },
+      { name: "Online Chat", link: "/professorProfile" },
+      { name: "Whatsapp", link: "https://chat.whatsapp.com/KVpmWkhAfLT1cqgyo7JTbP" },
     ],
   },
 ];
@@ -28,19 +27,19 @@ const footer_data = [
 // social_links
 const social_links = [
   {
-    link: "http://facebook.com",
+    link: "https://www.facebook.com/profile.php?id=61553247823094",
     target: "_blank",
     icon: "fab fa-facebook-f",
     name: "Facebook",
   },
   {
-    link: "https://www.youtube.com/",
+    link: "https://youtube.com/@theservantofgodtheheartoft4564?si=aGAqxxR71b7VLoEK",
     target: "_blank",
     icon: "fab fa-youtube",
     name: "Youtube",
   },
   {
-    link: "http://whatsapp.com",
+    link: "https://chat.whatsapp.com/KVpmWkhAfLT1cqgyo7JTbP",
     target: "_blank",
     icon: "fa-brands fa-whatsapp",
     name: "Twitter",
@@ -76,7 +75,7 @@ const Footer = () => {
                         <ul>
                           {item.links.map((link, i) => (
                             <li key={i}>
-                              <a href="#">{link.name}</a>
+                              <a href={link.link}>{link.name}</a>
                             </li>
                           ))}
                         </ul>

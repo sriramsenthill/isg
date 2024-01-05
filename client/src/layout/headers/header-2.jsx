@@ -1,15 +1,42 @@
 import useSticky from '@/hooks/use-sticky';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import jwt_decode from 'jwt-decode';
 import NavMenu from './nav-menu';
 import Sidebar from './sidebar';
 
-
-
 const HeaderTwo = () => {
-
-   const { sticky } = useSticky()
+   const { sticky } = useSticky();
    const [isActive, setIsActive] = useState(false);
+   const [jwtToken, setJwtToken] = useState('');
+
+   useEffect(() => {
+      // Check for JWT token in local storage
+      const token = localStorage.getItem('jwtToken');
+
+      if (token) {
+         // Set JWT token in state
+         setJwtToken(token);
+      }
+   }, []);
+
+   const welcome = () => {
+      try {
+         // Example: Display a welcome message with the user's name
+         return "Welcome ISG User!";
+      } catch (error) {
+         console.error('Error:', error);
+
+      }
+   };
+
+   const handleLogout = () => {
+      // Clear the JWT token from local storage
+      localStorage.removeItem('jwtToken');
+
+      // Redirect to the sign-in page
+      window.location.href = '/sign-in';
+   };
 
    return (
       <>
@@ -44,7 +71,25 @@ const HeaderTwo = () => {
                      <div className="col-xxl-3 col-xl-3 col-lg-6 d-flex align-items-center justify-content-end">
                         <div className="header-meta-green">
                            <ul>
-                              <li><Link href="/sign-in"><i className="fi fi-rr-user"></i></Link></li>
+                              {jwtToken ? (
+                                 <>
+                                    <li style={{ marginRight: '1rem' }}>{welcome()}</li>
+                                    <li style={{ marginTop: '-10px' }}>
+                                       <button
+                                          className="btn"
+                                          style={{
+                                             backgroundColor: "#5f096f",
+                                             color: "white",
+                                             border: "none",
+                                             padding: "6px 15px", // Adjust padding as needed
+                                             borderRadius: "5px", // Adjust border radius as needed
+                                          }}
+                                          onClick={handleLogout}>Logout</button></li>
+                                 </>
+                              ) : (
+                                 // If JWT token is not present, show sign-in link
+                                 <li><Link href="/sign-in"><i className="fi fi-rr-user"></i></Link></li>
+                              )}
                               <li><a href="#" className="tp-menu-toggle d-xl-none"><i className="icon_ul"></i></a></li>
                            </ul>
                         </div>
@@ -67,8 +112,25 @@ const HeaderTwo = () => {
                   <div className="col-md-6 col-7 d-flex align-items-center justify-content-end">
                      <div className="header-meta-green text-end">
                         <ul>
-                           <li><Link href="/sign-in"><i className="fi fi-rr-user"></i></Link></li>
-                           <li><Link href="/cart"><i className="fi fi-rr-shopping-bag"></i></Link></li>
+                           {jwtToken ? (
+                              <>
+                                 <li style={{ marginRight: '1rem', marginTop: '10px' }}>{welcome()}</li>
+                                 <li style={{ marginTop: '1px', marginRight: '1rem' }}>
+                                    <button
+                                       className="btn"
+                                       style={{
+                                          backgroundColor: "#5f096f",
+                                          color: "white",
+                                          border: "none",
+                                          padding: "6px 15px", // Adjust padding as needed
+                                          borderRadius: "5px", // Adjust border radius as needed
+                                       }}
+                                       onClick={handleLogout}>Logout</button></li>
+                              </>
+                           ) : (
+                              // If JWT token is not present, show sign-in link
+                              <li><Link href="/sign-in"><i className="fi fi-rr-user"></i></Link></li>
+                           )}
                            <li><a href="#" onClick={() => setIsActive(true)} className="tp-menu-toggle d-xl-none"><i className="icon_ul"></i></a></li>
                         </ul>
                      </div>

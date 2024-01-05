@@ -1,6 +1,22 @@
 const our_course_data = [
   //   tab all
   {
+    id: 0,
+    img: "/assets/img/isg/sunday.jpeg",
+    icon: "/assets/img/isg/logo.png",
+    title: "சர்வதேச பெண்கள் ஆராதனை",
+    cls_text: "Sunday",
+    st_text: "291 Students",
+    start_text: "4.7",
+    course_title: "Rev. Dr. Priyanthi Sudarshan",
+    ct_color: "c-color-blue",
+    course_link: "/course-details",
+    course_name: "ISG ஊழியங்கள்",
+    cn_color: "c-color-purple",
+    course_price: "29.99",
+    total_start: "125"
+  },
+  {
     id: 1,
     img: "/assets/img/isg/monday.jpeg",
     icon: "/assets/img/isg/logo.png",
@@ -50,7 +66,7 @@ const our_course_data = [
   },
   {
     id: 4,
-    img: "/assets/img/isg/thursday.jpeg",
+    img: "/assets/img/isg/sasi.jpeg",
     icon: "/assets/img/isg/logo.png",
     title: "திருமறை திரித்துவ உயர் பட்டப் படிப்பு",
     cls_text: "Thursday",
@@ -77,22 +93,6 @@ const our_course_data = [
     course_link: "/course-details",
     course_name: "பரிசுத்த வேதாகமக் கல்லூரி",
     cn_color: "பரிசுத்த வேதாகமக் கல்லூரி",
-    course_price: "29.99",
-    total_start: "125"
-  },
-  {
-    id: 6,
-    img: "/assets/img/isg/sunday.jpeg",
-    icon: "/assets/img/isg/logo.png",
-    title: "சர்வதேச பெண்கள் ஆராதனை",
-    cls_text: "Sunday",
-    st_text: "291 Students",
-    start_text: "4.7",
-    course_title: "Rev. Dr. Priyanthi Sudarshan",
-    ct_color: "c-color-blue",
-    course_link: "/course-details",
-    course_name: "ISG ஊழியங்கள்",
-    cn_color: "c-color-purple",
     course_price: "29.99",
     total_start: "125"
   },

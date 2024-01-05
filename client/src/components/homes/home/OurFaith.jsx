@@ -113,10 +113,11 @@ const OurFaith = () => {
               <div key={item.id} className="col-md-4 mb-4">
                 <div className="tpfea mb-30 wow fadeInUp">
                   <div className="tpfea__icon mb-3">
-                    <i className={item.icon}>
+                    <i className={`${item.icon} d-flex align-items-center justify-content-center`}> {/* Adjusted size with inline style */}
                       <img
                         src="/assets/img/icon/church.png"
                         alt="meta-icon"
+                        style={{ maxWidth: '60%', maxHeight: '60%' }}
                       />
                     </i>
                   </div>

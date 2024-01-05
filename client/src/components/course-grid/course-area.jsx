@@ -26,9 +26,9 @@ const CourseArea = () => {
                   data-wow-delay=".2s"
                 >
                   <div className="tpcourse__thumb p-relative w-img fix">
-                    <Link href="/course-details">
+                    <Link href="/professorProfile">
                       <div style={{ width: "500px", height: "500px" }}>
-                        <img style={{objectFit: "cover"}} src={item.img} alt="svasv" />{" "}
+                        <img style={{ objectFit: "cover" }} src={item.img} alt="svasv" />{" "}
                       </div>
                     </Link>
                     <div className="tpcourse__tag">
@@ -54,7 +54,7 @@ const CourseArea = () => {
                         <li>
                           <Link
                             className={item.ct_color}
-                            href="/course-details"
+                            href="/professorProfile"
                           >
                             {item.course_title}
                           </Link>
@@ -62,7 +62,7 @@ const CourseArea = () => {
                         <li>
                           <Link
                             className={item.cn_color}
-                            href="/course-details"
+                            href="/professorProfile"
                           >
                             {item.course_name}
                           </Link>
@@ -71,7 +71,7 @@ const CourseArea = () => {
                     </div>
                     <div className="tpcourse__ava-title mb-15">
                       <h4 className="tpcourse__title tp-cours-title-color">
-                        <Link href="/course-details">{item.title}</Link>
+                        <Link href="/professorProfile">{item.title}</Link>
                       </h4>
                     </div>
                     <div className="tpcourse__meta tpcourse__meta-gap pb-15 mb-15">
@@ -87,18 +87,20 @@ const CourseArea = () => {
                     </div>
                     <div className="tpcourse__rating d-flex">
                       <div className="tpcourse__pricing">
-                        <button
-                          className="btn"
-                          style={{
-                            backgroundColor: "#5f096f",
-                            color: "white",
-                            border: "none",
-                            padding: "6px 15px", // Adjust padding as needed
-                            borderRadius: "5px", // Adjust border radius as needed
-                          }}
-                        >
-                          Learn
-                        </button>
+                        <Link href="/professorProfile">
+                          <button
+                            className="btn"
+                            style={{
+                              backgroundColor: "#5f096f",
+                              color: "white",
+                              border: "none",
+                              padding: "6px 15px", // Adjust padding as needed
+                              borderRadius: "5px", // Adjust border radius as needed
+                            }}
+                          >
+                            Learn
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

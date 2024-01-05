@@ -1,44 +1,51 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Carousel from 'react-material-ui-carousel'
 
 const HeroBanner = () => {
+  var items = [
+    {
+      path: '/assets/img/banner/background.jpg',
+    },
+    {
+      path: '/assets/img/banner/1.jpeg',
+    },
+  ]
+
+  const carouselStyle = {
+    width: '100%', // Set the width to 100% of the container
+    maxHeight: '400px', // Adjust the height as needed
+  };
+
+  const imageStyle = {
+    objectFit: 'cover', // Ensure the image covers the entire container
+    width: '100%', // Make the image take up 100% of the container's width
+    height: '100%', // Set a fixed height for the images
+  };
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [items.length]);
   return (
     <>
-      <section
-        style={{
-          backgroundImage: `url('/assets/img/banner/background.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="banner-bg ">
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-6 col-lg-6 col-md-8 align-self-end">
-              </div>
-              <div className="col-xl-6 col-lg-6">
-                <div className="banner-info d-none">
-                  <ul>
-                    <li>
-                      <span>235K</span>Worldwide Students
-                    </li>
-                    <li>
-                      <span>3.5K</span>Free Pro Courses
-                    </li>
-                    <li>
-                      <span>
-                        4.7<i className="fi fi-rr-star "></i>
-                      </span>
-                      Worldwide Review
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Carousel
+        style={carouselStyle}
+        index={activeIndex} // Set the active index to control the displayed image
+        autoPlay={false} // Set to true if you want it to autoplay
+        interval={1000} // Set the interval to 1000 milliseconds (1 second)
+        animation="fade"
+        timeout={500}
+        indicators={false}>
+        {
+          items.map((item, i) => <img key={i} src={item.path} style={imageStyle} alt={`Banner ${i}`} />)
+        }
+      </Carousel>
+
     </>
   );
 };

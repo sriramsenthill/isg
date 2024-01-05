@@ -1,6 +1,6 @@
 import useSticky from "@/hooks/use-sticky";
 import Link from "next/link";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import NavMenu from "./nav-menu";
 import Sidebar from "./sidebar";
 
@@ -14,7 +14,7 @@ const category_data = [
 ];
 
 const HeaderThree = () => {
-  const {sticky} = useSticky()
+  const { sticky } = useSticky()
   const [isActive, setIsActive] = useState(false);
 
   return (
@@ -71,11 +71,7 @@ const HeaderThree = () => {
                             <i className="fi fi-rr-user"></i>
                           </Link>
                         </li>
-                        <li>
-                          <Link href="/cart" className="d-none d-md-block">
-                            <i className="	 fi fi-rr-shopping-bag"></i>
-                          </Link>
-                        </li>
+
                         <li>
                           <a href="#" onClick={() => setIsActive(true)} className="tp-menu-toggle d-xl-none">
                             <i className="icon_ul"></i>

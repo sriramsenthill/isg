@@ -33,7 +33,7 @@ const instructor_info_data = [
   },
   {
     id: 5,
-    img: "/assets/img/bg/sasikumar.jpeg",
+    img: "/assets/img/isg/sasi.jpeg",
     name: "Dr.Sasikumar Amos Dhanaraj",
     total_class: "35",
     total_st: "291",

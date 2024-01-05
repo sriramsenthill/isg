@@ -21,7 +21,7 @@ const OurVision = () => {
         className="tp-about-area pt-120 pb-90 wow fadeInUp"
         data-wow-duration="1.5s"
         data-wow-delay=".4s"
-        style={{backgroundColor:'#5f096f'}}
+        style={{ backgroundColor: '#5f096f' }}
       >
         <div className="container">
           <div className="row align-items-center">
@@ -37,14 +37,9 @@ const OurVision = () => {
                   <h2 className="tp-section-title mb-15 text-white">
                     {sub_title}
                   </h2>
-                  <p style={{ textAlign: 'justify' ,color:'#fff' }}>
+                  <p style={{ textAlign: 'justify', color: '#fff' }}>
                     {des}
                   </p>
-                </div>
-                <div className="about-btn">
-                  <Link href="/about" className="tp-btn">
-                    {about_btn}
-                  </Link>
                 </div>
               </div>
             </div>

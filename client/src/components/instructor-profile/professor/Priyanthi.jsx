@@ -11,7 +11,7 @@ const CustomButtonZoom = styled(Button)(({ theme }) => ({
   padding: "0px 25px",
   display: "flex",
   alignItems: "center",
-  fontSize: "15px",
+  fontSize: "13px",
   fontWeight: 600,
   textDecoration: "none",
   cursor: "pointer",
@@ -54,10 +54,10 @@ const CustomButtonZoom = styled(Button)(({ theme }) => ({
 const CustomButtonwhatsapp = styled(Button)(({ theme }) => ({
   background: "transparent",
   position: "relative",
-  padding: "0px 25px",
+  padding: "0px 20px",
   display: "flex",
   alignItems: "center",
-  fontSize: "15px",
+  fontSize: "13px",
   fontWeight: 600,
   textDecoration: "none",
   cursor: "pointer",
@@ -69,7 +69,7 @@ const CustomButtonwhatsapp = styled(Button)(({ theme }) => ({
   transition: "color 0.3s 0.1s ease-out",
   textAlign: "center",
   "& span": {
-    margin: "5px",
+    margin: "3px",
   },
   "&::before": {
     position: "absolute",
