@@ -114,8 +114,8 @@ const HeaderTwo = () => {
                         <ul>
                            {jwtToken ? (
                               <>
-                                 <li>{welcome()}</li>
-                                 <li style={{ marginTop: '5px' }}>
+                                 <li style={{ marginRight: '1rem', marginTop: '10px' }}>{welcome()}</li>
+                                 <li style={{ marginTop: '1px', marginRight: '1rem' }}>
                                     <button
                                        className="btn"
                                        style={{
