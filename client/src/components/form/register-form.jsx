@@ -2,17 +2,48 @@ import Link from "next/link";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+import axios from "axios";
 
 
 const RegisterhtmlForm = () => {
-  const [phoneNumber, setPhoneNumber] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:3000/register", {
+        name: name,
+        email: email,
+        number: phoneNumber,
+        password: password,
+      });
+
+      // If the request is successful, redirect to the login page
+      if (response.status === 200) {
+        window.location.href = "/sign-in";
+      }
+    } catch (err) {
+      // If there is an error, update the state with the error message
+      setError(err.response.data.error);
+    }
+  };
 
   return (
+
     <>
       <section
         className="login-area pt-100 pb-100 wow fadeInUp"
         data-wow-duration=".8s"
         data-wow-delay=".5s"
+        style={{
+          background: 'linear-gradient(135deg, #2c1448, #180e29)',
+          color: 'white',
+        }}
       >
         <div className="container">
           <div className="row">
@@ -22,21 +53,29 @@ const RegisterhtmlForm = () => {
                   <img src='/assets/img/isg/logo.png' style={{ height: "150px", width: "150px" }} alt="Logo" />
                 </div>
                 <br></br>
-                <h3 className="text-center mb-60">Sign up From Here</h3>
-                <form onSubmit={(e) => e.preventDefault()}>
-                  <label htmlFor="name">
-                    Username <span>**</span>
+                <h3 className="text-center mb-60" style={{ color: "white" }}>Sign up From Here</h3>
+                <form onSubmit={handleSubmit}>
+                  <label htmlFor="name" style={{ color: "white" }}>
+                    Name <span>**</span>
                   </label>
-                  <input id="name" type="text" placeholder="Enter Username" />
-                  <label htmlFor="email-id">
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                  <label htmlFor="email-id" style={{ color: "white" }}>
                     Email Address <span>**</span>
                   </label>
                   <input
                     id="email-id"
                     type="text"
                     placeholder="Email address..."
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
-                  <label htmlFor="phone">
+                  <label htmlFor="phone" style={{ color: "white" }}>
                     WhatsApp Number <span>**</span>
                   </label>
                   <PhoneInput
@@ -46,16 +85,19 @@ const RegisterhtmlForm = () => {
                     onChange={setPhoneNumber}
                   />
 
-                  <label htmlFor="pass">
+                  <label htmlFor="pass" style={{ color: "white" }}>
                     Password <span>**</span>
                   </label>
                   <input
                     id="pass"
                     type="password"
                     placeholder="Enter password..."
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                   <div className="mt-10"></div>
                   <button className="tp-btn w-100">Register Now</button>
+                  {error && <p style={{ color: "red" }}>{error}</p>}
                   <div className="or-divide">
                     <span>or</span>
                   </div>
