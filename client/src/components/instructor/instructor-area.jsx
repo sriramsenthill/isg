@@ -38,7 +38,7 @@ const InstructorArea = () => {
                     <div className="tp-instructor__content">
                       <span>{item.title}</span>
                       <h4 className="tp-instructor__title tp-instructor__title-info p-relative mb-2 mt-3">
-                        <Link href="/professorProfile">{item.name}</Link>
+                        <Link href={item.link}>{item.name}</Link>
                       </h4>
                       <div className="tp-instructor__stu-info"></div>
                     </div>

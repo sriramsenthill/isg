@@ -144,18 +144,17 @@ const InstructorPortfolioArea = () => {
               <div className="instructor-main-content ml-30 mb-40">
                 <div className="instruc-biography mb-50">
                   <h4 className="ins-bio-title mb-30">About</h4>
-                  <p>
+                  <p style={{ textAlign: "justify" }} >
                     சாட்சியாய் ஜொலிப்பதற்கு வல்லமை தருகிறார் அப்.1:8 சரியாக
                     ஜெபிப்பதற்கு வல்லமை தருகிறார் ரோமர் 8:26 சத்துருவை ஜெயம்
                     கொள்வதற்கு வல்லமை தருகிறார் ஏசாயா 59:19
                   </p>
-                  <p>
+                  <p style={{ textAlign: "justify" }}>
                     சுவிசேஷத்தை நான் பிரசங்கித்துவந்தும், மேன்மைபாராட்ட எனக்கு
                     இடமில்லை: அது என்மேல் விழுந்த கடமையாயிருக்கிறது; சுவிசேஷத்தை
                     நான் பிரசங்கியாதிருந்தால், எனக்கு ஐயோ. I கொரிந்தியர் 9 :16
                   </p>
                 </div>
-                <CommentForm />
               </div>
             </div>
           </div>

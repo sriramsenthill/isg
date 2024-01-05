@@ -26,7 +26,7 @@ const CourseArea = () => {
                   data-wow-delay=".2s"
                 >
                   <div className="tpcourse__thumb p-relative w-img fix">
-                    <Link href="/professorProfile">
+                    <Link href={item.link}>
                       <div style={{ width: "500px", height: "500px" }}>
                         <img style={{ objectFit: "cover" }} src={item.img} alt="svasv" />{" "}
                       </div>
@@ -54,7 +54,7 @@ const CourseArea = () => {
                         <li>
                           <Link
                             className={item.ct_color}
-                            href="/professorProfile"
+                            href={item.link}
                           >
                             {item.course_title}
                           </Link>
@@ -62,7 +62,7 @@ const CourseArea = () => {
                         <li>
                           <Link
                             className={item.cn_color}
-                            href="/professorProfile"
+                            href={item.link}
                           >
                             {item.course_name}
                           </Link>
@@ -71,7 +71,7 @@ const CourseArea = () => {
                     </div>
                     <div className="tpcourse__ava-title mb-15">
                       <h4 className="tpcourse__title tp-cours-title-color">
-                        <Link href="/professorProfile">{item.title}</Link>
+                        <Link href={item.link}>{item.title}</Link>
                       </h4>
                     </div>
                     <div className="tpcourse__meta tpcourse__meta-gap pb-15 mb-15">
@@ -87,7 +87,7 @@ const CourseArea = () => {
                     </div>
                     <div className="tpcourse__rating d-flex">
                       <div className="tpcourse__pricing">
-                        <Link href="/professorProfile">
+                        <Link href={item.link}>
                           <button
                             className="btn"
                             style={{

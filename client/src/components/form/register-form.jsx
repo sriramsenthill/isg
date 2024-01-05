@@ -49,9 +49,11 @@ const RegisterhtmlForm = () => {
           <div className="row">
             <div className="col-lg-8 offset-lg-2">
               <div className="basic-login">
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                  <img src='/assets/img/isg/logo.png' style={{ height: "150px", width: "150px" }} alt="Logo" />
-                </div>
+                <Link href="/" >
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img src='/assets/img/isg/logo.png' style={{ height: "150px", width: "150px" }} alt="Logo" />
+                  </div>
+                </Link>
                 <br></br>
                 <h3 className="text-center mb-60" style={{ color: "white" }}>Sign up From Here</h3>
                 <form onSubmit={handleSubmit}>
@@ -104,6 +106,8 @@ const RegisterhtmlForm = () => {
                   <Link href="/sign-in" className="tp-border-btn w-100">
                     login Now
                   </Link>
+                  <Link href="/" className="tp-border-btn w-100">Go To Home</Link>
+
                 </form>
               </div>
             </div>

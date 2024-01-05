@@ -150,7 +150,7 @@ const InstructorPortfolioArea = () => {
               <div className="instructor-main-content ml-30 mb-40">
                 <div className="instruc-biography mb-50">
                   <h4 className="ins-bio-title mb-30">About</h4>
-                  <p>
+                  <p style={{ textAlign: "justify" }}>
                     "சத்தியத்தை அறிவீர்கள் சத்தியம் உங்களை விடுதலையாக்கும்"
                     தேவனுடைய மனுஷன் தேறினவனாகவும், எந்த நற்கிரியையுஞ் செய்யத்
                     தகுதியுள்ளவனாகவும் இருக்கும்படியாக, அவைகள் உபதேசத்துக்கும்,
@@ -159,7 +159,6 @@ const InstructorPortfolioArea = () => {
                     தீமோத்தேயு 3:17
                   </p>
                 </div>
-                <CommentForm />
               </div>
             </div>
           </div>

@@ -13,6 +13,8 @@ const menu_data = [
     link: "/about",
     has_dropdown: true,
     sub_menus: [
+      { link: "/about", title: "EN" },
+      { link: "/aboutTamil", title: "தமிழ்" },
     ],
   },
   {
@@ -33,6 +35,14 @@ const menu_data = [
       { link: "/professorProfile", title: "Professor Profile" },
     ],
   },
+  {
+    id: 5,
+    title: "Chat",
+    link: "/chat",
+    has_dropdown: true,
+    sub_menus: [
+    ],
+  }
 
 ];
 export default menu_data;

@@ -14,7 +14,8 @@ const our_course_data = [
     course_name: "ISG ஊழியங்கள்",
     cn_color: "c-color-purple",
     course_price: "29.99",
-    total_start: "125"
+    total_start: "125",
+    link: "/prof/priyanthi"
   },
   {
     id: 1,
@@ -30,7 +31,8 @@ const our_course_data = [
     course_name: "பரிசுத்த வேதாகமக் கல்லூரி",
     cn_color: "c-color-red",
     course_price: "29.99",
-    total_start: "125"
+    total_start: "125",
+    link: "/prof/ben"
   },
   {
     id: 2,
@@ -46,7 +48,8 @@ const our_course_data = [
     course_name: "திருமறை ஆராய்ச்சி மையம்",
     cn_color: "c-color-blue",
     course_price: "29.99",
-    total_start: "125"
+    total_start: "125",
+    link: "/prof/saji"
   },
   {
     id: 3,
@@ -62,7 +65,7 @@ const our_course_data = [
     course_name: "திருமறை ஆராய்ச்சி மையம்",
     cn_color: "c-color-red",
     course_price: "29.99",
-    total_start: "125"
+    link: "/prof/sudarshan"
   },
   {
     id: 4,
@@ -78,7 +81,9 @@ const our_course_data = [
     course_name: "பரிசுத்த வேதாகமக் கல்லூரி",
     cn_color: "c-color-yellow",
     course_price: "29.99",
-    total_start: "125"
+    total_start: "125",
+    link: "/prof/sasi"
+
   },
   {
     id: 5,
@@ -94,7 +99,8 @@ const our_course_data = [
     course_name: "பரிசுத்த வேதாகமக் கல்லூரி",
     cn_color: "பரிசுத்த வேதாகமக் கல்லூரி",
     course_price: "29.99",
-    total_start: "125"
+    total_start: "125",
+    link: "/prof/caleb"
   },
 ];
 export default our_course_data;

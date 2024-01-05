@@ -6,6 +6,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof.Rev",
+    link: "/prof/sudarshan"
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof.Rev",
+    link: "/prof/saji"
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof.Rev",
+    link: "/prof/ben"
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Rev",
+    link: "/prof/priyanthi"
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof.Rev",
+    link: "/prof/sasikumar"
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof",
+    link: "/prof/caleb"
   },
 ];
 
