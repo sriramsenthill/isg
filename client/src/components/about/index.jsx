@@ -4,7 +4,8 @@ import OurVision from "../homes/home/OurVision";
 import OurMission from "../homes/home/OurMission";
 import OurFaith from "../homes/home/OurFaith";
 import OurFaithCreed from "../homes/home/OurFaithCreed";
-import ReactPlayer from 'react-player/youtube'
+import YouTubevideo from "./youtubevideo";
+
 
 
 
@@ -18,6 +19,7 @@ const About = () => {
       <OurMission />
       <OurFaith />
       <OurFaithCreed />
+      <YouTubevideo/>
       {/* <FeatureArea style_about={true} />
       <VideoArea style_2={true} /> */}
     </>
