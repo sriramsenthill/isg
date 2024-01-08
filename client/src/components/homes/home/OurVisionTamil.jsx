@@ -29,7 +29,7 @@ const OurVisionTamil = () => {
       <style jsx>{`
         @font-face {
           font-family: "MyCustomFont";
-          src: url("/assets/fonts/Uni-Tamil150.ttf") format("truetype");
+          src: url("/assets/fonts/tamil.ttf") format("truetype");
         }
 
         .customfont {
@@ -59,7 +59,7 @@ const OurVisionTamil = () => {
                   >
                     {about_title}
                   </span>
-                  <p className="customfont" style={{ letterSpacing: '0.2em', color: "#fff" , fontSize:'21px'}}>{des}</p>
+                  <p className="customfont" style={{ letterSpacing: '0.2em', color: "#fff", fontSize: '21px' }}>{des}</p>
                 </div>
               </div>
             </div>

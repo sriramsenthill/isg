@@ -81,17 +81,17 @@ const category_data = [
 const OurMissionTamil = () => {
     return (
         <>
-        <style jsx>{`
+            <style jsx>{`
         @font-face {
           font-family: 'MyCustomFont';
-          src: url('/assets/fonts/Uni-Tamil150.ttf') format('truetype');
+          src: url('/assets/fonts/tamil.ttf') format('truetype');
         }
 
         .customfont {
           font-family: 'MyCustomFont';
         }
       `}</style>
-     
+
             <section
                 className="tp-category-area bg-bottom grey-bg pt-110 pb-80 wow fadeInUp"
                 data-wow-duration="1.5s"
@@ -111,7 +111,7 @@ const OurMissionTamil = () => {
                             <div key={item.id} className="col-xl-3 col-lg-4 col-md-6">
                                 <div className="card tp-cat-item mb-40 d-flex align-items-stretch"> {/* Use align-items-stretch */}
                                     <div className="tp-category-icon mr-15"
-                                     style={{ height: "80px",width:'200px' }}>
+                                        style={{ height: "80px", width: '200px' }}>
                                         <img src={item.img} alt="category-img" />
                                     </div>
                                     <h4 className="tp-category-title customfont">

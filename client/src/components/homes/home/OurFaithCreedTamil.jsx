@@ -18,10 +18,10 @@ const { bg_img, experiences_years, title, sub_title, des, choose_list } =
 const OurFaithCreedTamil = () => {
   return (
     <>
-     <style jsx>{`
+      <style jsx>{`
         @font-face {
           font-family: 'MyCustomFont';
-          src: url('/assets/fonts/Uni-Tamil150.ttf') format('truetype');
+          src: url('/assets/fonts/tamil.ttf') format('truetype');
         }
 
         .customfont {
@@ -53,7 +53,7 @@ const OurFaithCreedTamil = () => {
                   <h2 className="tp-section-title mb-10 text-white customfont">
                     {sub_title}
                   </h2>
-                  <p className='customfont' style={{ textAlign: "justify", color: "#fff", fontSize: '18px' }}>{des}</p>
+                  <p className='customfont' style={{ textAlign: "justify", color: "#fff", fontSize: '20px', fontStyle: 'normal' }}>{des}</p>
                 </div>
                 <div className="tp-choose-list mb-35 ">
                   <ul>

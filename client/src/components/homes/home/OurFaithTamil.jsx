@@ -100,7 +100,7 @@ const OurFaithTamil = () => {
       <style jsx>{`
         @font-face {
           font-family: "MyCustomFont";
-          src: url("/assets/fonts/Uni-Tamil150.ttf") format("truetype");
+          src: url("/assets/fonts/tamil.ttf") format("truetype");
         }
 
         .customfont {
