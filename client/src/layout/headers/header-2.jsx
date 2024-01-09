@@ -20,15 +20,7 @@ const HeaderTwo = () => {
       }
    }, []);
 
-   const welcome = () => {
-      try {
-         // Example: Display a welcome message with the user's name
-         return "Welcome ISG User!";
-      } catch (error) {
-         console.error('Error:', error);
 
-      }
-   };
 
    const handleLogout = () => {
       // Clear the JWT token from local storage
@@ -73,7 +65,6 @@ const HeaderTwo = () => {
                            <ul>
                               {jwtToken ? (
                                  <>
-                                    <li style={{ marginRight: '1rem' }}>{welcome()}</li>
                                     <li style={{ marginTop: '-10px' }}>
                                        <button
                                           className="btn"
@@ -114,7 +105,6 @@ const HeaderTwo = () => {
                         <ul>
                            {jwtToken ? (
                               <>
-                                 <li style={{ marginRight: '1rem', marginTop: '10px' }}>{welcome()}</li>
                                  <li style={{ marginTop: '1px', marginRight: '1rem' }}>
                                     <button
                                        className="btn"
