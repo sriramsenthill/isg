@@ -3,8 +3,8 @@ import YouTube from "react-youtube";
 
 const Example = () => {
   const opts = {
-    height: "250",
-    width: "350",
+    height: "720",
+    width: "1080",
     playerVars: {
       autoplay: 1,
     },
@@ -20,7 +20,7 @@ const Example = () => {
             paddingBottom: "30px",
           }}
         >
-          Youtube videos
+          Our Youtube Video
         </h1>
         <div
           style={{
@@ -30,12 +30,7 @@ const Example = () => {
             justifyContent: "space-evenly",
           }}
         >
-          <div>
-            <YouTube videoId="0SPCj67qC40" opts={opts} />
-          </div>
-          <div>
-            <YouTube videoId="oU8nnuSCLzo" opts={opts} />
-          </div>
+
           <div>
             <YouTube videoId="CbKVQvWzYFw" opts={opts} />
           </div>

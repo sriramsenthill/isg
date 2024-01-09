@@ -36,13 +36,36 @@ const menu_data = [
     ],
   },
   {
-    id: 5,
-    title: "Chat",
-    link: "/chat",
+    id: 6,
+    title: "Bible Research Centre",
+    link: "/BibleResearchCentre",
     has_dropdown: true,
     sub_menus: [
     ],
-  }
-
+  },
+  {
+    id: 7,
+    title: "ISG Diocese",
+    link: "/isgDiocese",
+    has_dropdown: true,
+    sub_menus: [
+    ],
+  },
+  {
+    id: 8,
+    title: "Prayer",
+    link: "/prayer",
+    has_dropdown: true,
+    sub_menus: [
+    ],
+  },
+  {
+    id: 9,
+    title: "Pastor Fellowship",
+    link: "/pastorFellowship",
+    has_dropdown: true,
+    sub_menus: [
+    ],
+  },
 ];
 export default menu_data;

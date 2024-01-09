@@ -61,15 +61,15 @@ const HeaderTwo = () => {
             <div className={`header-menu-area ${sticky ? "header-sticky" : ""}`} id="header-sticky">
                <div className="container">
                   <div className="row">
-                     <div className="col-xxl-9 col-xl-9 col-lg-6 text-start">
+                     <div className="col-xxl-12 col-xl-12 col-lg-9 text-start">
                         <div className="main-menu main-menu-white">
                            <nav id="mobile-menu">
                               <NavMenu />
                            </nav>
                         </div>
                      </div>
-                     <div className="col-xxl-3 col-xl-3 col-lg-6 d-flex align-items-center justify-content-end">
-                        <div className="header-meta-green">
+                     <div className="col-xxl-12 col-xl-12 col-lg-6 d-flex align-items-center justify-content-end">
+                        <div className="header-meta-green" style={{ display: 'flex', position: "relative", bottom: "4.5rem" }}>
                            <ul>
                               {jwtToken ? (
                                  <>

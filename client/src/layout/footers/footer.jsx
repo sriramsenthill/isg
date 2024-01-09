@@ -17,7 +17,7 @@ const footer_data = [
     cls: "col-xl-3",
     links: [
       { name: "Contact us", link: "/contact" },
-      { name: "Online Chat", link: "/professorProfile" },
+      { name: "Online Chat", link: "/chat" },
       { name: "Whatsapp", link: "https://chat.whatsapp.com/KVpmWkhAfLT1cqgyo7JTbP" },
     ],
   },
