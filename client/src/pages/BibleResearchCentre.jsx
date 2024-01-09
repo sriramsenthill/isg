@@ -4,7 +4,9 @@ import Wrapper from "../layout/wrapper";
 
 const BibleResearchCentre = () => {
     // Create an array of image filenames
-    const imageFilenames = Array.from({ length: 7 }, (_, index) => `${index + 1}.jpeg`);
+    const imageFilenames = Array.from({ length: 15 }, (_, index) => index + 1)
+        .filter((value) => !(value >= 8 && value <= 10))
+        .map((index) => `${index}.jpeg`);
 
     return (
         <Wrapper>

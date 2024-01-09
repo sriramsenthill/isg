@@ -6,6 +6,7 @@ import OurFaithTamil from "../components/homes/home/OurFaithTamil";
 import OurMissionTamil from "../components/homes/home/OurMissionTamil";
 import OurVisionTamil from "../components/homes/home/OurVisionTamil";
 import WrapperFour from "../layout/wrapper-4";
+import YouTubevideo from "./youtubevideo";
 
 const index = () => {
     return (
@@ -15,6 +16,7 @@ const index = () => {
             <OurMissionTamil />
             <OurFaithCreedTamil />
             <OurFaithTamil />
+            <YouTubevideo />
         </WrapperFour>
     );
 };

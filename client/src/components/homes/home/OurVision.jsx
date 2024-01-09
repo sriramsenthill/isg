@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import Carousel from 'react-material-ui-carousel';
 
 
 
@@ -14,7 +14,44 @@ const about_info = {
 
 const { img_1, img_2, img_3, about_title, sub_title, des, about_btn } = about_info
 
+const generateImagePaths = (count) => {
+
+  const imagePaths = [];
+
+  for (let i = 1; i <= count; i++) {
+    imagePaths.push(`/assets/img/isg/a${i}.png`);
+  }
+
+  return imagePaths;
+};
+
+
 const OurVision = () => {
+  const itemCount = 10; // Adjust the count based on your requirement
+  const items = generateImagePaths(itemCount);
+
+  const carouselStyle = {
+    width: '100%',
+    maxHeight: '400px',
+  };
+
+  const imageStyle = {
+    objectFit: 'fit',
+    width: '70%',
+    height: '70%',
+  };
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [items.length]);
+
+
   return (
     <>
       <section
@@ -26,9 +63,20 @@ const OurVision = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xxl-7 col-xl-6 col-lg-6 col-md-6">
-              <div className="tp-about-img p-relative pb-30 ml-10">
-                <img src={img_1} alt="about-img" />
-              </div>
+
+              <Carousel
+                style={carouselStyle}
+                index={activeIndex}
+                autoPlay={false}
+                interval={1000}
+                animation="slide"
+                timeout={500}
+                indicators={false}
+              >
+                {items.map((item, i) => (
+                  <img key={i} src={item} style={imageStyle} alt={`Banner ${i}`} />
+                ))}
+              </Carousel>
             </div>
             <div className="col-xxl-5 col-xl-6 col-lg-6 col-md-6">
               <div className="tp-about-content pb-30 ml-80">
