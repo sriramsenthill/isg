@@ -9,7 +9,7 @@ const LoginForm = () => {
 
    const handleLogin = async () => {
       try {
-         const response = await axios.post('http://localhost:3000/signIn', {
+         const response = await axios.post('http://3.86.80.240:3000/signIn', {
             email,
             password,
          });

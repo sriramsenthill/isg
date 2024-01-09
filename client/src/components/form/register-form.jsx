@@ -16,7 +16,7 @@ const RegisterhtmlForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3000/register", {
+      const response = await axios.post("http://3.86.80.240:3000/register", {
         name: name,
         email: email,
         number: phoneNumber,
