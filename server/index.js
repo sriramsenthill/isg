@@ -3,11 +3,16 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 app.use(express.json());
-app.use(cors());
 const port = 3000;
 const User = require("./models/user")
 const jwt = require("jsonwebtoken");
 
+const corsOptions = {
+    origin: 'https://www.isgbiblecollegeuk.com', // Replace with your actual frontend domain
+    credentials: true, // You may need to set this based on your application's requirements
+};
+
+app.use(cors(corsOptions));
 // Connect to your MongoDB database
 mongoose
     .connect(
