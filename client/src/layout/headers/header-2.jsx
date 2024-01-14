@@ -1,33 +1,18 @@
 import useSticky from '@/hooks/use-sticky';
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
-import jwt_decode from 'jwt-decode';
+import React, { useState } from 'react';
 import NavMenu from './nav-menu';
 import Sidebar from './sidebar';
+import { useSession } from "next-auth/react"; // Import useSession
+import { signOut } from "next-auth/react";
 
 const HeaderTwo = () => {
    const { sticky } = useSticky();
    const [isActive, setIsActive] = useState(false);
-   const [jwtToken, setJwtToken] = useState('');
+   const { data: session } = useSession(); // Get the session
 
-   useEffect(() => {
-      // Check for JWT token in local storage
-      const token = localStorage.getItem('jwtToken');
-
-      if (token) {
-         // Set JWT token in state
-         setJwtToken(token);
-      }
-   }, []);
-
-
-
-   const handleLogout = () => {
-      // Clear the JWT token from local storage
-      localStorage.removeItem('jwtToken');
-
-      // Redirect to the sign-in page
-      window.location.href = '/sign-in';
+   const handleLogout = async () => {
+      await signOut({ redirect: false, callbackUrl: '/' }); // Use the signOut function from next-auth
    };
 
    return (
@@ -63,7 +48,7 @@ const HeaderTwo = () => {
                      <div className="col-xxl-12 col-xl-12 col-lg-6 d-flex align-items-center justify-content-end">
                         <div className="header-meta-green" style={{ display: 'flex', position: "relative", bottom: "4.5rem" }}>
                            <ul>
-                              {jwtToken ? (
+                              {session ? (
                                  <>
                                     <li style={{ marginTop: '-10px' }}>
                                        <button
@@ -103,7 +88,7 @@ const HeaderTwo = () => {
                   <div className="col-md-6 col-7 d-flex align-items-center justify-content-end">
                      <div className="header-meta-green text-end">
                         <ul>
-                           {jwtToken ? (
+                           {session ? (
                               <>
                                  <li style={{ marginTop: '1px', marginRight: '1rem' }}>
                                     <button

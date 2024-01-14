@@ -1,31 +1,34 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [error, setError] = useState('');
 
-   const handleLogin = async () => {
+   const router = useRouter();
+
+   const handleLogin = async (e) => {
+      e.preventDefault();
+
       try {
-         const response = await axios.post('http://localhost:3000/signIn', {
+         const res = await signIn("credentials", {
             email,
             password,
+            redirect: false,
          });
 
-         const { token } = response.data;
+         if (res.error) {
+            setError("Invalid Credentials");
+            return;
+         }
 
-         // Save the token to local storage
-         localStorage.setItem('jwtToken', token);
-
-         // Redirect to /bibleCourse
-         window.location.href = '/bibleCourse';
+         router.replace("/");
       } catch (error) {
-         console.error('Login failed:', error);
-
-         // Update the state with the error message
-         setError(error.response?.data.message || 'Login failed. Please try again.');
+         console.log(error);
       }
    };
 
@@ -68,3 +71,4 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+

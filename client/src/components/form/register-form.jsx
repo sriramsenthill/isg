@@ -10,7 +10,12 @@ const RegisterhtmlForm = () => {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
+  const [selectedType, setSelectedType] = useState(""); // New state for the selected type
   const [error, setError] = useState("");
+
+  const handleTypeChange = (e) => {
+    setSelectedType(e.target.value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,6 +23,7 @@ const RegisterhtmlForm = () => {
     try {
       const response = await axios.post("http://localhost:3000/register", {
         name: name,
+        type: selectedType, // Include the selected type in the request
         email: email,
         number: phoneNumber,
         password: password,
@@ -67,6 +73,28 @@ const RegisterhtmlForm = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
+                  <label htmlFor="name" style={{ color: "white" }}>
+                    Type <span>**</span>
+                  </label>
+                  <select
+                    id="type"
+                    value={selectedType}
+                    onChange={handleTypeChange}
+                    style={{
+                      width: "100%",
+                      padding: "18px",
+                      fontSize: "16px",
+                      border: "1px solid #ccc",
+                      backgroundColor: "#fff",
+                      color: "#333",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <option value="">Select Type</option>
+                    <option value="bibleCollegeStudent">Bible College Student</option>
+                    <option value="bibleResearch">Bible Research</option>
+                    <option value="internationalPastorFellowship">International Pastor Fellowship</option>
+                  </select>
                   <label htmlFor="email-id" style={{ color: "white" }}>
                     Email Address <span>**</span>
                   </label>
