@@ -20,13 +20,14 @@ const OurFaithCreed = () => {
         className="choose-area pb-90 wow fadeInUp"
         data-wow-duration=".8s"
         data-wow-delay=".4s"
-        style={{backgroundColor:'#5f096f' ,}}
+        style={{ backgroundColor: '#5f096f', backgroundImage: `url(/assets/img/bg/shape-bg-02.png)` }}
+
       >
         <div className="container">
           <div className="row align-items-center">
             <div className="col-xl-7 col-lg-6 col-md-6">
               <div className="tp-choose-img p-relative mb-30 ml-25">
-                <img src={bg_img} alt="choose-img" style={{backgroundSize:'cover'}} />
+                <img src={bg_img} alt="choose-img" style={{ backgroundSize: 'cover' }} />
                 <div className="tpchoose-img-text d-none d-md-block"></div>
               </div>
             </div>
@@ -35,7 +36,7 @@ const OurFaithCreed = () => {
                 <div className="section-title mb-20">
                   <span className="tp-sub-title mb-20 ">{title}</span>
                   <h2 className="tp-section-title mb-10 text-white">{sub_title}</h2>
-                  <p style={{ textAlign: "justify" ,color:'#fff' }}>{des}</p>
+                  <p style={{ textAlign: "justify", color: '#fff' }}>{des}</p>
                 </div>
                 <div className="tp-choose-list mb-35 ">
                   <ul>

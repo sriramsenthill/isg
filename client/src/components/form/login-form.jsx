@@ -9,7 +9,7 @@ const LoginForm = () => {
 
    const handleLogin = async () => {
       try {
-         const response = await axios.post('http://3.86.80.240:3000/signIn', {
+         const response = await axios.post('http://localhost:3000/signIn', {
             email,
             password,
          });
@@ -41,7 +41,7 @@ const LoginForm = () => {
                      <div className="basic-login">
                         <Link href="/" >
                            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                              <img src='/assets/img/isg/logo.png' style={{ height: "150px", width: "150px" }} alt="Logo" />
+                              <img src='/assets/img/isg/logoAni.gif' style={{ height: "350px", width: "350px" }} alt="Logo" />
                            </div>
                         </Link>
                         <br></br>

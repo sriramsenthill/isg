@@ -13,8 +13,7 @@ const FaqArea = () => {
           <div className="row text-center">
             <div className="col-lg-12">
               <div className="section-title mb-60">
-                <span className="tp-sub-title-box mb-15">FAQ</span>
-                <h2 className="tp-section-title">Many People Ask About This</h2>
+                <h2 className="tp-section-title" style={{ padding: "5rem" }}>Our Faith</h2>
               </div>
             </div>
           </div>
@@ -39,9 +38,9 @@ const FaqArea = () => {
                       </button>
                     </h2>
                     <div
-                     id={item.aria_controls} 
-                     className={`accordion-collapse collapse ${item.show}`}
-                     aria-labelledby={item.accordion_id} 
+                      id={item.aria_controls}
+                      className={`accordion-collapse collapse show`}
+                      aria-labelledby={item.accordion_id}
                       data-bs-parent="#accordionExample"
                     >
                       <div className="accordion-body">
@@ -49,14 +48,9 @@ const FaqArea = () => {
                       </div>
                     </div>
                   </div>
-                ))}               
+                ))}
               </div>
             </div>
-          </div>
-          <div className="faq-btn text-center">
-            <a href="#" className="tp-btn">
-              Add Your Questions
-            </a>
           </div>
         </div>
       </section>

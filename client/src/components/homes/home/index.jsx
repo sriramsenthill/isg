@@ -5,17 +5,19 @@ import OurFaithCreed from "./OurFaithCreed";
 import OurFaith from "./OurFaith";
 import HeroBanner from "./hero-banner";
 import InstructorArea from "../../instructor/instructor-area";
-
+import BrandArea from "../../../common/brand-area";
+import SecondArea from "./secondArea";
+import FaqArea from "../../faq/faq-area";
 
 const Home = () => {
   return (
     <>
       <HeroBanner />
-      <OurVision />
+      <SecondArea />
       <OurMission />
       <OurFaithCreed />
-      <OurFaith />
-      <InstructorArea />
+      <FaqArea />
+      <BrandArea style_1={true} />
     </>
   );
 };

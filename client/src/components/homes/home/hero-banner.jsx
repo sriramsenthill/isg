@@ -8,7 +8,14 @@ const HeroBanner = () => {
       path: '/assets/img/banner/background.jpg',
     },
     {
-      path: '/assets/img/banner/1.jpeg',
+      path: '/assets/img/banner/b3.jpeg',
+    },
+    {
+      path: '/assets/img/banner/b4.jpeg',
+    }, {
+      path: '/assets/img/banner/b5.jpeg',
+    }, {
+      path: '/assets/img/banner/b6.jpeg',
     },
   ]
 
@@ -38,7 +45,7 @@ const HeroBanner = () => {
         index={activeIndex} // Set the active index to control the displayed image
         autoPlay={false} // Set to true if you want it to autoplay
         interval={1000} // Set the interval to 1000 milliseconds (1 second)
-        animation="fade"
+        animation="slide"
         timeout={500}
         indicators={false}>
         {

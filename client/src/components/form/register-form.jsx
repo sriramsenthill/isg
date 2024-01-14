@@ -16,7 +16,7 @@ const RegisterhtmlForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://3.86.80.240:3000/register", {
+      const response = await axios.post("http://localhost:3000/register", {
         name: name,
         email: email,
         number: phoneNumber,
@@ -51,7 +51,7 @@ const RegisterhtmlForm = () => {
               <div className="basic-login">
                 <Link href="/" >
                   <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <img src='/assets/img/isg/logo.png' style={{ height: "150px", width: "150px" }} alt="Logo" />
+                    <img src='/assets/img/isg/logoAni.gif' style={{ height: "350px", width: "350px" }} alt="Logo" />
                   </div>
                 </Link>
                 <br></br>
