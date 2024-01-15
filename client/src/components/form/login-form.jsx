@@ -22,7 +22,7 @@ const LoginForm = () => {
          });
 
          if (res.error) {
-            setError(error);
+            setError("Invalid Credentials");
             return;
          }
 

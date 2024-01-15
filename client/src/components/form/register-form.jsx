@@ -21,7 +21,7 @@ const RegisterhtmlForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://isg-server.onrender.com/register", {
+      const response = await axios.post(process.env.SERVER_HOST + "/register", {
         name: name,
         type: selectedType, // Include the selected type in the request
         email: email,
