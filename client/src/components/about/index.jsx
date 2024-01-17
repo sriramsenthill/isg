@@ -5,6 +5,7 @@ import OurMission from "../homes/home/OurMission";
 import OurFaith from "../homes/home/OurFaith";
 import OurFaithCreed from "../homes/home/OurFaithCreed";
 import YouTubevideo from "./youtubevideo";
+import FaqArea from "../faq/faq-area";
 
 
 
@@ -17,9 +18,9 @@ const About = () => {
       <Breadcrumb title="About Us" subtitle="About Us" isDbbl="Pages" />
       <OurVision />
       <OurMission />
-      <OurFaith />
+      <FaqArea />
       <OurFaithCreed />
-      <YouTubevideo/>
+      <YouTubevideo />
       {/* <FeatureArea style_about={true} />
       <VideoArea style_2={true} /> */}
     </>

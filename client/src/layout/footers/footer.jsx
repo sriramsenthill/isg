@@ -47,7 +47,7 @@ const social_links = [
 ];
 
 const copyright = {
-  logo: "/assets/img/isg/logo.png",
+  logo: "/assets/img/isg/logoAni.gif",
   copyright_text: (
     <>Copyright © ISG {new Date().getFullYear()}, All Rights Reserved</>
   ),
@@ -103,12 +103,12 @@ const Footer = () => {
                 <div className="col-md-5">
                   <div className="f-copyright__logo mb-30">
                     <a href="#">
-                      <img src={logo} alt="logo" style={{ width: '100px', height: 'auto' }} />
+                      <img src={logo} alt="logo" style={{ width: '350px', height: '350px' }} />
                     </a>
                   </div>
                 </div>
                 <div className="col-md-7">
-                  <div className="f-copyright__text text-md-end mb-30">
+                  <div className="f-copyright__text text-md-end mb-30" style={{ marginTop: "10rem" }}>
                     <span>{copyright_text}</span>
                   </div>
                 </div>

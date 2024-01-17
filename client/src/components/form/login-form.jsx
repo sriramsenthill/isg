@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
-import axios from 'axios';
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -8,6 +7,7 @@ const LoginForm = () => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [error, setError] = useState('');
+   const [loading, setLoading] = useState(false);
 
    const router = useRouter();
 
@@ -15,6 +15,8 @@ const LoginForm = () => {
       e.preventDefault();
 
       try {
+         setLoading(true); // Set loading state to true
+
          const res = await signIn("credentials", {
             email,
             password,
@@ -23,12 +25,15 @@ const LoginForm = () => {
 
          if (res.error) {
             setError("Invalid Credentials");
+            setLoading(false); // Set loading state to false
             return;
          }
 
          router.replace("/");
       } catch (error) {
          console.log(error);
+      } finally {
+         setLoading(false); // Set loading state to false in case of success or error
       }
    };
 
@@ -55,8 +60,9 @@ const LoginForm = () => {
                            <label htmlFor="pass" style={{ color: "white" }}>Password <span>**</span></label>
                            <input id="pass" type="password" placeholder="Enter password..." value={password} onChange={(e) => setPassword(e.target.value)} />
                            <div className="mt-10"></div>
-                           <button className="tp-btn w-100" onClick={handleLogin}>Login Now</button>
-                           {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+                           <button className="tp-btn w-100" onClick={handleLogin} disabled={loading}>
+                              {loading ? 'Loading...' : 'Login Now'}
+                           </button>                           {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
                            <div className="or-divide" style={{ color: "black" }}><span>or</span></div>
                            <Link href="/register" className="tp-border-btn w-100">Register Now</Link>
                            <Link href="/" className="tp-border-btn w-100">Go To Home</Link>

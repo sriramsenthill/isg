@@ -1,22 +1,18 @@
 import React from "react";
-import OurVision from "./OurVision";
-import OurMission from "./OurMission";
-import OurFaithCreed from "./OurFaithCreed";
-import OurFaith from "./OurFaith";
 import HeroBanner from "./hero-banner";
-import InstructorArea from "../../instructor/instructor-area";
 import BrandArea from "../../../common/brand-area";
 import SecondArea from "./secondArea";
-import FaqArea from "../../faq/faq-area";
+import OurMissionTamil from "./OurMissionTamil";
+import OurFaithCreedTamil from "./OurFaithCreedTamil";
 
 const Home = () => {
   return (
     <>
       <HeroBanner />
       <SecondArea />
-      <OurMission />
-      <OurFaithCreed />
-      <FaqArea />
+      <OurMissionTamil />
+      <OurFaithCreedTamil />
+      <img src="/assets/img/isg/logo_exp.jpg" />
       <BrandArea style_1={true} />
     </>
   );

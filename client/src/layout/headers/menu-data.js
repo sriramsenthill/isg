@@ -13,8 +13,8 @@ const menu_data = [
     link: "/about",
     has_dropdown: true,
     sub_menus: [
-      { link: "/about", title: "EN" },
-      { link: "/aboutTamil", title: "தமிழ்" },
+      { link: "/about", title: "தமிழ்" },
+      { link: "/aboutEN", title: "EN" },
     ],
   },
   {
