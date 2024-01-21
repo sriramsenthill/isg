@@ -4,23 +4,33 @@ import Wrapper from "../layout/wrapper";
 
 const BibleResearchCentre = () => {
     // Create an array of image filenames
-    const imageFilenames = Array.from({ length: 15 }, (_, index) => index + 1)
-        .filter((value) => !(value >= 8 && value <= 10))
-        .map((index) => `${index}.jpeg`);
+    const imageFilenames = Array.from({ length: 7 }, (_, index) => `${index + 1}.jpeg`);
+
 
     return (
         <Wrapper>
             <SEO pageTitle={'BibleResearchCentre'} />
 
-            {/* Use the map function to render img tags for each image */}
-            {imageFilenames.map((filename, index) => (
-                <img
-                    key={index}
-                    src={`/assets/img/isg/${filename}`}
-                    alt={`Image ${index + 1}`}
-                    style={{ width: "100%", height: "auto", marginBottom: "10px" }}
-                />
-            ))}
+            <div style={{ backgroundColor: '#5f096f', backgroundImage: `url(/assets/img/bg/shape-bg-02.png)`, display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <div className="row text-center">
+                    <div className="col-lg-12">
+                        <div className="section-title mb-65">
+                            <h2 className="tp-section-title" style={{ color: 'white', padding: "2rem" }}>Bible Research Centre</h2>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    {imageFilenames.map((filename, index) => (
+                        <div key={index} className="col-md-6">
+                            <img
+                                src={`/assets/img/isg/br${filename}`}
+                                alt={`Image ${index + 1}`}
+                                style={{ width: "90%", height: "90%", margin: "10px" }}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </Wrapper>
     );
 };
