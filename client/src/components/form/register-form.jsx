@@ -12,6 +12,7 @@ const RegisterhtmlForm = () => {
   const [password, setPassword] = useState("");
   const [selectedType, setSelectedType] = useState(""); // New state for the selected type
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleTypeChange = (e) => {
     setSelectedType(e.target.value);
@@ -21,7 +22,8 @@ const RegisterhtmlForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(process.env.SERVER_HOST + "/register", {
+      setLoading(true); // Set loading state to true
+      const response = await axios.post("https://isg-server.onrender.com/register", {
         name: name,
         type: selectedType, // Include the selected type in the request
         email: email,
@@ -36,6 +38,10 @@ const RegisterhtmlForm = () => {
     } catch (err) {
       // If there is an error, update the state with the error message
       setError(err.response.data.error);
+      setLoading(false); // Set loading state to false
+
+    } finally {
+      setLoading(false); // Set loading state to false in case of success or error
     }
   };
 
@@ -126,7 +132,9 @@ const RegisterhtmlForm = () => {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                   <div className="mt-10"></div>
-                  <button className="tp-btn w-100">Register Now</button>
+                  <button className="tp-btn w-100" onClick={handleSubmit} disabled={loading}>
+                    {loading ? 'Loading...' : 'Register'}
+                  </button>
                   {error && <p style={{ color: "red" }}>{error}</p>}
                   <div className="or-divide">
                     <span>or</span>
