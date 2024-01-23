@@ -4,7 +4,7 @@ import Instructor from '../components/instructor';
 import WrapperFour from '../layout/wrapper-4';
 
 const index = () => {
-    const imageFilenames = Array.from({ length: 7 }, (_, index) => `${index + 1}.jpeg`);
+    const imageFilenames = Array.from({ length: 8 }, (_, index) => `${index + 1}.jpeg`);
 
     return (
         <WrapperFour>

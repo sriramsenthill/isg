@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const choose_data = {
-  bg_img: "/assets/img/bg/choose-img-01.jpg",
+  bg_img: "/assets/img/isg/grad.jpeg",
   experiences_years: "23",
   title: "",
   sub_title: <>Our Faith Creed</>,

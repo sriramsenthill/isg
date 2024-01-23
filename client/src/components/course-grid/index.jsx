@@ -10,7 +10,7 @@ const CourseGrid = () => {
     <>
       <Breadcrumb title="Bible Course" subtitle="Bible Course" isDbbl="Course" />
       <CourseArea />
-      <img src="/assets/img/banner/2.jpeg" />
+      <img src="/assets/img/isg/shedule.jpeg" />
     </>
   );
 };
