@@ -109,13 +109,13 @@ const OurMissionTamil = () => {
                     <div className="row">
                         {category_data.map((item) => (
                             <div key={item.id} className="col-xl-3 col-lg-4 col-md-6">
-                                <div className="card tp-cat-item mb-40 d-flex align-items-stretch"> {/* Use align-items-stretch */}
+                                <div className="card tp-cat-item mb-40 d-flex align-items-stretch" style={{ backgroundColor: "#5f096f" }}> {/* Use align-items-stretch */}
                                     <div className="tp-category-icon mr-15"
                                         style={{ height: "80px", width: '200px' }}>
                                         <img src={item.img} alt="category-img" />
                                     </div>
-                                    <h4 className="tp-category-title customfont">
-                                        <Link href={item.link}>{item.title}</Link>
+                                    <h4 className="tp-category-title customfont" style={{ marginTop: "1rem", }}>
+                                        <Link href={item.link} style={{ color: "white" }}>{item.title}</Link>
                                     </h4>
                                 </div>
                             </div>

@@ -133,14 +133,18 @@ const InstructorPortfolioArea = () => {
                         src="/assets/img/icon/zoom.png"
                         alt="instructor-thumb"
                       />
-                      <span>Zoom Meeting</span>
+                      <Link href="https://us02web.zoom.us/j/7565848499?pwd=MytEUXY3SGtENENyVFloUGtCN0pJdz09">
+                        <span>Zoom Meeting</span>
+                      </Link>
                     </CustomButtonZoom>
                     <CustomButtonwhatsapp>
                       <img
                         src="/assets/img/icon/whatsapp.png"
                         alt="instructor-thumb"
                       />
-                      <span>Whatsapp</span>
+                      <Link href="https://wa.link/aw3erb">
+                        <span>Whatsapp</span>
+                      </Link>
                     </CustomButtonwhatsapp>
                   </div>
                 </div>

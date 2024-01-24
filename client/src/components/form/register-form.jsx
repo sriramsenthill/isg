@@ -100,6 +100,8 @@ const RegisterhtmlForm = () => {
                     <option value="bibleCollegeStudent">Bible College Student</option>
                     <option value="bibleResearch">Bible Research</option>
                     <option value="internationalPastorFellowship">International Pastor Fellowship</option>
+                    <option value="prayerRequest">Prayer Request</option>
+                    <option value="ISGministriesMember">ISG Ministries Member</option>
                   </select>
                   <label htmlFor="email-id" style={{ color: "white" }}>
                     Email Address <span>**</span>

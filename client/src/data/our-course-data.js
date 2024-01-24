@@ -82,7 +82,7 @@ const our_course_data = [
     cn_color: "c-color-yellow",
     course_price: "29.99",
     total_start: "125",
-    link: "/prof/sasi"
+    link: "/prof/sasikumar"
 
   },
   {
@@ -90,13 +90,30 @@ const our_course_data = [
     img: "/assets/img/isg/saturday.jpeg",
     icon: "/assets/img/isg/logo.png",
     title: "வேதாகமத்தை திணியணித்தல்",
-    cls_text: "Saturday",
+    cls_text: "Friday",
     st_text: "291 Students",
     start_text: "4.7",
     course_title: "Prof. Caleb James",
     ct_color: "c-color-purple",
     course_link: "/course-details",
     course_name: "பரிசுத்த வேதாகமக் கல்லூரி",
+    cn_color: "பரிசுத்த வேதாகமக் கல்லூரி",
+    course_price: "29.99",
+    total_start: "125",
+    link: "/prof/caleb"
+  },
+  {
+    id: 6,
+    img: "/assets/img/isg/arul.jpeg",
+    icon: "/assets/img/isg/logo.png",
+    title: "இனிய இறையில்",
+    cls_text: "Saturday",
+    st_text: "291 Students",
+    start_text: "4.7",
+    course_title: "Rev M. Aruldoss",
+    ct_color: "c-color-purple",
+    course_link: "/course-details",
+    course_name: "இறையில் வேலன்மையும் முக்கியத்துவமும்",
     cn_color: "பரிசுத்த வேதாகமக் கல்லூரி",
     course_price: "29.99",
     total_start: "125",
