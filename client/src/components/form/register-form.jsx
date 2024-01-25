@@ -23,7 +23,7 @@ const RegisterhtmlForm = () => {
 
     try {
       setLoading(true); // Set loading state to true
-      const response = await axios.post("https://isg-server.onrender.com/register", {
+      const response = await axios.post("http://localhost:3000/register", {
         name: name,
         type: selectedType, // Include the selected type in the request
         email: email,

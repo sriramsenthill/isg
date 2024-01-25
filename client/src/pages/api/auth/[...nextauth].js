@@ -14,7 +14,7 @@ export const authOptions = {
 
                 try {
                     // Make a POST request to the backend route for credential validation
-                    const response = await axios.post(process.env.SERVER_HOST + "/signIn", {
+                    const response = await axios.post("http://localhost:3000/signIn", {
                         email,
                         password,
                     });
