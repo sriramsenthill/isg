@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import SEO from "../common/seo";
 import CourseGrid from "../components/course-grid";
 import WrapperFour from "../layout/wrapper-4";
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 const Index = () => {
   const { data: session, status } = useSession();
@@ -25,6 +27,12 @@ const Index = () => {
     <WrapperFour>
       <SEO pageTitle={"Bible Course"} />
       <CourseGrid />
+      <AudioPlayer
+        autoPlay
+        src="/assets/img/isg/song.mp3"
+        onPlay={e => console.log("onPlay")}
+      // other props here
+      />
     </WrapperFour>
   );
 };

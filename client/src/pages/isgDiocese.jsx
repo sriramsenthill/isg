@@ -1,6 +1,8 @@
 import React from "react";
 import SEO from "../common/seo";
 import WrapperFour from "../layout/wrapper-4";
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 const isgDiocese = () => {
     const imageFilenames = Array.from({ length: 2 }, (_, index) => `${index + 1}.jpeg`);
@@ -28,6 +30,12 @@ const isgDiocese = () => {
                     ))}
                 </div>
             </div>
+            <AudioPlayer
+                autoPlay
+                src="/assets/img/isg/song.mp3"
+                onPlay={e => console.log("onPlay")}
+            // other props here
+            />
         </WrapperFour>
     );
 };

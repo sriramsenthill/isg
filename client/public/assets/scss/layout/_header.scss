@@ -63,7 +63,7 @@
             & input {
                 width: 200px;
                 height: 50px;
-                background-color: var(--tp-grey-1);
+                background-color: black;
                 border: 1px solid var(--tp-grey-1);
                 padding: 0 20px;
                 padding-left: 40px;
@@ -97,7 +97,7 @@
                 height: 44px;
                 line-height: 44px;
                 @include border-radius(6px);
-                background-color: var(--tp-grey-5);
+                background-color: black;
 
                 @include tp-placeholder {
                     color: var(--tp-text-10);
@@ -471,7 +471,7 @@
             & a {
                 padding: 35px 0;
                 font-family: 'Gordita-500';
-                color: var(--tp-text-2);
+                color: black;
 
                 &:hover {
                     color: var(--tp-common-black);
@@ -512,7 +512,7 @@
                 height: 50px;
                 width: 50px;
                 line-height: 53px;
-                background: rgba(255, 255, 255, .1);
+                background: black;
                 text-align: center;
                 border-radius: 50px;
                 color: var(--tp-common-white);

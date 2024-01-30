@@ -17,7 +17,7 @@ const HeaderTwo = () => {
 
    return (
       <>
-         <header className="header_white_area d-none d-xl-block">
+         <header className="header_white_area d-none d-xl-block" style={{ backgroundImage: `url("/assets/img/isg/back.jpeg")`, backgroundSize: 'cover' }}>
             <div className="header__area pt-40 pb-5">
                <div className="main-header">
                   <div className="container">
@@ -40,7 +40,7 @@ const HeaderTwo = () => {
                   <div className="row">
                      <div className="col-xxl-12 col-xl-12 col-lg-9 text-start">
                         <div className="main-menu main-menu-white">
-                           <nav id="mobile-menu">
+                           <nav id="mobile-menu" >
                               <NavMenu />
                            </nav>
                         </div>

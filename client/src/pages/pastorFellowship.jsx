@@ -3,6 +3,8 @@ import SEO from "../common/seo";
 import WrapperFour from "../layout/wrapper-4";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 
 const pastorFellowship = () => {
     const { data: session, status } = useSession();
@@ -22,6 +24,12 @@ const pastorFellowship = () => {
     return (
         <WrapperFour>
             <SEO pageTitle={"Pastor Fellowship"} />
+            <AudioPlayer
+                autoPlay
+                src="/assets/img/isg/song.mp3"
+                onPlay={e => console.log("onPlay")}
+            // other props here
+            />
         </WrapperFour>
     );
 };
