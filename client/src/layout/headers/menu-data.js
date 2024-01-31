@@ -4,8 +4,7 @@ const menu_data = [
     title: "Home",
     link: "/",
     has_dropdown: true,
-    sub_menus: [
-    ],
+    sub_menus: [],
   },
   {
     id: 2,
@@ -22,8 +21,7 @@ const menu_data = [
     title: "Professors",
     link: "/professors",
     has_dropdown: true,
-    sub_menus: [
-    ],
+    sub_menus: [],
   },
   {
     id: 4,
@@ -40,8 +38,7 @@ const menu_data = [
     title: "Bible Research Centre",
     link: "/BibleResearchCentre",
     has_dropdown: true,
-    sub_menus: [
-    ],
+    sub_menus: [],
   },
   {
     id: 7,
@@ -49,6 +46,18 @@ const menu_data = [
     link: "/isgDiocese",
     has_dropdown: true,
     sub_menus: [
+      { link: "certificate/paster_fellowship", title: "paster_fellowship" },
+      { link: "certificate/evangelist", title: "evangelist" },
+      { link: "certificate/reverent", title: "reverent" },
+      { link: "certificate/appostalic", title: "appostalic" },
+      { link: "certificate/master_phd", title: "master_Phd" },
+      { link: "certificate/mth_master_degree", title: "mth_master_degree" },
+      { link: "certificate/bth_bachelor_degree", title: "bth_bachelor_degree" },
+      { link: "certificate/diploma_in_theology", title: "diploma_in_theology" },
+      {
+        link: "certificate/certificate_achievement",
+        title: "certificate_achievement",
+      },
     ],
   },
   {
@@ -56,16 +65,14 @@ const menu_data = [
     title: "Prayer",
     link: "/prayer",
     has_dropdown: true,
-    sub_menus: [
-    ],
+    sub_menus: [],
   },
   {
     id: 9,
     title: "Pastor Fellowship",
     link: "/pastorFellowship",
     has_dropdown: true,
-    sub_menus: [
-    ],
+    sub_menus: [],
   },
 ];
 export default menu_data;
