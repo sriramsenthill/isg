@@ -6,7 +6,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof.Rev",
-    link: "/prof/sudarshan"
+    link: "/prof/sudarshan",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof.Rev",
-    link: "/prof/saji"
+    link: "/prof/saji",
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof.Rev",
-    link: "/prof/ben"
+    link: "/prof/ben",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Rev",
-    link: "/prof/priyanthi"
+    link: "/prof/priyanthi",
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof.Rev",
-    link: "/prof/sasikumar"
+    link: "/prof/sasikumar",
   },
   {
     id: 6,
@@ -51,8 +51,26 @@ const instructor_info_data = [
     total_class: "35",
     total_st: "291",
     title: "ISG Prof",
-    link: "/prof/caleb"
+    link: "/prof/caleb",
+  },
+  {
+    id: 7,
+    img: "/assets/img/bg/dayamalar.jpeg",
+    name: "Rev .S.Dayamalar(MD)",
+    total_class: "35",
+    total_st: "291",
+    title: "ISG Principal",
+    link: "/prof/dayamalar",
+  },
+  {
+    id: 8,
+    img: "/assets/img/bg/john.jpeg",
+    name: "Rev.K.John Donld",
+    total_class: "35",
+    total_st: "291",
+    title: "ISG Dean",
+    link: "/prof/john",
   },
 ];
 
-export default instructor_info_data
+export default instructor_info_data;
