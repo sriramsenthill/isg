@@ -77,7 +77,6 @@ const category_data = [
   },
 ];
 
-
 const OurMission = () => {
   return (
     <>
@@ -98,12 +97,39 @@ const OurMission = () => {
           <div className="row">
             {category_data.map((item) => (
               <div key={item.id} className="col-xl-3 col-lg-4 col-md-6">
-                <div className="card tp-cat-item mb-40 d-flex align-items-stretch" style={{ backgroundColor: "#5f096f" }}> {/* Use align-items-stretch */}
-                  <div className="tp-category-icon mr-15">
-                    <img src={item.img} alt="category-img" />
+                <div
+                  className="card tp-cat-item mb-40 d-flex align-items-stretch"
+                  style={{ backgroundColor: "#5f096f" }}
+                >
+                  {" "}
+                  {/* Use align-items-stretch */}
+                  <div
+                    className="tp-category-icon mr-15"
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <div>
+                      <img src={item.img} alt="category-img" />
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "end",
+                      }}
+                    >
+                      <img
+                        src="/assets/img/isg/newLogo.png"
+                        alt="category-img"
+                        style={{ width: "55px", height: "55px" }}
+                      />
+                    </div>
                   </div>
-                  <h4 className="tp-category-title customfont" style={{ marginTop: "1rem", }}>
-                    <Link href={item.link} style={{ color: "white", }}>{item.title}</Link>
+                  <h4
+                    className="tp-category-title customfont"
+                    style={{ marginTop: "1rem" }}
+                  >
+                    <Link href={item.link} style={{ color: "white" }}>
+                      {item.title}
+                    </Link>
                   </h4>
                 </div>
               </div>
@@ -112,7 +138,6 @@ const OurMission = () => {
         </div>
       </section>
     </>
-
   );
 };
 

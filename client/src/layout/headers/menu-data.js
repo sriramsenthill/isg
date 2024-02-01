@@ -38,7 +38,7 @@ const menu_data = [
     title: "Bible Research Centre",
     link: "/BibleResearchCentre",
     has_dropdown: true,
-    sub_menus: [],
+    sub_menus: [{ link: "/Library", title: "Library" }],
   },
   {
     id: 7,
