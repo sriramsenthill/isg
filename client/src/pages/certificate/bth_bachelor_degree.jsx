@@ -40,6 +40,13 @@ const index = () => {
     <WrapperFour>
       <SEO pageTitle={"bth_bachelor_degree"} />
       <div className="row" style={{ backgroundColor: "#5f096f" }}>
+        <div className="row text-center">
+          <div className="col-lg-12">
+            <div className="section-title mb-65">
+              <h2 className="tp-section-title" style={{ color: 'white', padding: "2rem" }}>Bth Bachelor Degree</h2>
+            </div>
+          </div>
+        </div>
         {data.map((item) => (
           <div className="col-xl-3 col-lg-4 col-md-6 col-12">
             <div className=" tp-rec-item mb-25 mt-25">

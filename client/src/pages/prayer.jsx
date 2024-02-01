@@ -48,7 +48,7 @@ const Prayer = () => {
             </div>
             <AudioPlayer
                 autoPlay
-                src="/assets/img/isg/song.mp3"
+                src="/assets/img/isg/prayerSong.mp3"
                 onPlay={e => console.log("onPlay")}
             // other props here
             />

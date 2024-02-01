@@ -6,7 +6,15 @@ const index = () => {
   return (
     <WrapperFour>
       <SEO pageTitle={"mth_master_degree"} />
-      <h1>mth_master_degree</h1>
+      <div className="row" style={{ backgroundColor: "#5f096f" }}>
+        <div className="row text-center">
+          <div className="col-lg-12">
+            <div className="section-title mb-65">
+              <h2 className="tp-section-title" style={{ color: 'white', padding: "2rem" }}>Mth Master Degree</h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </WrapperFour>
   );
 };

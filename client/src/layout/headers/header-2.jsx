@@ -17,7 +17,7 @@ const HeaderTwo = () => {
 
    return (
       <>
-         <header className="header_white_area d-none d-xl-block" style={{ backgroundImage: `url("/assets/img/isg/back.jpeg")`, backgroundSize: 'cover' }}>
+         <header className="header_white_area d-none d-xl-block" style={{ background: 'linear-gradient(to right, #a91c57, #5f0a6f)' }}>
             <div className="header__area pt-40 pb-5">
                <div className="main-header">
                   <div className="container">
