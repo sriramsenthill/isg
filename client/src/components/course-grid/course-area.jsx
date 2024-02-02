@@ -1,4 +1,6 @@
 import our_course_data from "@/src/data/our-course-data";
+import DownloadIcon from "@mui/icons-material/Download";
+import ChatIcon from "@mui/icons-material/Chat";
 import Link from "next/link";
 import React from "react";
 
@@ -28,7 +30,11 @@ const CourseArea = () => {
                   <div className="tpcourse__thumb p-relative w-img fix">
                     <Link href={item.link}>
                       <div style={{ width: "500px", height: "500px" }}>
-                        <img style={{ objectFit: "cover" }} src={item.img} alt="svasv" />{" "}
+                        <img
+                          style={{ objectFit: "cover" }}
+                          src={item.img}
+                          alt="svasv"
+                        />{" "}
                       </div>
                     </Link>
                     <div className="tpcourse__tag">
@@ -52,18 +58,12 @@ const CourseArea = () => {
                     <div className="tpcourse__category mb-10">
                       <ul className="tpcourse__price-list d-flex align-items-center">
                         <li>
-                          <Link
-                            className={item.ct_color}
-                            href={item.link}
-                          >
+                          <Link className={item.ct_color} href={item.link}>
                             {item.course_title}
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            className={item.cn_color}
-                            href={item.link}
-                          >
+                          <Link className={item.cn_color} href={item.link}>
                             {item.course_name}
                           </Link>
                         </li>
@@ -75,32 +75,76 @@ const CourseArea = () => {
                       </h4>
                     </div>
                     <div className="tpcourse__meta tpcourse__meta-gap pb-15 mb-15">
-                      <ul className="d-flex align-items-center">
+                      <ul
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
                         <li>
                           <img
                             src="/assets/img/icon/c-meta-01.png"
                             alt="meta-icon"
-                          />{" "}
+                          />
                           <span>{item.cls_text}</span>
                         </li>
-                      </ul>
-                    </div>
-                    <div className="tpcourse__rating d-flex">
-                      <div className="tpcourse__pricing">
-                        <Link href={item.link}>
+                        <div>
                           <button
                             className="btn"
                             style={{
                               backgroundColor: "#5f096f",
                               color: "white",
                               border: "none",
-                              padding: "6px 15px", // Adjust padding as needed
-                              borderRadius: "5px", // Adjust border radius as needed
+                              padding: "6px 15px",
+                              borderRadius: "5px",
                             }}
                           >
-                            Learn
+                            <DownloadIcon />
+                            &nbsp;Download
                           </button>
-                        </Link>
+                        </div>
+                      </ul>
+                    </div>
+
+                    <div className="tpcourse__rating ">
+                      <div
+                        className="tpcourse__pricing"
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <div>
+                          <Link href={item.link}>
+                            <button
+                              className="btn"
+                              style={{
+                                backgroundColor: "#5f096f",
+                                color: "white",
+                                border: "none",
+                                padding: "6px 15px",
+                                borderRadius: "5px",
+                              }}
+                            >
+                              Learn
+                            </button>
+                          </Link>
+                        </div>
+                        <div>
+                          <button
+                            className="btn"
+                            style={{
+                              backgroundColor: "green",
+                              color: "white",
+                              border: "none",
+                              padding: "6px 15px",
+                              borderRadius: "5px",
+                            }}
+                          >
+                            <ChatIcon />
+                            &nbsp; chat
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
