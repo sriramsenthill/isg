@@ -3,8 +3,12 @@ import DownloadIcon from "@mui/icons-material/Download";
 import ChatIcon from "@mui/icons-material/Chat";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/router";
 
 const CourseArea = () => {
+
+  const router = useRouter();
+
   return (
     <>
       <section className="course-area pb-120" style={{ marginTop: "5rem" }}>
@@ -133,6 +137,9 @@ const CourseArea = () => {
                         <div>
                           <button
                             className="btn"
+                            onClick={() => {
+                              router.push("/chat")
+                            }}
                             style={{
                               backgroundColor: "green",
                               color: "white",

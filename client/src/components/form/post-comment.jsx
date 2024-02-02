@@ -4,7 +4,7 @@ const PostComment = () => {
   return (
     <>
       <div className="postbox__comment-form">
-        <h3 className="postbox__comment-form-title">Write a comment</h3>
+        <h3 className="postbox__comment-form-title">Chat</h3>
         <form onSubmit={(e) => e.preventDefault()}>
           <div className="row">
             <div className="col-xxl-6 col-xl-6 col-lg-6">
@@ -19,18 +19,18 @@ const PostComment = () => {
             </div>
             <div className="col-xxl-12">
               <div className="postbox__comment-input">
-                <input type="text" placeholder="Website" />
+                <input type="text" placeholder="subject" />
               </div>
             </div>
             <div className="col-xxl-12">
               <div className="postbox__comment-input">
-                <textarea placeholder="Enter your comment ..."></textarea>
+                <textarea placeholder="Enter your message ..."></textarea>
               </div>
             </div>
             <div className="col-xxl-12">
               <div className="postbox__comment-btn">
                 <button type="submit" className="tp-btn">
-                  Post Comment
+                  Send Message
                 </button>
               </div>
             </div>

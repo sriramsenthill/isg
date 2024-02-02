@@ -6,7 +6,7 @@ import 'react-h5-audio-player/lib/styles.css';
 
 const BibleResearchCentre = () => {
     // Create an array of image filenames
-    const imageFilenames = Array.from({ length: 7 }, (_, index) => `${index + 1}.jpeg`);
+    const imageFilenames = Array.from({ length: 8 }, (_, index) => `${index + 1}.jpeg`);
 
 
     return (

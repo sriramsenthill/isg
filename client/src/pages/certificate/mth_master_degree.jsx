@@ -3,6 +3,45 @@ import SEO from "../../common/seo";
 import WrapperFour from "../../layout/wrapper-4";
 
 const index = () => {
+  const data = [
+    {
+      img4: "/assets/img/isgdiocese/mth/1.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/2.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/3.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/4.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/5.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/6.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/7.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/8.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/9.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/10.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/11.jpeg",
+    },
+    {
+      img4: "/assets/img/isgdiocese/mth/12.jpeg",
+    },
+  ];
+
   return (
     <WrapperFour>
       <SEO pageTitle={"mth_master_degree"} />
@@ -10,10 +49,19 @@ const index = () => {
         <div className="row text-center">
           <div className="col-lg-12">
             <div className="section-title mb-65">
-              <h2 className="tp-section-title" style={{ color: 'white', padding: "2rem" }}>Mth Master Degree</h2>
+              <h2 className="tp-section-title" style={{ color: 'white', padding: "2rem" }}>Master of Theology</h2>
             </div>
           </div>
         </div>
+        {data.map((item) => (
+          <div className="col-xl-3 col-lg-4 col-md-6 col-12">
+            <div className=" tp-rec-item mb-25 mt-25">
+              <div>
+                <img src={item.img4} alt="category-img" />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </WrapperFour>
   );

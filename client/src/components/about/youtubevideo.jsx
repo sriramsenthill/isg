@@ -12,12 +12,14 @@ const Example = () => {
 
   return (
     <>
-      <div>
+
+      <div style={{ backgroundColor: '#5f096f', backgroundImage: `url(/assets/img/bg/shape-bg-02.png)` }}>
         <h1
           style={{
             textAlign: "center",
             paddingTop: "60px",
             paddingBottom: "30px",
+            color: "white"
           }}
         >
           Our Youtube Video

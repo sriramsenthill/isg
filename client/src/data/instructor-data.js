@@ -71,6 +71,15 @@ const instructor_info_data = [
     title: "ISG Dean",
     link: "/prof/john",
   },
+  {
+    id: 9,
+    img: "/assets/img/isg/arul.jpeg",
+    name: "Rev. M.Aruldoss",
+    total_class: "35",
+    total_st: "291",
+    title: "ISG Prof",
+    link: "/prof/john",
+  },
 ];
 
 export default instructor_info_data;

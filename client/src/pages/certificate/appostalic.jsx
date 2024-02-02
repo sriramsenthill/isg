@@ -3,6 +3,11 @@ import SEO from "../../common/seo";
 import WrapperFour from "../../layout/wrapper-4";
 
 const index = () => {
+  const data = [
+    {
+      img4: "/assets/img/isg/apostalic.jpeg",
+    },
+  ];
   return (
     <WrapperFour>
       <SEO pageTitle={"appostalic"} />
@@ -14,6 +19,15 @@ const index = () => {
             </div>
           </div>
         </div>
+        {data.map((item, index) => (
+          <div className="col-xl-3 col-lg-4 col-md-6 col-12" key={index}>
+            <div className="tp-rec-item mb-25 mt-25 d-flex align-items-center justify-content-center">
+              <div className="text-center">
+                <img src={item.img4} alt={`category-img-${index}`} className="img-fluid" />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </WrapperFour>
   );
