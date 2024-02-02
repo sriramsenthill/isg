@@ -1,4 +1,6 @@
 import our_course_data from "@/src/data/our-course-data";
+import DownloadIcon from "@mui/icons-material/Download";
+import ChatIcon from "@mui/icons-material/Chat";
 import Link from "next/link";
 import React from "react";
 
@@ -97,7 +99,8 @@ const CourseArea = () => {
                               borderRadius: "5px",
                             }}
                           >
-                            Download
+                            <DownloadIcon />
+                            &nbsp;Download
                           </button>
                         </div>
                       </ul>
@@ -138,7 +141,8 @@ const CourseArea = () => {
                               borderRadius: "5px",
                             }}
                           >
-                            chat
+                            <ChatIcon />
+                            &nbsp; chat
                           </button>
                         </div>
                       </div>
