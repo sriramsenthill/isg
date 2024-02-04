@@ -5,6 +5,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import Breadcrumb from "@/src/components/bredcrumb/breadcrumb";
+
 
 const pastorFellowship = () => {
     const { data: session, status } = useSession();
@@ -24,6 +26,7 @@ const pastorFellowship = () => {
     return (
         <WrapperFour>
             <SEO pageTitle={"Pastor Fellowship"} />
+            <Breadcrumb title="Pastor Fellowship" subtitle="Pastor Fellowship" isDbbl="" imageUrl="/assets/img/isg/logos/pastor.png" />
             <AudioPlayer
                 autoPlay
                 src="/assets/img/isg/pastor.mp3"

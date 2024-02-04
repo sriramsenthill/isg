@@ -7,6 +7,7 @@ import Sasikumar from "./professor/Sasikumar";
 import Ben from "./professor/ben";
 import Caleb from "./professor/Caleb";
 import Priyanthi from "./professor/Priyanthi";
+import Arul from "./professor/Arul";
 
 const InstructorProfile = () => {
   return (
@@ -18,6 +19,7 @@ const InstructorProfile = () => {
       <Ben />
       <Priyanthi />
       <Sasikumar />
+      <Arul />
     </>
   );
 };

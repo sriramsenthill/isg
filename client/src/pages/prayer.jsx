@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import Breadcrumb from "@/src/components/bredcrumb/breadcrumb";
 
 const Prayer = () => {
     const { data: session, status } = useSession();
@@ -26,6 +27,7 @@ const Prayer = () => {
     return (
         <WrapperFour>
             <SEO pageTitle={"Prayer"} />
+            <Breadcrumb title="Prayer" subtitle="Prayer" isDbbl="" imageUrl="/assets/img/isg/logos/prayer.png" />
             <div style={{ backgroundColor: '#5f096f', backgroundImage: `url(/assets/img/bg/shape-bg-02.png)`, display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <div className="row text-center">
                     <div className="col-lg-12">

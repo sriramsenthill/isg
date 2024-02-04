@@ -6,6 +6,9 @@ import AudioPlayer from 'react-h5-audio-player';
 
 const data = [
   {
+    img2: "/assets/img/isgdiocese/reverend/0.jpeg",
+  },
+  {
     img2: "/assets/img/isgdiocese/reverend/1.jpeg",
   },
   {

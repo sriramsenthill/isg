@@ -3,6 +3,7 @@ import SEO from "../../common/seo";
 import WrapperFour from "../../layout/wrapper-4";
 import 'react-h5-audio-player/lib/styles.css';
 import AudioPlayer from 'react-h5-audio-player';
+import Breadcrumb from "@/src/components/bredcrumb/breadcrumb";
 
 const data = [
   {
@@ -59,6 +60,8 @@ const index = () => {
   return (
     <WrapperFour>
       <SEO pageTitle={"paster_fellowship"} />
+      <Breadcrumb title="ISG Diocese" subtitle="Diocese" isDbbl="isgDiocese" imageUrl="/assets/img/isg/logos/diocese.png" />
+
       <div className="row" style={{ backgroundColor: "#5f096f" }}>
         <div className="row text-center">
           <div className="col-lg-12">

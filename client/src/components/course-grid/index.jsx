@@ -8,7 +8,7 @@ import CourseArea from "./course-area";
 const CourseGrid = () => {
   return (
     <>
-      <Breadcrumb title="Bible Course" subtitle="Bible Course" isDbbl="Course" />
+      <Breadcrumb title="Bible Course" subtitle="Bible Course" isDbbl="Course" imageUrl="/assets/img/isg/logos/bibleCourse.png" />
       <CourseArea />
       <img src="/assets/img/isg/shedule.jpeg" />
     </>

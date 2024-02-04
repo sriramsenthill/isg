@@ -3,6 +3,7 @@ import SEO from "../common/seo";
 import Wrapper from "../layout/wrapper";
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import Breadcrumb from "../components/bredcrumb/breadcrumb";
 
 const BibleResearchCentre = () => {
     // Create an array of image filenames
@@ -12,7 +13,7 @@ const BibleResearchCentre = () => {
     return (
         <Wrapper>
             <SEO pageTitle={'BibleResearchCentre'} />
-
+            <Breadcrumb title="Bible Research Centre" subtitle="Bible Research Centre" isDbbl="" imageUrl="/assets/img/isg/logos/bibleResearch.png" />
             <div style={{ backgroundColor: '#5f096f', backgroundImage: `url(/assets/img/bg/shape-bg-02.png)`, display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <div className="row text-center">
                     <div className="col-lg-12">

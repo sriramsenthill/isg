@@ -1,12 +1,12 @@
 import Link from "next/link";
 import React from "react";
 
-const Breadcrumb = ({ title, subtitle, isDbbl = "" }) => {
+const Breadcrumb = ({ title, subtitle, isDbbl = "", imageUrl }) => {
   return (
     <section
       className="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay"
       style={{
-        background: "#5f096f"
+        background: "#5f096f",
       }}
     >
       <div className="container">
@@ -31,10 +31,26 @@ const Breadcrumb = ({ title, subtitle, isDbbl = "" }) => {
                 )}
                 <span className="sub-page-black">{subtitle}</span>
               </div>
+
             </div>
+
           </div>
+
+        </div>
+
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginRight: "30px" }}>
+        {/* Your other content here */}
+
+        <div style={{ marginLeft: 'auto', marginTop: '20px' }}>
+          {imageUrl && (
+            <span>
+              <img src={imageUrl} alt="Breadcrumb Image" style={{ width: '190px', height: 'auto', marginTop: '-210px' }} />
+            </span>
+          )}
         </div>
       </div>
+
     </section>
   );
 };

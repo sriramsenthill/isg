@@ -30,6 +30,7 @@ const HeaderTwo = () => {
                                  </Link>
                               </div>
                            </div>
+                           <h1 style={{ color: "white", textAlign: 'center' }}>ISG BIBLE COLLEGE UK</h1>
                         </div>
                      </div>
                   </div>
