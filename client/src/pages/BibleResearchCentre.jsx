@@ -6,7 +6,7 @@ import 'react-h5-audio-player/lib/styles.css';
 
 const BibleResearchCentre = () => {
     // Create an array of image filenames
-    const imageFilenames = Array.from({ length: 8 }, (_, index) => `${index + 1}.jpeg`);
+    const imageFilenames = Array.from({ length: 4 }, (_, index) => `${index + 1}.jpeg`);
 
 
     return (
@@ -35,7 +35,7 @@ const BibleResearchCentre = () => {
             </div>
             <AudioPlayer
                 autoPlay
-                src="/assets/img/isg/song.mp3"
+                src="/assets/img/isg/bibleResearch.mp3"
                 onPlay={e => console.log("onPlay")}
             // other props here
             />

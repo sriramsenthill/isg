@@ -26,7 +26,7 @@ const pastorFellowship = () => {
             <SEO pageTitle={"Pastor Fellowship"} />
             <AudioPlayer
                 autoPlay
-                src="/assets/img/isg/song.mp3"
+                src="/assets/img/isg/pastor.mp3"
                 onPlay={e => console.log("onPlay")}
             // other props here
             />
