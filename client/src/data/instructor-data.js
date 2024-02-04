@@ -55,12 +55,12 @@ const instructor_info_data = [
   },
   {
     id: 7,
-    img: "/assets/img/bg/dayamalar.jpeg",
-    name: "Rev .S.Dayamalar(MD)",
+    img: "/assets/img/isg/arul.jpeg",
+    name: "Rev. M.Aruldoss",
     total_class: "35",
     total_st: "291",
-    title: "ISG Principal",
-    link: "/prof/dayamalar",
+    title: "ISG Prof",
+    link: "/prof/john",
   },
   {
     id: 8,
@@ -73,13 +73,14 @@ const instructor_info_data = [
   },
   {
     id: 9,
-    img: "/assets/img/isg/arul.jpeg",
-    name: "Rev. M.Aruldoss",
+    img: "/assets/img/bg/dayamalar.jpeg",
+    name: "Rev .S.Dayamalar",
     total_class: "35",
     total_st: "291",
-    title: "ISG Prof",
-    link: "/prof/john",
+    title: "ISG Principal",
+    link: "/prof/dayamalar",
   },
+
 ];
 
 export default instructor_info_data;

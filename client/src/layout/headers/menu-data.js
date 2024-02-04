@@ -43,7 +43,7 @@ const menu_data = [
   {
     id: 7,
     title: "ISG Diocese",
-    link: "/isgDiocese",
+    link: "/certificate/paster_fellowship",
     has_dropdown: true,
     sub_menus: [
       { link: "/certificate/paster_fellowship", title: "Pastor Fellowship" },

@@ -1,6 +1,8 @@
 import React from "react";
 import SEO from "../../common/seo";
 import WrapperFour from "../../layout/wrapper-4";
+import 'react-h5-audio-player/lib/styles.css';
+import AudioPlayer from 'react-h5-audio-player';
 
 const data = [
   {
@@ -47,6 +49,12 @@ const index = () => {
           </div>
         ))}
       </div>
+      <AudioPlayer
+        autoPlay
+        src="/assets/img/isg/song.mp3"
+        onPlay={e => console.log("onPlay")}
+      // other props here
+      />
     </WrapperFour>
   );
 };
