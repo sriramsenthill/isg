@@ -30,7 +30,19 @@ const HeaderTwo = () => {
                                  </Link>
                               </div>
                            </div>
-                           <h1 style={{ color: "white", textAlign: 'center' }}>ISG BIBLE COLLEGE UK</h1>
+                           <style jsx global>{`
+        @font-face {
+          font-family: 'EnglishTowne';
+          src: url('assets/fonts/EnglishTowne.ttf') format('truetype');
+        }
+
+        h1 {
+          font-family: 'Canterbury', sans-serif;
+          color: white;
+          text-align: center;
+        }
+      `}</style>
+                           <h1 style={{ color: "white", textAlign: 'center' }}>ISG Tamil Bible College & Research Center England & Wales, Scotland </h1>
                         </div>
                      </div>
                   </div>
