@@ -17,10 +17,7 @@ const HeaderTwo = () => {
 
   return (
     <>
-      <header
-        className="header_white_area d-none d-xl-block"
-        style={{ background: "linear-gradient(to right, #a91c57, #5f0a6f)" }}
-      >
+      <header className="header_white_area d-none d-xl-block" style={{ background: 'linear-gradient(to right, #a91c57, #5f0a6f)' }}>
         <div className="header__area pt-40 pb-5">
           <div className="main-header">
             <div className="container">
@@ -29,11 +26,7 @@ const HeaderTwo = () => {
                   <div className="logo-area d-flex align-items-center justify-content-center">
                     <div className="logo">
                       <Link href="/">
-                        <img
-                          src="/assets/img/isg/logoAni.gif"
-                          style={{ height: "300px", width: "300px" }}
-                          alt="logo"
-                        />
+                        <img src="/assets/img/isg/logoAni.gif" style={{ height: "300px", width: "300px" }} alt="logo" />
                       </Link>
                     </div>
                   </div>
@@ -57,32 +50,22 @@ const HeaderTwo = () => {
             </div>
           </div>
         </div>
-        <div
-          className={`header-menu-area ${sticky ? "header-sticky" : ""}`}
-          id="header-sticky"
-        >
+        <div className={`header-menu-area ${sticky ? "header-sticky" : ""}`} id="header-sticky">
           <div className="container">
             <div className="row">
               <div className="col-xxl-12 col-xl-12 col-lg-9 text-start">
                 <div className="main-menu main-menu-white">
-                  <nav id="mobile-menu">
+                  <nav id="mobile-menu" >
                     <NavMenu />
                   </nav>
                 </div>
               </div>
               <div className="col-xxl-12 col-xl-12 col-lg-6 d-flex align-items-center justify-content-end">
-                <div
-                  className="header-meta-green"
-                  style={{
-                    display: "flex",
-                    position: "relative",
-                    bottom: "4.5rem",
-                  }}
-                >
+                <div className="header-meta-green" style={{ display: 'flex', position: "relative", bottom: "4.5rem" }}>
                   <ul>
                     {session ? (
                       <>
-                        <li style={{ marginTop: "-10px" }}>
+                        <li style={{ marginTop: '-10px' }}>
                           <button
                             className="btn"
                             style={{
@@ -92,25 +75,13 @@ const HeaderTwo = () => {
                               padding: "6px 15px", // Adjust padding as needed
                               borderRadius: "5px", // Adjust border radius as needed
                             }}
-                            onClick={handleLogout}
-                          >
-                            Logout
-                          </button>
-                        </li>
+                            onClick={handleLogout}>Logout</button></li>
                       </>
                     ) : (
                       // If JWT token is not present, show sign-in link
-                      <li>
-                        <Link href="/sign-in">
-                          <i className="fi fi-rr-user"></i>
-                        </Link>
-                      </li>
+                      <li><Link href="/sign-in"><i className="fi fi-rr-user"></i></Link></li>
                     )}
-                    <li>
-                      <a href="#" className="tp-menu-toggle d-xl-none">
-                        <i className="icon_ul"></i>
-                      </a>
-                    </li>
+                    <li><a href="#" className="tp-menu-toggle d-xl-none"><i className="icon_ul"></i></a></li>
                   </ul>
                 </div>
               </div>
