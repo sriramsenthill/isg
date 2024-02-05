@@ -5,6 +5,7 @@ const menu_data = [
     link: "/",
     has_dropdown: true,
     sub_menus: [],
+    icon: "/assets/img/isg/newLogo.png"
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ const menu_data = [
       { link: "/about", title: "தமிழ்" },
       { link: "/aboutEN", title: "EN" },
     ],
+    icon: "/assets/img/isg/newLogo.png"
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const menu_data = [
     link: "/professors",
     has_dropdown: true,
     sub_menus: [],
+    icon: "/assets/img/isg/newLogo.png"
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ const menu_data = [
       { link: "/bibleCourse", title: "Course" },
       { link: "/professorProfile", title: "Professor Profile" },
     ],
+    icon: "/assets/img/isg/logos/bibleCourse.png"
   },
   {
     id: 6,
@@ -39,6 +43,7 @@ const menu_data = [
     link: "/BibleResearchCentre",
     has_dropdown: true,
     sub_menus: [{ link: "/Library", title: "Library" }],
+    icon: "/assets/img/isg/logos/bibleResearch.png"
   },
   {
     id: 7,
@@ -59,6 +64,7 @@ const menu_data = [
         title: "Certificate Achievement",
       },
     ],
+    icon: "/assets/img/isg/logos/diocese.png"
   },
   {
     id: 8,
@@ -66,6 +72,7 @@ const menu_data = [
     link: "/prayer",
     has_dropdown: true,
     sub_menus: [],
+    icon: "/assets/img/isg/logos/prayer.png"
   },
   {
     id: 9,
@@ -73,6 +80,7 @@ const menu_data = [
     link: "/pastorFellowship",
     has_dropdown: true,
     sub_menus: [],
+    icon: "/assets/img/isg/logos/pastor.png"
   },
 ];
 export default menu_data;

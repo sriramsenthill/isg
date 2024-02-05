@@ -12,7 +12,7 @@ const NavMenu = () => {
               <img
                 src={item.icon}
                 alt={`${item.title} icon`}
-                style={{ width: '38px', height: '38px', marginRight: '8px' }}
+                style={{ width: '38px', height: '38px', marginRight: '5px' }}
               />
             )}            <Link href={item.link}>{item.title}</Link>
             {item.sub_menus.length > 0 && (
