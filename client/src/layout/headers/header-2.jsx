@@ -30,20 +30,20 @@ const HeaderTwo = () => {
                       </Link>
                     </div>
                   </div>
-                  <style jsx global>{`
-        @font-face {
-          font-family: 'canterbury';
-          src: url('/fonts/canterbury.ttf') format('truetype');
-        }
+                  <style jsx>{`
+  @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+  h1 {
+    font-family: 'UnifrakturMaguntia', cursive;
+    color: white;
+    text-align: center;
+  }
+`}</style>
 
-        h1 {
-          font-family: 'canterbury', sans-serif;
-          color: white;
-          text-align: center;
-        }
-      `}</style>
-                  <h1>                    ISG Tamil Bible College & Research Center England & Wales, Scotland
+                  <h1>
+                    ISG Tamil Bible College & Research Center
+                    England & Wales, Scotland
                   </h1>
+
 
                 </div>
               </div>

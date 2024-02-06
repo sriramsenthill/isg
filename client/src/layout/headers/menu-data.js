@@ -5,7 +5,7 @@ const menu_data = [
     link: "/",
     has_dropdown: true,
     sub_menus: [],
-    icon: "/assets/img/isg/newLogo.png"
+    icon: "/assets/img/isg/logos/newLogo.png"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const menu_data = [
       { link: "/about", title: "தமிழ்" },
       { link: "/aboutEN", title: "EN" },
     ],
-    icon: "/assets/img/isg/newLogo.png"
+    icon: "/assets/img/isg/logos/newLogo.png"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const menu_data = [
     link: "/professors",
     has_dropdown: true,
     sub_menus: [],
-    icon: "/assets/img/isg/newLogo.png"
+    icon: "/assets/img/isg/logos/newLogo.png"
   },
   {
     id: 4,

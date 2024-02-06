@@ -33,13 +33,13 @@ const social_links = [
     name: "Facebook",
   },
   {
-    link: "https://youtube.com/@theservantofgodtheheartoft4564?si=aGAqxxR71b7VLoEK",
+    link: "https://youtube.com/@isgholymedia1255",
     target: "_blank",
     icon: "fab fa-youtube",
     name: "Youtube",
   },
   {
-    link: "https://chat.whatsapp.com/KVpmWkhAfLT1cqgyo7JTbP",
+    link: "https://api.whatsapp.com/send?phone=447565848499",
     target: "_blank",
     icon: "fa-brands fa-whatsapp",
     name: "Twitter",
