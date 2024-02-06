@@ -18,7 +18,7 @@ const footer_data = [
     links: [
       { name: "Contact us", link: "/contact" },
       { name: "Online Chat", link: "/chat" },
-      { name: "Whatsapp", link: "https://chat.whatsapp.com/KVpmWkhAfLT1cqgyo7JTbP" },
+      { name: "Whatsapp", link: "https://api.whatsapp.com/send?phone=447565848499" },
     ],
   },
 ];
