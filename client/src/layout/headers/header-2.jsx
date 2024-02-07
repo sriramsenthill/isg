@@ -31,19 +31,21 @@ const HeaderTwo = () => {
                     </div>
                   </div>
                   <style jsx>{`
-  @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
-  h1 {
-    font-family: 'UnifrakturMaguntia', cursive;
-    color: white;
-    text-align: center;
-  }
-`}</style>
+                      @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+                      h1 {
+                        font-family: 'Merriweather', serif;
+                        color: white;
+                        text-align: center;
+                      }
+                      p {
+                        font-family: 'Merriweather', serif;
+                        color: white;
+                        text-align: center;
+                      }
+                  `}</style>
 
-                  <h1>
-                    ISG Tamil Bible College & Research Center
-                    England & Wales, Scotland
-                  </h1>
-
+                  <h1 style={{ fontSize: "25px" }}>ISG Tamil Bible College & Research Center</h1>
+                  <p>England & Wales, Scotland</p>
 
                 </div>
               </div>
