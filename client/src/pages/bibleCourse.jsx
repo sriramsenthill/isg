@@ -29,7 +29,7 @@ const Index = () => {
       <CourseGrid />
       <AudioPlayer
         autoPlay
-        src="/assets/img/isg/song.mp3"
+        src="/assets/img/isg/bibleCourse.mp3"
         onPlay={e => console.log("onPlay")}
       // other props here
       />

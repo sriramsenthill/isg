@@ -33,9 +33,9 @@ const pastorFellowship = () => {
       />
       <AudioPlayer
         autoPlay
-        src="/assets/img/isg/diosis.mp3"
+        src="/assets/img/isg/pastorFellowship.mp3"
         onPlay={(e) => console.log("onPlay")}
-        // other props here
+      // other props here
       />
     </WrapperFour>
   );

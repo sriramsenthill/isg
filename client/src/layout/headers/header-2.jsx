@@ -18,8 +18,11 @@ const HeaderTwo = () => {
   return (
     <>
       <header className="header_white_area d-none d-xl-block" style={{
-        backgroundColor: "#5f096f",
-        backgroundImage: `url(/assets/img/bg/shape-bg-02.png)`,
+        backgroundColor: "rgba(95, 9, 111)", // Decrease opacity by adjusting the alpha value
+        backgroundImage: `url(/assets/img/isg/london.png)`,
+        backgroundPosition: 'center top', // Move the image up a bit
+        backgroundSize: 'cover', // Optional: adjust the background size if necessary
+        paddingTop: '20px', // Optional: add padding to adjust the vertical position
       }}>
         <div className="header__area pt-40 pb-3">
           <div className="main-header">
