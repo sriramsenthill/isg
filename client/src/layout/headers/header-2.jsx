@@ -44,7 +44,7 @@ const HeaderTwo = () => {
                       }
                   `}</style>
 
-                  <h1 style={{ fontSize: "25px" }}>ISG Tamil Bible College & Research Center</h1>
+                  <h1 style={{ fontSize: "26px" }}>ISG TAMIL BIBLE COLLEGE & RESEARCH CENTER</h1>
                   <p>England & Wales, Scotland</p>
 
                 </div>
