@@ -51,7 +51,7 @@ const menu_data = [
     link: "/certificate/paster_fellowship",
     has_dropdown: true,
     sub_menus: [
-      { link: "/certificate/paster_fellowship", title: "Pastor Fellowship" },
+      { link: "/certificate/paster_fellowship", title: "Pastor Oridination" },
       { link: "/certificate/evangelist", title: "Evangelist" },
       { link: "/certificate/reverent", title: "Reverend" },
       { link: "/certificate/appostalic", title: "Apostolic" },

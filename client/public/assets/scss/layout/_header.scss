@@ -762,10 +762,10 @@ ul.bili_circle li::before {
 }
 
 .header-menu-area.header-sticky {
-    background: linear-gradient(to right, #a91c57, #5f0a6f);
-    /* Replace with your desired gradient colors */
-
-    background-color: var(--tp-common-white);
+    background-color: #5f096f;
+    /* Changed to the desired background color */
+    background-image: url("/assets/img/bg/shape-bg-02.png");
+    /* Changed to the correct URL syntax and removed backticks */
     padding-top: 0;
     padding-bottom: 0;
 }

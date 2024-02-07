@@ -17,8 +17,11 @@ const HeaderTwo = () => {
 
   return (
     <>
-      <header className="header_white_area d-none d-xl-block" style={{ background: 'linear-gradient(to right, #a91c57, #5f0a6f)' }}>
-        <div className="header__area pt-40 pb-5">
+      <header className="header_white_area d-none d-xl-block" style={{
+        backgroundColor: "#5f096f",
+        backgroundImage: `url(/assets/img/bg/shape-bg-02.png)`,
+      }}>
+        <div className="header__area pt-40 pb-3">
           <div className="main-header">
             <div className="container">
               <div className="logo-area d-flex align-items-center justify-content-center">
@@ -44,7 +47,7 @@ const HeaderTwo = () => {
                       }
                   `}</style>
 
-                  <h1 style={{ fontSize: "26px" }}>ISG TAMIL BIBLE COLLEGE & RESEARCH CENTER</h1>
+                  <h1 style={{ fontSize: "23px" }}>ISG TAMIL BIBLE COLLEGE & RESEARCH CENTER</h1>
                   <p>England & Wales, Scotland</p>
 
                 </div>
@@ -71,7 +74,7 @@ const HeaderTwo = () => {
                           <button
                             className="btn"
                             style={{
-                              backgroundColor: "#5f096f",
+                              backgroundColor: "black",
                               color: "white",
                               border: "none",
                               padding: "6px 15px", // Adjust padding as needed
