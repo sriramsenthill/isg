@@ -13,6 +13,20 @@ const CourseArea = () => {
 
   const router = useRouter();
 
+  const handleDownload = (fileName, filePath) => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.setAttribute('download', fileName); // Set the download attribute to force download
+    document.body.appendChild(link);
+
+    // Simulate a click on the link to trigger the download
+    link.click();
+
+    // Clean up
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <WrapperFour>
@@ -101,6 +115,7 @@ const CourseArea = () => {
                           <div>
                             <button
                               className="btn"
+                              onClick={() => handleDownload(item.fileName, item.filePath)}
                               style={{
                                 backgroundColor: "#5f096f",
                                 color: "white",

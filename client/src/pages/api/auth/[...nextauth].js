@@ -10,14 +10,18 @@ export const authOptions = {
             credentials: {},
 
             async authorize(credentials) {
-                const { email, password } = credentials;
+                const { email, password, REG_NO } = credentials;
 
                 try {
+                    let requestData;
+                    if (REG_NO) {
+                        requestData = { REG_NO };
+                    } else {
+                        requestData = { email, password };
+                    }
+
                     // Make a POST request to the backend route for credential validation
-                    const response = await axios.post(process.env.SERVER_HOST + "/signIn", {
-                        email,
-                        password,
-                    });
+                    const response = await axios.post(process.env.SERVER_HOST + "/signIn", requestData);
 
                     const user = response.data;
 

@@ -65,7 +65,9 @@ const our_course_data = [
     course_name: "திருமறை ஆராய்ச்சி மையம்",
     cn_color: "c-color-red",
     course_price: "29.99",
-    link: "/prof/sudarshan"
+    link: "/prof/sudarshan",
+    fileName: 'relationship.pdf',
+    filePath: '/assets/img/files/relationship.pdf'
   },
   {
     id: 4,
@@ -82,8 +84,9 @@ const our_course_data = [
     cn_color: "c-color-yellow",
     course_price: "29.99",
     total_start: "125",
-    link: "/prof/sasikumar"
-
+    link: "/prof/sasikumar",
+    fileName: 'BSISGNIGHT.pdf',
+    filePath: '/assets/img/files/BSISGNIGHT.pdf'
   },
   {
     id: 5,

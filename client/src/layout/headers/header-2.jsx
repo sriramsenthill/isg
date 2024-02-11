@@ -86,8 +86,17 @@ const HeaderTwo = () => {
                             onClick={handleLogout}>Logout</button></li>
                       </>
                     ) : (
-                      // If JWT token is not present, show sign-in link
-                      <li><Link href="/sign-in"><i className="fi fi-rr-user"></i></Link></li>
+                      <button
+                        className="btn"
+                        style={{
+                          backgroundColor: "black",
+                          color: "white",
+                          border: "none",
+                          padding: "6px 15px", // Adjust padding as needed
+                          borderRadius: "5px", // Adjust border radius as needed
+                        }}
+                      ><Link href="/sign-in">Login/Register</Link></button>
+
                     )}
                     <li><a href="#" className="tp-menu-toggle d-xl-none"><i className="icon_ul"></i></a></li>
                   </ul>

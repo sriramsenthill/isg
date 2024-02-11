@@ -30,7 +30,9 @@ const freeCourse = [
         course_name: "திருமறை ஆராய்ச்சி மையம்",
         cn_color: "c-color-red",
         course_price: "29.99",
-        link: "/prof/sudarshan"
+        link: "/prof/sudarshan",
+        fileName: 'relationship.pdf',
+        filePath: '/assets/img/files/relationship.pdf'
     },
 ];
 export default freeCourse;

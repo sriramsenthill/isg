@@ -4,7 +4,9 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+   const [loginType, setLoginType] = useState('student'); // Default login type is 'normal'
    const [email, setEmail] = useState('');
+   const [registerNumber, setRegisterNumber] = useState('');
    const [password, setPassword] = useState('');
    const [error, setError] = useState('');
    const [loading, setLoading] = useState(false);
@@ -17,9 +19,20 @@ const LoginForm = () => {
       try {
          setLoading(true); // Set loading state to true
 
+         let credentials = {};
+         if (loginType === 'others') {
+            credentials = {
+               email,
+               password,
+            };
+         } else if (loginType === 'student') {
+            credentials = {
+               REG_NO: registerNumber,
+            };
+         }
+
          const res = await signIn("credentials", {
-            email,
-            password,
+            ...credentials,
             redirect: false,
          });
 
@@ -36,6 +49,7 @@ const LoginForm = () => {
          setLoading(false); // Set loading state to false in case of success or error
       }
    };
+
 
    return (
       <>
@@ -54,15 +68,50 @@ const LoginForm = () => {
                         </Link>
                         <br></br>
                         <h3 className="text-center mb-60" style={{ color: "white" }}>Login From Here</h3>
-                        <form onSubmit={(e) => e.preventDefault()}>
-                           <label htmlFor="email" style={{ color: "white" }}>Email <span>**</span></label>
-                           <input id="email" type="text" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                           <label htmlFor="pass" style={{ color: "white" }}>Password <span>**</span></label>
-                           <input id="pass" type="password" placeholder="Enter password..." value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <form onSubmit={handleLogin}>
+                           <label htmlFor="loginType" style={{ color: "white" }}>Login Type</label>
+                           <select id="loginType" value={loginType} onChange={(e) => setLoginType(e.target.value)} style={{
+                              width: "100%",
+                              padding: "18px",
+                              fontSize: "16px",
+                              border: "1px solid #ccc",
+                              backgroundColor: "#fff",
+                              color: "#333",
+                              cursor: "pointer",
+                           }}>
+                              <option value="student">Student</option>
+                              <option value="others">Others</option>
+                           </select>
+                           {loginType === 'others' ? (
+                              <>
+                                 <label htmlFor="email" style={{ color: "white" }}>Email <span>**</span></label>
+                                 <input id="email" type="text" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                              </>
+                           ) : (
+                              <>
+                                 <label htmlFor="registerNumber" style={{ color: "white" }}>Register Number <span>**</span></label>
+                                 <input
+                                    id="registerNumber"
+                                    type="text"
+                                    placeholder="Enter Register Number"
+                                    value={registerNumber}
+                                    onChange={(e) => setRegisterNumber(e.target.value.toUpperCase())}
+                                 />
+                              </>
+                           )}
+                           {loginType === 'others' ?
+                              (
+                                 <>
+                                    <label htmlFor="pass" style={{ color: "white" }}>Password <span>**</span></label>
+                                    <input id="pass" type="password" placeholder="Enter password..." value={password} onChange={(e) => setPassword(e.target.value)} />
+                                 </>
+                              ) : (<></>)
+                           }
                            <div className="mt-10"></div>
-                           <button className="tp-btn w-100" onClick={handleLogin} disabled={loading}>
+                           <button className="tp-btn w-100" type="submit" disabled={loading}>
                               {loading ? 'Loading...' : 'Login Now'}
-                           </button>                           {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+                           </button>
+                           {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
                            <div className="or-divide" style={{ color: "black" }}><span>or</span></div>
                            <Link href="/register" className="tp-border-btn w-100">Register Now</Link>
                            <Link href="/" className="tp-border-btn w-100">Go To Home</Link>
@@ -77,4 +126,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-

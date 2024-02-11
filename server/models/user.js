@@ -25,6 +25,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    REG_NO: {
+        type: String,
+    }
 });
 
 const User = mongoose.model("User", userSchema);
