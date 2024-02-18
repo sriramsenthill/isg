@@ -8,7 +8,7 @@ import Breadcrumb from "../components/bredcrumb/breadcrumb";
 const BibleResearchCentre = () => {
   // Create an array of image filenames
   const imageFilenames = Array.from(
-    { length: 4 },
+    { length: 8 },
     (_, index) => `${index + 1}.jpeg`
   );
 
@@ -58,7 +58,7 @@ const BibleResearchCentre = () => {
         autoPlay
         src="/assets/img/isg/bible.mp3"
         onPlay={(e) => console.log("onPlay")}
-        // other props here
+      // other props here
       />
     </Wrapper>
   );

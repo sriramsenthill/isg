@@ -7,6 +7,7 @@ const ContactForm = () => {
         className="contact-area pb-60 wow fadeInUp"
         data-wow-duration=".8s"
         data-wow-delay=".2s"
+        style={{ margin: "16px" }}
       >
         <div className="container">
           <div className="row">
@@ -63,14 +64,7 @@ const ContactForm = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-6 col-md-12 col-12">
-              <div className="contact-bg mb-60">
-                <img
-                  src="/assets/img/bg/contact-sub-bg-01.png"
-                  alt="contact-bg"
-                />
-              </div>
-            </div>
+
           </div>
         </div>
       </section>

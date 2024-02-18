@@ -114,7 +114,7 @@ const InstructorPortfolioArea = () => {
                 <div className="instructor-sidebar-widget">
                   <div className="isntruc-side-content text-center">
                     <h4 className="side-instructor-title mb-15">
-                      Dr.Sudarshan Ashokan
+                      Dr. Sudharshan Asokan (Shan Shalom)
                     </h4>
                     <p>
                       தேவனுடனான நமது உறவு! தேவனோடு உள்ள உறவை புரிதலும், தேவனை
