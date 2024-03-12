@@ -1,14 +1,5 @@
 const User = require("./models/user");
-const nodemailer = require("nodemailer");
 
-const transporter = nodemailer.createTransport({
-    // Your email configuration, such as service, auth, etc.
-    service: "gmail",
-    auth: {
-        user: "senthilnathan.shanmugam2003@gmail.com",
-        pass: "bity hppa lzyv dcbk",
-    },
-});
 
 const registerUser = async (req, res) => {
     try {
@@ -26,9 +17,6 @@ const registerUser = async (req, res) => {
         // Save the new user to the database
         const savedUser = await newUser.save();
 
-        // Send email notification
-        await sendRegistrationEmail(savedUser);
-
         // Send the saved user as the response
         res.json(savedUser);
     } catch (error) {
@@ -37,25 +25,18 @@ const registerUser = async (req, res) => {
     }
 };
 
-const sendRegistrationEmail = async (user) => {
-    const mailOptions = {
-        from: "senthilnathan.shanmugam2003@gmail.com",
-        to: "isgministriesuk@gmail.com",
-        subject: "New ISG User Registration",
-        text: `A new user has registered with the following details:\n\n
-      Name: ${user.name}\n
-      Email: ${user.email}\n
-      Phone Number: ${user.number}\n,
-      Type: ${user.type}`
-    };
-
+const getUsers = async (req, res) => {
     try {
-        await transporter.sendMail(mailOptions);
-        console.log("Email sent successfully");
+        // Retrieve all users from the User collection
+        const users = await User.find({});
+
+        // Send the retrieved users as the response
+        res.json(users);
     } catch (error) {
-        console.error("Error sending email:", error);
+        console.error("Error retrieving users:", error);
+        res.status(500).json({ error: "Internal Server Error" });
     }
 };
 
 
-module.exports = { registerUser };
+module.exports = { registerUser, getUsers };
