@@ -4,34 +4,23 @@ import React from "react";
 // suitable_data
 const suitable_data = [
   {
-    id: 1,
-    title: (
-      <>
-        Do you want to <span>Learn</span> here?
-      </>
-    ),
-    des: <>Dramatically supply transpa deliverables before & you.</>,
-    img: "/assets/img/bg/suit-bg-01.png",
-  },
-  {
     id: 2,
     title: (
       <>
         Do you want to <span>Learn</span> here?
       </>
     ),
-    des: <>Dramatically supply transpa deliverables before & you.</>,
+    des: <>Course registration for the year 2025 are now open!</>,
     img: "/assets/img/bg/suit-bg-02.png",
   },
 ];
 
-const SuitableArea = ({ style_2}) => {
+const SuitableArea = ({ style_2 }) => {
   return (
     <>
       <section
-        className={`suitable-area  ${
-          style_2 ? "bg-bottom grey-bg pt-115" : ""
-        } pb-90 wow fadeInUp`}
+        className={`suitable-area  ${style_2 ? "bg-bottom grey-bg pt-115" : ""
+          } pb-90 wow fadeInUp`}
         data-wow-duration="1s"
         data-wow-delay=".4s"
         style={{
@@ -44,27 +33,26 @@ const SuitableArea = ({ style_2}) => {
           <div className="row text-center">
             <div className="col-lg-12">
               <div className="section-title mb-60">
-                <span className="tp-sub-title mb-25">Join With Us</span>
+                <span className="tp-sub-title mb-25">Register With Us</span>
                 <h2 className="tp-section-title">
-                  Which One is Suitable For You?
+                  2025 Ordination and Student Graduate Registration Open
                 </h2>
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="d-flex justify-content-center">
             {suitable_data.map((item) => (
               <div key={item.id} className="col-xl-6">
                 <div
-                  className={`tp-suit mb-30 p-relative ${
-                    style_2 ? "white-bg" : ""
-                  }`}
+                  className={`tp-suit mb-30 p-relative ${style_2 ? "white-bg" : ""
+                    }`}
                 >
                   <div className="tp-suit__content">
                     <h4 className="tp-suit__title">{item.title}</h4>
                     <p>{item.des}</p>
                     <div className="tp-suit__btn pt-5">
-                      <Link href="/contact" className="tp-border-btn">
-                        Join Now
+                      <Link href="/registration" className="tp-border-btn">
+                        Register Now
                       </Link>
                     </div>
                   </div>

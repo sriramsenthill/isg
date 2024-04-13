@@ -1,320 +1,296 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const CheckoutArea = () => {
-    
-    const [isOpen, setIsOpen] = useState(false)
-    const [isShipOpen, setIsShipOpen] = useState(false);
-    return (
-        <>
-            <section className="checkout-area pb-70 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
-            <div className="container">
-               <form onSubmit={(e) => e.preventDefault()}>
-                  <div className="row">
-                        <div className="col-lg-6 col-md-12">
-                           <div className="checkbox-form">
-                              <h3>Billing Details</h3>
-                              <div className="row">
-                                    <div className="col-md-12">
-                                       <div className="country-select">
-                                          <label>Country <span className="required">*</span></label>
-                                          <select>
-                                                <option value="volvo">United States</option>
-                                                <option value="saab">Algeria</option>
-                                                <option value="mercedes">Canada</option>
-                                                <option value="audi">Germany</option>
-                                                <option value="audi2">England</option>
-                                                <option value="audi3">Qatar</option>
-                                                <option value="audi5">Dominican Republic</option>
-                                          </select>
-                                       </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                       <div className="checkout-form-list">
-                                          <label>First Name <span className="required">*</span></label>
-                                          <input type="text" placeholder="" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                       <div className="checkout-form-list">
-                                          <label>Last Name <span className="required">*</span></label>
-                                          <input type="text" placeholder="" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                       <div className="checkout-form-list">
-                                          <label>Company Name</label>
-                                          <input type="text" placeholder="" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                       <div className="checkout-form-list">
-                                          <label>Address <span className="required">*</span></label>
-                                          <input type="text" placeholder="Street address" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                       <div className="checkout-form-list">
-                                          <input type="text" placeholder="Apartment, suite, unit etc. (optional)" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                       <div className="checkout-form-list">
-                                          <label>Town / City <span className="required">*</span></label>
-                                          <input type="text" placeholder="Town / City" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                       <div className="checkout-form-list">
-                                          <label>State / County <span className="required">*</span></label>
-                                          <input type="text" placeholder="" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                       <div className="checkout-form-list">
-                                          <label>Postcode / Zip <span className="required">*</span></label>
-                                          <input type="text" placeholder="Postcode / Zip" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                       <div className="checkout-form-list">
-                                          <label>Email Address <span className="required">*</span></label>
-                                          <input type="email" placeholder="" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                       <div className="checkout-form-list">
-                                          <label>Phone <span className="required">*</span></label>
-                                          <input type="text" placeholder="Postcode / Zip" />
-                                       </div>
-                                    </div>
-                                    <div className="col-md-12">
-                                       <div className="checkout-form-list create-acc">
-                                          <input id="cbox" type="checkbox" onClick={() => setIsOpen(!isOpen)} />
-                                          <label htmlFor="cbox">Create an account?</label>
-                                       </div>
-                                       {
-                                        isOpen && 
+   const [formData, setFormData] = useState({
+      country: '',
+      name: '',
+      fatherName: '',
+      dob: '',
+      passportPhoto: null,
+      married: '',
+      address: '',
+      city: '',
+      state: '',
+      postalCode: '',
+      email: '',
+      whatsappNumber: '',
+      churchName: '',
+      churchRegisterNumber: '',
+      churchAddress: '',
+      churchPhoneNumber: '',
+      churchMembers: '',
+      churchExperience: '',
+      courseCertificate: '',
+      attestation: '',
+   });
+   const [errors, setErrors] = useState({});
 
-                                       <div id="cbox_info" className={`checkout-form-list create-account ${isOpen ? "d-block" : ""}`}>
-                                          <p>Create an account by entering the information below. If you are a returning
-                                                customer please login at the top of the page.</p>
-                                          <label>Account password <span className="required">*</span></label>
-                                          <input type="password" placeholder="password" />
-                                       </div>
-                                       }
-                                    </div>
+   const router = useRouter();
+
+   const handleChange = (e) => {
+      const { name, value, files } = e.target;
+      if (name === 'passportPhoto') {
+         setFormData({ ...formData, [name]: files[0] });
+      } else {
+         setFormData({ ...formData, [name]: value });
+      }
+   };
+
+   const handleSubmit = async (e) => {
+      e.preventDefault();
+
+      // Validate form fields
+      const validationErrors = {};
+      for (const [key, value] of Object.entries(formData)) {
+         if (!value && key !== 'passportPhoto') {
+            validationErrors[key] = `This Field is required.`;
+         }
+      }
+
+      if (Object.keys(validationErrors).length > 0) {
+         setErrors(validationErrors);
+         return;
+      }
+
+      try {
+
+         await axios.post('http://localhost:3000/registration', formData);
+         router.push('/');
+      } catch (error) {
+         console.error(error);
+      }
+   };
+
+   return (
+      <>
+         <img src="/assets/img/isg/logoAni.gif" alt="logo" style={{ width: '150px', height: '150px', marginLeft: '280px' }} />
+         <section className="checkout-area pb-70 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
+            <div className="container">
+               <form onSubmit={handleSubmit}>
+                  <div className="row">
+                     <div className="col-lg-6 col-md-12">
+                        <div className="checkbox-form">
+                           <h3>2025 Ordination and Student Graduate Registration</h3>
+                           <h5>**⁠ ⁠Imparting BIBLICAL KNOWLEDGE**</h5>
+                           <h5> ** ⁠Developing SPIRITUAL CHARACTER**</h5>
+                           <h5>  **⁠ ⁠Improving MINISTERIAL SKILLS**</h5>
+                           <br />
+                           <div className="row">
+                              <h8>Please Provide Your Details</h8>
+                              <div className="col-md-12">
+                                 <div className="country-select">
+                                    <label>Country <span className="required">*</span></label>
+                                    <select name="country" value={formData.country} onChange={handleChange}>
+                                       <option value="">Select Country</option>
+                                       <option value="United Kingdom">United Kingdom</option>
+                                       <option value="United States">United States</option>
+                                       <option value="India">India</option>
+                                       <option value="Sri Lanka">Sri Lanka</option>
+                                       <option value="England">England</option>
+                                       <option value="Australia">Australia</option>
+                                       <option value="South Wales">South Wales</option>
+                                       <option value="Germany">Germany</option>
+                                       <option value="South Wales">France</option>
+                                       <option value="Germany">Italy</option>
+                                       <option value="South Wales">Singapore</option>
+                                       <option value="Germany">Malaysia</option>
+                                    </select>
+                                    {errors.country && <div className="error" style={{ color: 'red' }}>{errors.country}</div>}
+                                 </div>
                               </div>
-                              <div className="different-address">
-                                    <div className="ship-different-title">
-                                       <h3>
-                                          <label htmlFor="ship-box">Ship to a different address?</label>
-                                          <input id="ship-box" type="checkbox" onClick={() => setIsShipOpen(!isShipOpen)} />
-                                       </h3>
-                                    </div>
-                                    {
-                                        isShipOpen && 
-                                    <div id="ship-box-info" className={`${isShipOpen ? "d-block" : ""}`}>
-                                       <div className="row">
-                                          <div className="col-md-12">
-                                                <div className="country-select">
-                                                   <label>Country <span className="required">*</span></label>
-                                                   <select>
-                                                      <option value="volvo">bangladesh</option>
-                                                      <option value="saab">Algeria</option>
-                                                      <option value="mercedes">Afghanistan</option>
-                                                      <option value="audi">Ghana</option>
-                                                      <option value="audi2">Albania</option>
-                                                      <option value="audi3">Bahrain</option>
-                                                      <option value="audi4">Colombia</option>
-                                                      <option value="audi5">Dominican Republic</option>
-                                                   </select>
-                                                </div>
-                                          </div>
-                                          <div className="col-md-6">
-                                                <div className="checkout-form-list">
-                                                   <label>First Name <span className="required">*</span></label>
-                                                   <input type="text" placeholder="" />
-                                                </div>
-                                          </div>
-                                          <div className="col-md-6">
-                                                <div className="checkout-form-list">
-                                                   <label>Last Name <span className="required">*</span></label>
-                                                   <input type="text" placeholder="" />
-                                                </div>
-                                          </div>
-                                          <div className="col-md-12">
-                                                <div className="checkout-form-list">
-                                                   <label>Company Name</label>
-                                                   <input type="text" placeholder="" />
-                                                </div>
-                                          </div>
-                                          <div className="col-md-12">
-                                                <div className="checkout-form-list">
-                                                   <label>Address <span className="required">*</span></label>
-                                                   <input type="text" placeholder="Street address" />
-                                                </div>
-                                          </div>
-                                          <div className="col-md-12">
-                                                <div className="checkout-form-list">
-                                                   <input type="text" placeholder="Apartment, suite, unit etc. (optional)" />
-                                                </div>
-                                          </div>
-                                          <div className="col-md-12">
-                                                <div className="checkout-form-list">
-                                                   <label>Town / City <span className="required">*</span></label>
-                                                   <input type="text" placeholder="Town / City" />
-                                                </div>
-                                          </div>
-                                          <div className="col-md-6">
-                                                <div className="checkout-form-list">
-                                                   <label>State / County <span className="required">*</span></label>
-                                                   <input type="text" placeholder="" />
-                                                </div>
-                                          </div>
-                                          <div className="col-md-6">
-                                                <div className="checkout-form-list">
-                                                   <label>Postcode / Zip <span className="required">*</span></label>
-                                                   <input type="text" placeholder="Postcode / Zip" />
-                                                </div>
-                                          </div>
-                                          <div className="col-md-6">
-                                                <div className="checkout-form-list">
-                                                   <label>Email Address <span className="required">*</span></label>
-                                                   <input type="email" placeholder="" />
-                                                </div>
-                                          </div>
-                                          <div className="col-md-6">
-                                                <div className="checkout-form-list">
-                                                   <label>Phone <span className="required">*</span></label>
-                                                   <input type="text" placeholder="Postcode / Zip" />
-                                                </div>
-                                          </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Name <span className="required">*</span></label>
+                                    <input type="text" name="name" value={formData.name} onChange={handleChange} />
+                                    {errors.name && <div className="error" style={{ color: 'red' }}>{errors.name}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Father Name <span className="required">*</span></label>
+                                    <input type="text" name="fatherName" value={formData.fatherName} onChange={handleChange} />
+                                    {errors.fatherName && <div className="error" style={{ color: 'red' }}>{errors.fatherName}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Date of Birth</label>
+                                    <input type="text" name="dob" value={formData.dob} onChange={handleChange} />
+                                    {errors.dob && <div className="error" style={{ color: 'red' }}>{errors.dob}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Passport Photo</label>
+                                    <input type="file" name="passportPhoto" onChange={handleChange} />
+                                    {errors.passportPhoto && <div className="error" style={{ color: 'red' }}>{errors.passportPhoto}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Are you married? <span className="required">*</span></label>
+                                    <div>
+                                       <div className="d-flex align-items-center justify-content-start">
+                                          <input
+                                             type="radio"
+                                             id="married-yes"
+                                             name="married"
+                                             value="yes"
+                                             checked={formData.married === 'yes'}
+                                             onChange={handleChange}
+                                             required
+                                          />
+                                          <label htmlFor="married-yes" className="mx-3">
+                                             Yes
+                                          </label>
+                                          <input
+                                             type="radio"
+                                             id="married-no"
+                                             name="married"
+                                             value="no"
+                                             checked={formData.married === 'no'}
+                                             onChange={handleChange}
+                                             required
+                                          />
+                                          <label htmlFor="married-no" className="mx-3">
+                                             No
+                                          </label>
                                        </div>
                                     </div>
-                                    }
-                                    <div className="order-notes">
-                                       <div className="checkout-form-list">
-                                          <label>Order Notes</label>
-                                          <textarea id="checkout-mess" cols="30" rows="10"
-                                                placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
-                                       </div>
-                                    </div>
+                                    {errors.married && <div className="error" style={{ color: 'red' }}>{errors.married}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Address <span className="required">*</span></label>
+                                    <input type="text" name="address" value={formData.address} onChange={handleChange} />
+                                    {errors.address && <div className="error" style={{ color: 'red' }}>{errors.address}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>City <span className="required">*</span></label>
+                                    <input type="text" name="city" value={formData.city} onChange={handleChange} />
+                                    {errors.city && <div className="error">{errors.city}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>State <span className="required">*</span></label>
+                                    <input type="text" name="state" value={formData.state} onChange={handleChange} />
+                                    {errors.state && <div className="error" style={{ color: 'red' }}>{errors.state}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Postcode / Zip <span className="required">*</span></label>
+                                    <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} />
+                                    {errors.postalCode && <div className="error" style={{ color: 'red' }}>{errors.postalCode}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Email Address <span className="required">*</span></label>
+                                    <input type="email" name="email" value={formData.email} onChange={handleChange} />
+                                    {errors.email && <div className="error" style={{ color: 'red' }}>{errors.email}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Whatsapp Number<span className="required">*</span></label>
+                                    <input type="text" name="whatsappNumber" value={formData.whatsappNumber} onChange={handleChange} />
+                                    {errors.whatsappNumber && <div className="error" style={{ color: 'red' }}>{errors.whatsappNumber}</div>}
+                                 </div>
+                              </div>
+                              <h6>Church Details</h6>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Church Name <span className="required">*</span></label>
+                                    <input type="text" name="churchName" value={formData.churchName} onChange={handleChange} />
+                                    {errors.churchName && <div className="error" style={{ color: 'red' }}>{errors.churchName}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Church Register Number</label>
+                                    <input type="text" name="churchRegisterNumber" value={formData.churchRegisterNumber} onChange={handleChange} />
+                                    {errors.churchRegisterNumber && <div className="error" style={{ color: 'red' }}>{errors.churchRegisterNumber}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Church Address <span className="required">*</span></label>
+                                    <input type="text" name="churchAddress" value={formData.churchAddress} onChange={handleChange} />
+                                    {errors.churchAddress && <div className="error" style={{ color: 'red' }}>{errors.churchAddress}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>Church Phone Number <span className="required">*</span></label>
+                                    <input type="text" name="churchPhoneNumber" value={formData.churchPhoneNumber} onChange={handleChange} />
+                                    {errors.churchPhoneNumber && <div className="error" style={{ color: 'red' }}>{errors.churchPhoneNumber}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>No of Church Members <span className="required">*</span></label>
+                                    <input type="text" name="churchMembers" value={formData.churchMembers} onChange={handleChange} />
+                                    {errors.churchMembers && <div className="error" style={{ color: 'red' }}>{errors.churchMembers}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <div className="checkout-form-list">
+                                    <label>No of Years Experience in Church Ministry <span className="required">*</span></label>
+                                    <input type="text" name="churchExperience" value={formData.churchExperience} onChange={handleChange} />
+                                    {errors.churchExperience && <div className="error" style={{ color: 'red' }}>{errors.churchExperience}</div>}
+                                 </div>
+                              </div>
+                              <h6>Certificate Details</h6>
+                              <div className="col-md-12">
+                                 <div className="country-select">
+                                    <label>Select Course Certificate <span className="required">*</span></label>
+                                    <select name="courseCertificate" value={formData.courseCertificate} onChange={handleChange}>
+                                       <option value="">Select Course Certificate</option>
+                                       <option value="Pastor Ordination">Pastor Ordination</option>
+                                       <option value="Evangelist">Evangelist</option>
+                                       <option value="Reverend Ordination">Reverend Ordination</option>
+                                       <option value="Apostolic Ordination">Apostolic Ordination</option>
+                                       <option value="Doctorate Ordination">Doctorate Ordination</option>
+                                    </select>
+                                    {errors.courseCertificate && <div className="error" style={{ color: 'red' }}>{errors.courseCertificate}</div>}
+                                 </div>
+                              </div>
+                              <div className="col-md-12">
+                                 <div className="country-select">
+                                    <label>Attestation by college <span className="required">*</span></label>
+                                    <select name="attestation" value={formData.attestation} onChange={handleChange}>
+                                       <option value="">Select Attestation</option>
+                                       <option value="Bth Bachelor's Degree">Bth Bachelor's Degree</option>
+                                       <option value="Mth Master's Degree">Mth Master's Degree</option>
+                                       <option value="Diplomo in Theology">Diplomo in Theology</option>
+                                       <option value="Diplomo in Theology">Diploma in Divinity - D.D.</option>
+                                       <option value="Diplomo in Theology">Bachelor in Divinity - B.D</option>
+                                       <option value="Diplomo in Theology"> Master of Divinity - M.D</option>
+                                    </select>
+                                    {errors.attestation && <div className="error" style={{ color: 'red' }}>{errors.attestation}</div>}
+                                 </div>
+                              </div>
+                              <div className="order-button-payment mt-20">
+                                 <button type="submit" className="tp-btn">
+                                    Submit Application
+                                 </button>
                               </div>
                            </div>
                         </div>
-                        <div className="col-lg-6 col-md-12">
-                           <div className="your-order mb-30 ">
-                              <h3>Your order</h3>
-                              <div className="your-order-table table-responsive">
-                                    <table>
-                                       <thead>
-                                          <tr>
-                                             <th className="product-name">Product</th>
-                                             <th className="product-total">Total</th>
-                                          </tr>
-                                       </thead>
-                                       <tbody>
-                                          <tr className="cart_item">
-                                                <td className="product-name">
-                                                   Vestibulum suscipit <strong className="product-quantity"> × 1</strong>
-                                                </td>
-                                                <td className="product-total">
-                                                   <span className="amount">$165.00</span>
-                                                </td>
-                                          </tr>
-                                          <tr className="cart_item">
-                                                <td className="product-name">
-                                                   Vestibulum dictum magna <strong className="product-quantity"> × 1</strong>
-                                                </td>
-                                                <td className="product-total">
-                                                   <span className="amount">$50.00</span>
-                                                </td>
-                                          </tr>
-                                       </tbody>
-                                       <tfoot>
-                                          <tr className="cart-subtotal">
-                                                <th>Cart Subtotal</th>
-                                                <td><span className="amount">$215.00</span></td>
-                                          </tr>
-                                          <tr className="shipping">
-                                                <th>Shipping</th>
-                                                <td>
-                                                   <ul>
-                                                      <li>
-                                                            <input type="radio" name="shipping"/>
-                                                            <label>
-                                                               Flat Rate: <span className="amount">$7.00</span>
-                                                            </label>
-                                                      </li>
-                                                      <li>
-                                                            <input type="radio" name="shipping"/>
-                                                            <label>Free Shipping:</label>
-                                                      </li>
-                                                   </ul>
-                                                </td>
-                                          </tr>
-                                          <tr className="order-total">
-                                                <th>Order Total</th>
-                                                <td><strong><span className="amount">$215.00</span></strong>
-                                                </td>
-                                          </tr>
-                                       </tfoot>
-                                    </table>
-                              </div>
-                              <div className="payment-method">
-                                 <div className="accordion" id="checkoutAccordion">
-                                    <div className="accordion-item">
-                                       <h2 className="accordion-header" id="checkoutOne">
-                                          <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#bankOne" aria-expanded="true" aria-controls="bankOne">
-                                          Direct Bank Transfer
-                                          </button>
-                                       </h2>
-                                       <div id="bankOne" className="accordion-collapse collapse show" aria-labelledby="checkoutOne" data-bs-parent="#checkoutAccordion">
-                                          <div className="accordion-body">
-                                          Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div className="accordion-item">
-                                       <h2 className="accordion-header" id="paymentTwo">
-                                          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#payment" aria-expanded="false" aria-controls="payment">
-                                          Cheque Payment
-                                          </button>
-                                       </h2>
-                                       <div id="payment" className="accordion-collapse collapse" aria-labelledby="paymentTwo" data-bs-parent="#checkoutAccordion">
-                                          <div className="accordion-body">
-                                          Please send your cheque to Store Name, Store Street, Store Town, Store
-                                          State / County, Store
-                                          Postcode.
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div className="accordion-item">
-                                       <h2 className="accordion-header" id="paypalThree">
-                                          <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paypal" aria-expanded="false" aria-controls="paypal">
-                                          PayPal
-                                          </button>
-                                       </h2>
-                                       <div id="paypal" className="accordion-collapse collapse" aria-labelledby="paypalThree" data-bs-parent="#checkoutAccordion">
-                                          <div className="accordion-body">
-                                          Pay via PayPal; you can pay with your credit card if you don’t have a
-                                          PayPal account.
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 <div className="order-button-payment mt-20">
-                                    <button type="submit"  className="tp-btn">Place order</button>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
+                     </div>
                   </div>
                </form>
             </div>
-      </section>
-        </>
-    );
+         </section>
+      </>
+   );
 };
 
 export default CheckoutArea;
