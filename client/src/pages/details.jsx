@@ -18,14 +18,7 @@ export default function App() {
         fetchData();
     }, []);
 
-    function downloadImage(base64) {
-        const link = document.createElement('a');
-        link.href = `data:image/jpeg;base64,${base64}`;
-        link.download = 'passport_photo.jpeg';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+
 
     return (
         <div>
@@ -83,7 +76,7 @@ export default function App() {
                                 <TableCell>
                                     {user.passportPhoto && (
                                         <div>
-                                            <button onClick={() => downloadImage(user.passportPhoto)}>Download Passport Photo</button>
+                                            <img src={user.passportPhoto || avatar} alt="" />
                                         </div>
                                     )}
                                 </TableCell>
