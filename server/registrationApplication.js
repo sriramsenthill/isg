@@ -23,6 +23,7 @@ const registration = async (req, res) => {
         courseCertificate,
         attestation,
     } = req.body;
+    console.log(req.body);
 
     try {
         // Validate input fields
@@ -44,7 +45,8 @@ const registration = async (req, res) => {
             !churchMembers ||
             !churchExperience ||
             !courseCertificate ||
-            !attestation
+            !attestation ||
+            !passportPhoto
         ) {
             return res.status(400).send("All fields are required.");
         }

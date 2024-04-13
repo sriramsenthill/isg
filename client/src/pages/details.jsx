@@ -8,7 +8,7 @@ export default function App() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get('http://localhost:3000/getDetails');
+                const response = await axios.get('https://backend.isgbiblecollegeuk.com/getDetails');
                 setUserData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -17,6 +17,15 @@ export default function App() {
 
         fetchData();
     }, []);
+
+    function downloadImage(base64) {
+        const link = document.createElement('a');
+        link.href = `data:image/jpeg;base64,${base64}`;
+        link.download = 'passport_photo.jpeg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
 
     return (
         <div>
@@ -45,6 +54,7 @@ export default function App() {
                             <TableCell>Church Experience</TableCell>
                             <TableCell>Course Certificate</TableCell>
                             <TableCell>Attestation By College</TableCell>
+                            <TableCell>Passport Photo</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -70,6 +80,13 @@ export default function App() {
                                 <TableCell>{user.churchExperience}</TableCell>
                                 <TableCell>{user.courseCertificate}</TableCell>
                                 <TableCell>{user.attestation}</TableCell>
+                                <TableCell>
+                                    {user.passportPhoto && (
+                                        <div>
+                                            <button onClick={() => downloadImage(user.passportPhoto)}>Download Passport Photo</button>
+                                        </div>
+                                    )}
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

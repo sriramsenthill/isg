@@ -15,7 +15,7 @@ const registration = new mongoose.Schema({
         type: String,
     },
     passportPhoto: {
-        passportPhoto: Object,
+        type: String,
     },
     married: {
         type: String,

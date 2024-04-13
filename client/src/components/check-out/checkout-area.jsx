@@ -8,7 +8,6 @@ const CheckoutArea = () => {
       name: '',
       fatherName: '',
       dob: '',
-      passportPhoto: null,
       married: '',
       address: '',
       city: '',
@@ -24,15 +23,20 @@ const CheckoutArea = () => {
       churchExperience: '',
       courseCertificate: '',
       attestation: '',
+      passportPhoto: '',
    });
+
    const [errors, setErrors] = useState({});
 
    const router = useRouter();
 
-   const handleChange = (e) => {
+   const handleChange = async (e) => {
       const { name, value, files } = e.target;
-      if (name === 'passportPhoto') {
-         setFormData({ ...formData, [name]: files[0] });
+
+      if (name === 'passportPhoto' && files && files.length > 0) {
+         const file = files[0];
+         const base64 = await convertToBase64(file);
+         setFormData({ ...formData, [name]: base64 });
       } else {
          setFormData({ ...formData, [name]: value });
       }
@@ -55,8 +59,8 @@ const CheckoutArea = () => {
       }
 
       try {
-
-         await axios.post('http://localhost:3000/registration', formData);
+         console.log(formData);
+         await axios.post('https://backend.isgbiblecollegeuk.com/registration', formData);
          router.push('/');
       } catch (error) {
          console.error(error);
@@ -65,7 +69,7 @@ const CheckoutArea = () => {
 
    return (
       <>
-         <img src="/assets/img/isg/logoAni.gif" alt="logo" style={{ width: '150px', height: '150px', marginLeft: '280px' }} />
+         <img src="/assets/img/isg/logoAni.gif" alt="logo" style={{ width: '150px', height: '150px' }} className="checkout-area wow ml-200 fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s" />
          <section className="checkout-area pb-70 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
             <div className="container">
                <form onSubmit={handleSubmit}>
@@ -88,9 +92,8 @@ const CheckoutArea = () => {
                                        <option value="United States">United States</option>
                                        <option value="India">India</option>
                                        <option value="Sri Lanka">Sri Lanka</option>
-                                       <option value="England">England</option>
                                        <option value="Australia">Australia</option>
-                                       <option value="South Wales">South Wales</option>
+                                       <option value="South Wales">Wales</option>
                                        <option value="Germany">Germany</option>
                                        <option value="South Wales">France</option>
                                        <option value="Germany">Italy</option>
@@ -124,7 +127,14 @@ const CheckoutArea = () => {
                               <div className="col-md-6">
                                  <div className="checkout-form-list">
                                     <label>Passport Photo</label>
-                                    <input type="file" name="passportPhoto" onChange={handleChange} />
+                                    <input
+                                       type="file"
+                                       lable="Image"
+                                       name="passportPhoto"
+                                       id='file-upload'
+                                       accept='.jpeg, .png, .jpg'
+                                       onChange={(e) => handleChange(e)}
+                                    />
                                     {errors.passportPhoto && <div className="error" style={{ color: 'red' }}>{errors.passportPhoto}</div>}
                                  </div>
                               </div>
@@ -277,6 +287,10 @@ const CheckoutArea = () => {
                                     {errors.attestation && <div className="error" style={{ color: 'red' }}>{errors.attestation}</div>}
                                  </div>
                               </div>
+                              <h5>**⁠A PAYMENT IS REQUIRED TO PROCEED, CONTACT THE BELOW NUMBER FOR PAYMENT INFO**</h5>
+                              <h6>ISG DEAN K.JOHN DONALD: +91-9884585263</h6>
+                              <h6>ISG PRINCIPLE S .DAYAMALAR: +91-919600044625</h6>
+                              <h6>ISG ASSISTANT PRINCIPLE SANTHI EBENEZER: +91-9487783048</h6>
                               <div className="order-button-payment mt-20">
                                  <button type="submit" className="tp-btn">
                                     Submit Application
@@ -294,3 +308,16 @@ const CheckoutArea = () => {
 };
 
 export default CheckoutArea;
+
+function convertToBase64(file) {
+   return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+      fileReader.onload = () => {
+         resolve(fileReader.result)
+      };
+      fileReader.onerror = (error) => {
+         reject(error)
+      }
+   })
+}
