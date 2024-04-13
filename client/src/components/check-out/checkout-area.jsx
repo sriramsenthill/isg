@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/router';
+import Modal from './Modal';
+const CheckoutArea = ({ handleClose }) => {
 
-const CheckoutArea = () => {
+   const [isLoading, setIsLoading] = useState(false);
+   const [successMessage, setSuccessMessage] = useState('');
+   const [errorMessage, setErrorMessage] = useState('');
+   const [showModal, setShowModal] = useState(false);
+
    const [formData, setFormData] = useState({
       country: '',
       name: '',
@@ -28,7 +33,6 @@ const CheckoutArea = () => {
 
    const [errors, setErrors] = useState({});
 
-   const router = useRouter();
 
    const handleChange = async (e) => {
       const { name, value, files } = e.target;
@@ -59,11 +63,19 @@ const CheckoutArea = () => {
       }
 
       try {
+         setIsLoading(true);
          console.log(formData);
          await axios.post('https://backend.isgbiblecollegeuk.com/registration', formData);
-         router.push('/');
+         setSuccessMessage('Form submitted successfully!');
+         setErrorMessage('');
+         setShowModal(true);
       } catch (error) {
          console.error(error);
+         setErrorMessage('Error submitting form. Please try again later.');
+         setSuccessMessage('');
+         setShowModal(true);
+      } finally {
+         setIsLoading(false);
       }
    };
 
@@ -293,7 +305,7 @@ const CheckoutArea = () => {
                               <h6>ISG ASSISTANT PRINCIPLE SANTHI EBENEZER: +91-9487783048</h6>
                               <div className="order-button-payment mt-20">
                                  <button type="submit" className="tp-btn">
-                                    Submit Application
+                                    {isLoading ? 'Loading...' : 'Submit Application'}
                                  </button>
                               </div>
                            </div>
@@ -303,6 +315,23 @@ const CheckoutArea = () => {
                </form>
             </div>
          </section>
+         <Modal show={showModal} onClose={() => setShowModal(false)}>
+            {successMessage && (
+               <div className="success-message" style={{ color: 'green' }}>
+                  {successMessage}
+               </div>
+            )}
+            {errorMessage && (
+               <div className="error-message" style={{ color: 'red' }}>
+                  {errorMessage}
+               </div>
+            )}
+            <div className="order-button-payment mt-20">
+               <button type="button" className="tp-btn" onClick={handleClose}>
+                  Go Back to Home
+               </button>
+            </div>
+         </Modal>
       </>
    );
 };
