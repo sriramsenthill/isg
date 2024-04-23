@@ -177,10 +177,10 @@ const CheckoutArea = ({ handleClose }) => {
                                        <option value="Australia">Australia</option>
                                        <option value="South Wales">Wales</option>
                                        <option value="Germany">Germany</option>
-                                       <option value="South Wales">France</option>
-                                       <option value="Germany">Italy</option>
-                                       <option value="South Wales">Singapore</option>
-                                       <option value="Germany">Malaysia</option>
+                                       <option value="France">France</option>
+                                       <option value="Italy">Italy</option>
+                                       <option value="Singapore">Singapore</option>
+                                       <option value="Malaysia">Malaysia</option>
                                     </select>
                                     {errors.country && (
                                        <div className="error" style={{ color: "red" }}>
