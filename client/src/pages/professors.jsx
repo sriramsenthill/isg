@@ -9,7 +9,9 @@ const index = () => {
   const imageFilenames = Array.from(
     { length: 8 },
     (_, index) => `${index + 1}.jpeg`
-  );
+  ).filter(filename => filename !== '4.jpeg');
+
+
 
   return (
     <WrapperFour>
@@ -52,7 +54,7 @@ const index = () => {
         autoPlay
         src="/assets/img/isg/pro.mp3"
         onPlay={(e) => console.log("onPlay")}
-        // other props here
+      // other props here
       />
     </WrapperFour>
   );

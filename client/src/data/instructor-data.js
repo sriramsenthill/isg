@@ -71,15 +71,6 @@ const instructor_info_data = [
     title: "ISG Dean",
     link: "/prof/john",
   },
-  {
-    id: 9,
-    img: "/assets/img/bg/dayamalar.jpeg",
-    name: "Rev .S.Dayamalar",
-    total_class: "35",
-    total_st: "291",
-    title: "ISG Principal",
-    link: "/prof/dayamalar",
-  },
 
 ];
 

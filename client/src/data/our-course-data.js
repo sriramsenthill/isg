@@ -32,7 +32,9 @@ const our_course_data = [
     cn_color: "c-color-red",
     course_price: "29.99",
     total_start: "125",
-    link: "/prof/ben"
+    link: "/prof/ben",
+    fileName: 'class.pdf',
+    filePath: '/assets/img/files/class.pdf'
   },
   {
     id: 2,

@@ -82,7 +82,7 @@ const SecondArea = () => {
                             <img src="/assets/img/isg/3.jpeg" alt="dean" />
                         </div>
                         <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 mb-4">
-                            <img src="/assets/img/isg/4.jpeg" alt="dean" />
+                            {/* <img src="/assets/img/isg/4.jpeg" alt="dean" /> */}
                         </div>
                     </div>
 
