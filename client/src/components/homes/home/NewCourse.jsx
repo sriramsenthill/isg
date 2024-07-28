@@ -4,7 +4,7 @@ import React from "react";
 const category_data = [
     {
         id: 1,
-        title: "Postgraduate Diploma in Theology (PGDip Theo) in Pastoral Studies"
+        title: "PG Diploma in Theology in Pastoral Studies"
     },
     {
         id: 2,
@@ -40,7 +40,7 @@ const category_data = [
     },
     {
         id: 10,
-        title: "Certificate IV in Christian Ministry and Theology"
+        title: "Certificate IV in Christian Ministry & Theology"
     },
     {
         id: 11,
@@ -52,19 +52,19 @@ const category_data = [
     },
     {
         id: 13,
-        title: "Introductory Certificate in Christian Studies (ICCS)"
+        title: "Introductory Certificate in Christian Studies"
     },
     {
         id: 14,
-        title: "TRANSFORMATIONAL LEADERSHIP certificate"
+        title: "Transformational Leadership Certificate"
     },
     {
         id: 15,
-        title: "Postgraduate Certificate in Chaplaincy (PGCertChap) 1pm"
+        title: "Postgraduate Certificate in Chaplaincy"
     },
     {
         id: 16,
-        title: "Postgraduate Diploma in Chaplaincy (PGDpChep)"
+        title: "Postgraduate Diploma in Chaplaincy"
     },
     {
         id: 17,
@@ -116,7 +116,7 @@ const category_data = [
     },
     {
         id: 29,
-        title: "Certificate Ill in Christian Ministry and Theology"
+        title: "Certificate Ill in Christian Ministry & Theology"
     },
     {
         id: 30,
@@ -128,7 +128,7 @@ const category_data = [
     },
     {
         id: 32,
-        title: "Certificate in Bible and Mission (CBM)"
+        title: "Certificate in Bible and Mission"
     },
     {
         id: 33,
@@ -240,7 +240,7 @@ const category_data = [
     },
     {
         id: 60,
-        title: "Advanced CITE™️ Financial Analysis"
+        title: "Advanced CITE Financial Analysis"
     },
     {
         id: 61,
@@ -284,6 +284,18 @@ const category_data = [
     }
 ];
 
+const wrapTitle = (title) => {
+    const words = title.split(' ');
+    let wrappedTitle = '';
+    for (let i = 0; i < words.length; i++) {
+        wrappedTitle += words[i] + ' ';
+        if ((i + 1) % 4 === 0) {
+            wrappedTitle += '<br/>';
+        }
+    }
+    return wrappedTitle;
+};
+
 const NewCourse = () => {
     return (
         <>
@@ -302,80 +314,35 @@ const NewCourse = () => {
                         </div>
                     </div>
                     <div className="row">
-                        {category_data.map((item) => (
-                            <div key={item.id} className="col-xl-3 col-lg-4 col-md-6">
-                                <div
-                                    className="card tp-cat-item mb-40"
-                                    style={{
-                                        position: "relative",
-                                        overflow: "hidden",
-                                        borderRadius: "8px",
-                                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
-                                        padding: "1rem",
-                                        height: "300px", // Adjust height as needed
-                                        display: "flex",
-                                        flexDirection: "column",
-                                        justifyContent: "space-between",
-                                        textAlign: "center",
-                                        backgroundImage: 'url(/assets/img/isg/bg_new_course.jpeg)', // Set background image for cards
-                                        backgroundSize: 'cover',
-                                        backgroundPosition: 'center',
-                                        color: "white", // Text color
-                                        border: "1px solid rgba(0, 0, 0, 0.8)", // Subtle black border
-                                    }}
-                                >
-                                    {/* Decorative Element */}
+                        {category_data.map((item, index) => (
+                            <div className="col-lg-6 col-md-6 mb-4" key={index}>
+                                <a href="https://forms.zohopublic.in/sriramsenthilnathan/form/ParentFeedback/formperma/mU2KcN3DhEE_wZXlXObe6KO8U_HBec9b7zoS38jhzpo" className="course-link">
                                     <div
+                                        className="course-item"
                                         style={{
-                                            position: "absolute",
-                                            top: "0",
-                                            left: "0",
-                                            width: "100%",
-                                            height: "100%",
-                                            background: "rgba(0, 0, 0, 0.2)", // Add overlay to ensure text is readable
-                                            zIndex: "0",
-                                            borderRadius: "8px",
-                                        }}
-                                    />
-                                    <div
-                                        className="tp-category-icon"
-                                        style={{
-                                            zIndex: "1",
-                                            marginBottom: "1rem",
+                                            backgroundImage: 'url(/assets/img/isg/newCourse.png)',
+                                            backgroundSize: 'contain',
+                                            backgroundRepeat: 'no-repeat',
+                                            backgroundPosition: 'center',
+                                            width: '100%',
+                                            height: '300px', // Adjust the height according to the original image size
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            overflow: 'hidden',
+                                            textAlign: 'center', // Center align the text
+                                            padding: '10px' // Add some padding for better text visibility
                                         }}
                                     >
-                                        <img
-                                            src="/assets/img/isg/newLogo.png"
-                                            alt="category-img"
-                                            style={{
-                                                width: "55px",
-                                                height: "55px",
-                                                marginBottom: "1rem",
-                                            }}
-                                        />
+                                        <h3 className="course-title" style={{
+                                            color: '#fecd07',
+                                            fontSize: '0.9rem',
+                                            wordWrap: 'break-word', // Break long words to fit within the container
+                                            maxWidth: '80%' // Limit the width to ensure proper wrapping
+                                        }} dangerouslySetInnerHTML={{ __html: wrapTitle(item.title) }}>
+                                        </h3>
                                     </div>
-                                    <div
-                                        className="card-body"
-                                        style={{
-                                            position: "relative",
-                                            zIndex: "1",
-                                        }}
-                                    >
-                                        <h4
-                                            className="tp-category-title customfont"
-                                            style={{
-                                                margin: "0",
-                                            }}
-                                        >
-                                            <Link
-                                                href="https://forms.zohopublic.in/sriramsenthilnathan/form/ParentFeedback/formperma/mU2KcN3DhEE_wZXlXObe6KO8U_HBec9b7zoS38jhzpo"
-                                                style={{ color: "white" }}
-                                            >
-                                                {item.title}
-                                            </Link>
-                                        </h4>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         ))}
                     </div>
