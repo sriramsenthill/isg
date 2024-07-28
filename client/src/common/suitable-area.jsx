@@ -33,9 +33,9 @@ const SuitableArea = ({ style_2 }) => {
           <div className="row text-center">
             <div className="col-lg-12">
               <div className="section-title mb-60">
-                <span className="tp-sub-title mb-25">Register With Us</span>
+                <span className="tp-sub-title mb-25">New Courses Introduced</span>
                 <h2 className="tp-section-title">
-                  2025 Ordination and Student Graduate Registration Open
+                  Registration Open for New Courses introduced by ISG
                 </h2>
               </div>
             </div>
@@ -51,7 +51,7 @@ const SuitableArea = ({ style_2 }) => {
                     <h4 className="tp-suit__title">{item.title}</h4>
                     <p>{item.des}</p>
                     <div className="tp-suit__btn pt-5">
-                      <Link href="/registration" className="tp-border-btn">
+                      <Link href="/newCourse" className="tp-border-btn">
                         Register Now
                       </Link>
                     </div>

@@ -291,7 +291,6 @@ const NewCourse = () => {
                 className="tp-category-area bg-bottom grey-bg pt-110 pb-80 wow fadeInUp"
                 data-wow-duration="1.5s"
                 data-wow-delay=".4s"
-                style={{ backgroundImage: 'url(/assets/img/bg/shape-bg-1.png)' }}
             >
                 <div className="container">
                     <div className="row text-center">
@@ -311,16 +310,18 @@ const NewCourse = () => {
                                         position: "relative",
                                         overflow: "hidden",
                                         borderRadius: "8px",
-                                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-                                        border: "1px solid rgba(255, 215, 0, 0.8)", // Yellow border with reduced opacity
-                                        backgroundColor: "rgba(0, 0, 0, 0.8)", // Black background with reduced opacity
-                                        color: "#FFD700", // Yellow color for text and icons
+                                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.3)",
                                         padding: "1rem",
                                         height: "300px", // Adjust height as needed
                                         display: "flex",
                                         flexDirection: "column",
                                         justifyContent: "space-between",
                                         textAlign: "center",
+                                        backgroundImage: 'url(/assets/img/isg/bg_new_course.jpeg)', // Set background image for cards
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
+                                        color: "white", // Text color
+                                        border: "1px solid rgba(0, 0, 0, 0.8)", // Subtle black border
                                     }}
                                 >
                                     {/* Decorative Element */}
@@ -331,11 +332,9 @@ const NewCourse = () => {
                                             left: "0",
                                             width: "100%",
                                             height: "100%",
-                                            backgroundImage: "linear-gradient(135deg, rgba(255, 215, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 50%)",
-                                            backgroundSize: "cover",
+                                            background: "rgba(0, 0, 0, 0.2)", // Add overlay to ensure text is readable
                                             zIndex: "0",
                                             borderRadius: "8px",
-                                            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 50% 50%)", // Diagonal cut effect
                                         }}
                                     />
                                     <div
@@ -366,7 +365,6 @@ const NewCourse = () => {
                                             className="tp-category-title customfont"
                                             style={{
                                                 margin: "0",
-                                                color: "#FFD700", // Yellow color for title
                                             }}
                                         >
                                             <Link
@@ -384,6 +382,7 @@ const NewCourse = () => {
                 </div>
             </section>
         </>
+
 
 
 
