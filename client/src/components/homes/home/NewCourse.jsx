@@ -56,7 +56,7 @@ const category_data = [
     },
     {
         id: 14,
-        title: "Transformational Leadership Certificate"
+        title: "Certificate of Transformational Leadership"
     },
     {
         id: 15,
@@ -192,7 +192,7 @@ const category_data = [
     },
     {
         id: 48,
-        title: "GRADUATE CERTIFICATE IN MINISTRY"
+        title: "Graduate Certificate in Minsitry"
     },
     {
         id: 49,
@@ -212,7 +212,7 @@ const category_data = [
     },
     {
         id: 53,
-        title: "CERTIFICATE OF HIGHER EDUCATION IN JEWISH EDUCATION"
+        title: "Certificate of Higher Education in Jewish Education"
     },
     {
         id: 54,
@@ -244,7 +244,7 @@ const category_data = [
     },
     {
         id: 61,
-        title: "CERTIFICATE IN APPLIED THEOLOGY"
+        title: "Certificate in Applied Theology"
     },
     {
         id: 62,
@@ -289,7 +289,7 @@ const wrapTitle = (title) => {
     let wrappedTitle = '';
     for (let i = 0; i < words.length; i++) {
         wrappedTitle += words[i] + ' ';
-        if ((i + 1) % 4 === 0) {
+        if ((i + 1) % 3 === 0) {
             wrappedTitle += '<br/>';
         }
     }
@@ -303,13 +303,17 @@ const NewCourse = () => {
                 className="tp-category-area bg-bottom grey-bg pt-110 pb-80 wow fadeInUp"
                 data-wow-duration="1.5s"
                 data-wow-delay=".4s"
+                style={{
+                    backgroundColor: "#5f096f",
+                    backgroundImage: `url(/assets/img/bg/shape-bg-02.png)`,
+                }}
             >
                 <div className="container">
                     <div className="row text-center">
                         <div className="col-lg-12">
                             <div className="section-title mb-65">
-                                <h2 className="tp-section-title">We Have Introduced New Courses</h2>
-                                <h6>please click the course title to get enrolled in the course</h6>
+                                <h2 className="tp-section-title" style={{ color: "white" }}>We Have Introduced New Courses</h2>
+                                <h6 style={{ color: "white" }}>please click the course title to get enrolled in the course</h6>
                             </div>
                         </div>
                     </div>
@@ -336,18 +340,20 @@ const NewCourse = () => {
                                     >
                                         <h3 className="course-title" style={{
                                             color: '#fecd07',
-                                            fontSize: '0.9rem',
+                                            fontSize: '1.5rem',
                                             wordWrap: 'break-word', // Break long words to fit within the container
-                                            maxWidth: '80%' // Limit the width to ensure proper wrapping
+                                            maxWidth: '80%', // Limit the width to ensure proper wrapping
+                                            fontFamily: "'Great Vibes', cursive" // Stylish font for certificates
                                         }} dangerouslySetInnerHTML={{ __html: wrapTitle(item.title) }}>
                                         </h3>
+
                                     </div>
                                 </a>
                             </div>
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
         </>
 
 
