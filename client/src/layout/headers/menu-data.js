@@ -32,6 +32,7 @@ const menu_data = [
     link: "/bibleCourse",
     has_dropdown: true,
     sub_menus: [
+      { link: "/newCourse", title: "New Courses" },
       { link: "/bibleCourse", title: "Course" },
       { link: "/professorProfile", title: "Professor Profile" },
     ],

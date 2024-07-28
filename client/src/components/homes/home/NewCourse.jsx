@@ -291,14 +291,14 @@ const NewCourse = () => {
                 className="tp-category-area bg-bottom grey-bg pt-110 pb-80 wow fadeInUp"
                 data-wow-duration="1.5s"
                 data-wow-delay=".4s"
-                style={{ backgroundImage: `url(/assets/img/bg/shape-bg-1.png)` }}
+                style={{ backgroundImage: 'url(/assets/img/bg/shape-bg-1.png)' }}
             >
                 <div className="container">
                     <div className="row text-center">
                         <div className="col-lg-12">
                             <div className="section-title mb-65">
                                 <h2 className="tp-section-title">We Have Introduced New Courses</h2>
-                                <h6 >please click the course title to get enrolled in the course</h6>
+                                <h6>please click the course title to get enrolled in the course</h6>
                             </div>
                         </div>
                     </div>
@@ -306,39 +306,77 @@ const NewCourse = () => {
                         {category_data.map((item) => (
                             <div key={item.id} className="col-xl-3 col-lg-4 col-md-6">
                                 <div
-                                    className="card tp-cat-item mb-40 d-flex align-items-stretch"
-                                    style={{ backgroundColor: "#5f096f" }}
+                                    className="card tp-cat-item mb-40"
+                                    style={{
+                                        position: "relative",
+                                        overflow: "hidden",
+                                        borderRadius: "8px",
+                                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+                                        border: "1px solid rgba(255, 215, 0, 0.8)", // Yellow border with reduced opacity
+                                        backgroundColor: "rgba(0, 0, 0, 0.8)", // Black background with reduced opacity
+                                        color: "#FFD700", // Yellow color for text and icons
+                                        padding: "1rem",
+                                        height: "300px", // Adjust height as needed
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        justifyContent: "space-between",
+                                        textAlign: "center",
+                                    }}
                                 >
-                                    {" "}
-                                    {/* Use align-items-stretch */}
+                                    {/* Decorative Element */}
                                     <div
-                                        className="tp-category-icon mr-15"
-                                        style={{ display: "flex", justifyContent: "space-between" }}
+                                        style={{
+                                            position: "absolute",
+                                            top: "0",
+                                            left: "0",
+                                            width: "100%",
+                                            height: "100%",
+                                            backgroundImage: "linear-gradient(135deg, rgba(255, 215, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 50%)",
+                                            backgroundSize: "cover",
+                                            zIndex: "0",
+                                            borderRadius: "8px",
+                                            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%, 50% 50%)", // Diagonal cut effect
+                                        }}
+                                    />
+                                    <div
+                                        className="tp-category-icon"
+                                        style={{
+                                            zIndex: "1",
+                                            marginBottom: "1rem",
+                                        }}
                                     >
-                                        {/* <div>
-                                            <img src={item.img} alt="category-img" />
-                                        </div> */}
-                                        <div
+                                        <img
+                                            src="/assets/img/isg/newLogo.png"
+                                            alt="category-img"
                                             style={{
-                                                display: "flex",
-                                                justifyContent: "end",
+                                                width: "55px",
+                                                height: "55px",
+                                                marginBottom: "1rem",
+                                            }}
+                                        />
+                                    </div>
+                                    <div
+                                        className="card-body"
+                                        style={{
+                                            position: "relative",
+                                            zIndex: "1",
+                                        }}
+                                    >
+                                        <h4
+                                            className="tp-category-title customfont"
+                                            style={{
+                                                margin: "0",
+                                                color: "#FFD700", // Yellow color for title
                                             }}
                                         >
-                                            <img
-                                                src="/assets/img/isg/newLogo.png"
-                                                alt="category-img"
-                                                style={{ width: "55px", height: "55px" }}
-                                            />
-                                        </div>
+                                            <Link
+                                                href="https://forms.zohopublic.in/sriramsenthilnathan/form/ParentFeedback/formperma/mU2KcN3DhEE_wZXlXObe6KO8U_HBec9b7zoS38jhzpo"
+                                                style={{ color: "white" }}
+                                            >
+                                                {item.title}
+                                            </Link>
+                                        </h4>
                                     </div>
-                                    <h4
-                                        className="tp-category-title customfont"
-                                        style={{ marginTop: "1rem" }}
-                                    >
-                                        <Link href="https://forms.zohopublic.in/sriramsenthilnathan/form/ParentFeedback/formperma/mU2KcN3DhEE_wZXlXObe6KO8U_HBec9b7zoS38jhzpo" style={{ color: "white" }}>
-                                            {item.title}
-                                        </Link>
-                                    </h4>
                                 </div>
                             </div>
                         ))}
@@ -346,6 +384,9 @@ const NewCourse = () => {
                 </div>
             </section>
         </>
+
+
+
     );
 };
 
