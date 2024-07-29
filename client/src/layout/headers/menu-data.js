@@ -32,7 +32,6 @@ const menu_data = [
     link: "/bibleCourse",
     has_dropdown: true,
     sub_menus: [
-      { link: "/newCourse", title: "New Courses" },
       { link: "/bibleCourse", title: "Course" },
       { link: "/professorProfile", title: "Professor Profile" },
     ],
@@ -82,6 +81,14 @@ const menu_data = [
     has_dropdown: true,
     sub_menus: [],
     icon: "/assets/img/isg/logos/pastor.png"
+  },
+  {
+    id: 10,
+    title: "The Holy Bible Special Courses",
+    link: "/newCourse",
+    has_dropdown: true,
+    sub_menus: [],
+    icon: "/assets/img/isg/logos/newCourseLogo.png"
   },
 ];
 export default menu_data;

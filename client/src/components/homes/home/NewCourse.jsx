@@ -3,6 +3,42 @@ import React from "react";
 
 const category_data = [
     {
+        id: 100,
+        title: "Master of Divinity"
+    },
+    {
+        id: 101,
+        title: "Master of Arts in Christian Ministries"
+    },
+    {
+        id: 102,
+        title: "Master of Theological Studies"
+    },
+    {
+        id: 103,
+        title: "Master of Arts"
+    },
+    {
+        id: 104,
+        title: "Master of Ministry"
+    },
+    {
+        id: 105,
+        title: "Doctor of Ministry"
+    },
+    {
+        id: 106,
+        title: "Master of Family Counselling"
+    },
+    {
+        id: 107,
+        title: "Family Counselling Theological"
+    },
+    {
+        id: 108,
+        title: "Master of Youth and Family Ministry"
+    },
+    {
         id: 1,
         title: "PG Diploma in Theology in Pastoral Studies"
     },
@@ -228,7 +264,7 @@ const category_data = [
     },
     {
         id: 57,
-        title: "HE CERT THEOLOGY"
+        title: "He Cert Theology"
     },
     {
         id: 58,
