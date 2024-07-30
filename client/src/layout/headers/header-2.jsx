@@ -18,12 +18,27 @@ const HeaderTwo = () => {
   return (
     <>
       <header className="header_white_area d-none d-xl-block" style={{
-        backgroundColor: "rgba(95, 9, 111)", // Decrease opacity by adjusting the alpha value
-        backgroundImage: `url(/assets/img/isg/london.png)`,
-        backgroundPosition: 'center top', // Move the image up a bit
-        backgroundSize: 'cover', // Optional: adjust the background size if necessary
-        paddingTop: '20px', // Optional: add padding to adjust the vertical position
+        position: 'relative',
+        overflow: 'hidden',
+        paddingTop: '20px',
       }}>
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            top: 0,
+            left: 0,
+            zIndex: -1,
+          }}
+        >
+          <source src="/assets/img/isg/logos/headerVideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="header__area pt-40 pb-3">
           <div className="main-header">
             <div className="container">
@@ -50,7 +65,7 @@ const HeaderTwo = () => {
                       }
                   `}</style>
 
-                  <h1 style={{ fontSize: "23px" }}>ISG TAMIL BIBLE COLLEGE & RESEARCH CENTER</h1>
+                  <h1 style={{ fontSize: "23px" }}>ISG TAMIL HOLY TRINITY RESEARCH HISTORY CENTRE & COLLEGE OF THEROLOGY</h1>
                   <p>England & Wales, Scotland</p>
 
                 </div>
