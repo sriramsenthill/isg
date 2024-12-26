@@ -30,6 +30,8 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
         run: |
+          cd ./server
+          npm install
           IMAGE_TAG=latest
           IMAGE_NAME=backend-image
           IMAGE_URI=$ECR_REPOSITORY/$IMAGE_NAME:$IMAGE_TAG
