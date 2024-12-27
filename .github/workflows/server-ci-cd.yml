@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      uri: ${{ steps.image-uri.outputs.uri }}
+      uri: ${{ steps.image_uri.outputs.uri }}
 
     steps:
       - name: Checkout code
@@ -60,19 +60,38 @@ jobs:
       - name: Deploy Server to EC2
         uses: appleboy/ssh-action@v0.1.5
         with:
-          host: ${{ secrets.EC2_HOST }}
+          host: 54.88.93.125 # Hardcoded EC2 public IP
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           port: 22
           script: |
-            echo "Stopping and removing old container..."
+            # Update and install Docker if not installed
+            echo "Checking if Docker is installed..."
+            if ! command -v docker &> /dev/null; then
+              echo "Docker not found. Installing Docker..."
+              sudo apt-get update -y
+              sudo apt-get install -y docker.io
+              sudo systemctl start docker
+              sudo systemctl enable docker
+            else
+              echo "Docker is already installed."
+            fi
+
+            # Stop and remove any existing container
+            echo "Stopping and removing old container (if exists)..."
             docker stop app || true
             docker rm app || true
 
+            # Pull the latest Docker image from ECR
             echo "Pulling Docker image from ECR..."
             docker pull ${{ needs.build-and-push-to-ecr.outputs.uri }}
 
-            echo "Running Docker container..."
+            # Run the Docker container
+            echo "Running the Docker container..."
             docker run -d --name app -p 3000:3000 ${{ needs.build-and-push-to-ecr.outputs.uri }}
 
-            echo "Deployment complete."
+            # Optional: Clean up unused Docker images
+            echo "Cleaning up unused Docker images..."
+            docker image prune -f
+
+            echo "Deployment to EC2 completed successfully."
