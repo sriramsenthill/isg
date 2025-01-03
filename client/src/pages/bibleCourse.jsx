@@ -8,20 +8,20 @@ import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
 const Index = () => {
-  const { data: session, status } = useSession();
-  const router = useRouter();
+  // const { data: session, status } = useSession();
+  // const router = useRouter();
 
-  // Redirect to sign-in page if no active session
-  useEffect(() => {
-    if (status === "unauthenticated" || !session) {
-      router.push("/sign-in");
-    }
-  }, [status, session, router]);
+  // // Redirect to sign-in page if no active session
+  // useEffect(() => {
+  //   if (status === "unauthenticated" || !session) {
+  //     router.push("/sign-in");
+  //   }
+  // }, [status, session, router]);
 
-  if (status === "loading") {
-    // You might want to render a loading indicator here
-    return <div>Loading...</div>;
-  }
+  // if (status === "loading") {
+  //   // You might want to render a loading indicator here
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <WrapperFour>

@@ -8,20 +8,20 @@ import 'react-h5-audio-player/lib/styles.css';
 import Breadcrumb from "@/src/components/bredcrumb/breadcrumb";
 
 const Prayer = () => {
-    const { data: session, status } = useSession();
-    const router = useRouter();
+    // const { data: session, status } = useSession();
+    // const router = useRouter();
 
-    // Redirect to sign-in page if no active session
-    useEffect(() => {
-        if (status === "unauthenticated" || !session) {
-            router.push("/sign-in");
-        }
-    }, [status, session, router]);
+    // // Redirect to sign-in page if no active session
+    // useEffect(() => {
+    //     if (status === "unauthenticated" || !session) {
+    //         router.push("/sign-in");
+    //     }
+    // }, [status, session, router]);
 
-    if (status === "loading") {
-        // You might want to render a loading indicator here
-        return <div>Loading...</div>;
-    }
+    // if (status === "loading") {
+    //     // You might want to render a loading indicator here
+    //     return <div>Loading...</div>;
+    // }
     const imageFilenames = Array.from({ length: 4 }, (_, index) => `${index + 1}.jpeg`);
 
     return (

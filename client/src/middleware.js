@@ -1,3 +1,4 @@
 export { default } from "next-auth/middleware";
 
-export const config = { matcher: ["/bibleCourse", "/prayer", "/pastorFellowship"] };
+export const config = { matcher: [] };
+// export const config = { matcher: ["/bibleCourse", "/prayer", "/pastorFellowship"] };
